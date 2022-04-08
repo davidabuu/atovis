@@ -6,7 +6,7 @@ import Sign from './Sign';
 const FooterDiv = () => {
   return (
     <FooterDivStyle>
-      <img src='./logo.png' alt='Hola' />
+      <img src='/logo.png' alt='Hola' />
       <Sign />
       <div className='footer-info'>
         <ul>

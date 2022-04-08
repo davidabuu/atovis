@@ -62,8 +62,10 @@ export const FooterDivStyle = styled.div`
     cursor: pointer;
     justify-content: space-around;
   }
+  @media (max-width: 912px) {
+    flex-direction: column;
+    height: 74vh;
+  }
 `;
 
-export const SignInStyle = styled.div`
-
-`
+export const SignInStyle = styled.div``;

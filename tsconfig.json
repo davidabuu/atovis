@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Header/Header.tsx", "ICONS/figmaIcons.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Header/Header.tsx", "ICONS/figmaIcons.js", "src/components/Layout/Layout.js", "src/components/Vendor/ImgLanding.js"],
   "exclude": ["node_modules"]
 }
