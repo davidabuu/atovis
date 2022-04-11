@@ -1,13 +1,11 @@
-import React from 'react';
 import Head from 'next/head';
-
-const UserWebLayout = ({ webtitle, children}) => {
+const UserWebLayout = ({ webtitle, children }) => {
     return (
         <>
             <Head>
-                <title>{webtitle} | Bub Books</title>
-                {children}
-            </Head>
+                <title>{webtitle} | 3reen Shop</title>
+            </Head>   
+            {children}
         </>
     );
 };

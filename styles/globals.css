@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 html,
 body {
   padding: 0;
@@ -25,9 +26,9 @@ input:focus {
 input {
   padding: 10px;
 }
-input[type='text'] {
+input {
   width: 300px;
-  border: none;
+
 }
 input[type='button'] {
   background-color: var(--button-color);
