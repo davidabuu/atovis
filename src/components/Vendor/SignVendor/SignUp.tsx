@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button, Col, Input, Row } from 'antd';
 import React from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled } from './SignStyled';
@@ -8,35 +8,24 @@ const SignUp = () => {
       <UserWebLayout webtitle={'Vendor Sign In'}>
         <SignStyled style={{ marginTop: '20px' }}>
           <img src='/logo2.png' alt='Log' />
-          <div className='form-control'>
-            <label>Full Name</label>
-            <br />
-            <input type={'text'} placeholder='Enter Your Phone Number' />
-          </div>
-          <div className='form-control'>
-            <label>Offical Email Address</label>
-            <br />
-            <input type={'email'} placeholder='Enter your Email' />
-          </div>
-          <div className='form-control'>
-            <label>Phone Number</label>
-            <br />
-            <input type={'number'} placeholder='Enter your Phone number' />
-          </div>
-          <div className='form-control'>
-            <label>Password</label>
-            <br />
-            <input type={'password'} placeholder='Enter your Password' />
-          </div>
-          <div className='form-control'>
-            <label>Confirm Password</label>
-            <br />
-            <input type={'password'} placeholder='Enter your Password' />
-          </div>
-          <Button>REGISTER</Button>
-          <p>
-            Already have an account? <a>Login</a>
-          </p>
+          <form autoComplete='off'>
+            <Row gutter={24}>
+              <Col xs={24} xl={8} lg={8}>
+                <label>First Name</label>
+                <Input size='large' />
+              </Col>
+              <Col xs={24} xl={8} lg={8}>
+                <label>Email Address</label>
+                <Input size='large' name='newemail' />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={24} xl={8} lg={8}>
+                <label>Password</label>
+                <Input.Password name='newpass' size='large' />
+              </Col>
+            </Row>
+          </form>
         </SignStyled>
       </UserWebLayout>
     </div>
