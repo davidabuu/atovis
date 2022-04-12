@@ -19,7 +19,15 @@ a {
   --primary-color: #1b5958;
   --button-color: #4cc5d2;
 }
-
+.searchBtn {
+  background-color: #4cc5d2;
+  border-color: var(--button-color);
+  margin-left: 2px;
+}
+.search {
+  display: flex;
+}
+/* 
 input:focus {
   outline: none;
 }
@@ -42,4 +50,8 @@ button {
 }
 button:focus {
   outline: none;
+} */
+
+.container {
+  margin: 1rem 4rem;
 }

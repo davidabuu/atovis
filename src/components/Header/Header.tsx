@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProfileIcon } from '../../../ICONS/figmaIcons';
 import FooterDiv from '../Footer/FooterDiv';
+import { Button, Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
 const Header = () => {
   return (
@@ -9,8 +10,8 @@ const Header = () => {
         <HeaderStyled>
           <img src='/logo.png' alt='Log.png' />
           <div className='search'>
-            <input placeholder='Search for a product' type={'text'} />
-            <input type='button' value='Search' />
+            <Input placeholder='Search for a product' type={'text'} />
+            <Button type='default' className='searchBtn'>Search</Button>
           </div>
           <p>
             Sign In <ProfileIcon />
