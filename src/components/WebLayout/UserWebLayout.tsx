@@ -1,5 +1,5 @@
 import Head from 'next/head';
-const UserWebLayout = ({ webtitle, children }) => {
+const UserWebLayout = ({ webtitle, children }: any) => {
     return (
         <>
             <Head>
