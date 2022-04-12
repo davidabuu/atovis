@@ -19,7 +19,7 @@ a {
   --primary-color: #1b5958;
   --button-color: #4cc5d2;
 }
-
+/* 
 input:focus {
   outline: none;
 }
@@ -42,4 +42,8 @@ button {
 }
 button:focus {
   outline: none;
+} */
+
+.container {
+  margin: 1rem 4rem;
 }
