@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Header/Header.tsx", "ICONS/figmaIcons.js", "src/components/Layout/Layout.js", "src/components/Vendor/ImgLanding.jtsx", "pages/_app.tsx", "src/components/WebLayout/UserWebLayout.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Header/Header.tsx", "ICONS/figmaIcons.tsx", "src/components/Layout/Layout.js", "src/components/Vendor/ImgLanding.jtsx", "pages/_app.tsx", "src/components/WebLayout/UserWebLayout.tsx", "src/components/Vendor/Header.tsx"],
   "exclude": ["node_modules"]
 }
