@@ -1,7 +1,24 @@
 import styled from 'styled-components';
 
 export const SignStyled = styled.div`
+<<<<<<< HEAD
   margin: auto 5rem;
+=======
+  margin: auto 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LogoHolder = styled.div`
+  display: flex;
+  margin: 1rem 3rem;
+  transition: ease all 0.5s;
+`;
+
+export const FormGroup = styled.div`
+  margin-bottom: 15px;
+>>>>>>> fc5546e12375fe5768d82a1e706575815b805fb6
 `;
 
 export const Layout = styled.div`
