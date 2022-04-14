@@ -7,9 +7,10 @@ const SignUp = () => {
     <div>
       <UserWebLayout webtitle={'Vendor Sign In'}>
         <LogoHolder>
-          <img src='/logo2.png' alt='Log' />
+          <div className='img'>
+            <img src='/logo2.png' alt='Log' />
+          </div>
         </LogoHolder>
-
         <SignStyled style={{ marginTop: '20px' }}>
           <Card>
             <form autoComplete='off'>
@@ -38,7 +39,6 @@ const SignUp = () => {
             </form>
           </Card>
         </SignStyled>
-
       </UserWebLayout>
     </div>
   );

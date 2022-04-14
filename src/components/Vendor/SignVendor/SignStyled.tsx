@@ -1,24 +1,78 @@
 import styled from 'styled-components';
 
 export const SignStyled = styled.div`
-<<<<<<< HEAD
-  margin: auto 5rem;
-=======
   margin: auto 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  form {
+    width: 400px;
+  }
+  button {
+    color: #fff;
+    width: 200px;
+  }
+  .terms {
+    margin-left: 5px;
+    color: #000;
+  }
+  .checkbox {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @media (max-width: 500px) {
+    .img {
+      img {
+        width: 200px;
+      }
+      margin-top: 10px;
+    }
+    form {
+      width: 300px;
+    }
+    .select {
+      width: 300px;
+    }
+  }
+  @media (max-width: 400px) {
+    margin: auto 10rem;
+  }
+  a {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  .dont {
+    text-align: center;
+  }
 `;
 
 export const LogoHolder = styled.div`
   display: flex;
-  margin: 1rem 3rem;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+  transition: ease all 0.5s;
+  .img {
+    margin-top: 50px;
+  }
+  @media (max-width: 500px) {
+    .img {
+      margin-top: 10px;
+    }
+  }
+`;
+export const LogoHolders = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
   transition: ease all 0.5s;
 `;
 
 export const FormGroup = styled.div`
   margin-bottom: 15px;
->>>>>>> fc5546e12375fe5768d82a1e706575815b805fb6
 `;
 
 export const Layout = styled.div`
@@ -35,6 +89,12 @@ export const Layout = styled.div`
   ul {
     margin-top: 5px;
     display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  a {
+    display: flex;
     align-items: center;
     justify-content: space-around;
   }
@@ -43,8 +103,15 @@ export const Layout = styled.div`
     list-style: none;
   }
   ///////////////////////////////////////RESPONSIVE DESING/////////////////////
-  @media (max-width: 550px) {
-    display: none;
+  @media (max-width: 650px) {
+    ul {
+      width: 400px;
+      font-size: 15px;
+    }
+    a {
+      font-size: 12px;
+      width: 300px;
+    }
   }
 `;
 

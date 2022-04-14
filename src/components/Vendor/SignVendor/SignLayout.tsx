@@ -8,10 +8,19 @@ const SignLayout = ({ info }) => {
       <Layout>
         <h1>{info}</h1>
         <ul>
-          <li>Seller Details</li> <ArrowForward/>
-          <li>Bussiness Details</li> <ArrowForward />
-          <li>Payment Details</li> <ArrowForward />
-          <li>Summary</li> <ArrowForward />
+          <a>
+            <li>Seller Details</li> <ArrowForward />
+          </a>
+          <a>
+            <li>Bussiness Details</li> <ArrowForward />
+          </a>
+          <a>
+            <li>Payment Details</li> <ArrowForward />
+          </a>
+          <a>
+            {' '}
+            <li>Summary</li> <ArrowForward />
+          </a>
         </ul>
       </Layout>
     </div>
