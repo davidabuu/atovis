@@ -11,10 +11,10 @@ const Header = () => {
         <Button type='default' className='searchBtn'>
           Search
         </Button>
-      <div>
-        <NotificationsActive />
-      </div>
-      <img src='/profile.png' alt='Hello' />
+        <div className='noti'>
+          <NotificationsActive />
+        </div>
+        <img src='/profile.png' alt='Hello' />
       </div>
     </HeaderStyled>
   );

@@ -159,10 +159,18 @@ export const HeaderStyled = styled.div`
   border-bottom: 1px solid var(--primary-color);
   display: flex;
   align-items: center;
+  padding: 10px;
   justify-content: space-around;
   .search {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    width: 600px;
+  }
+  img, .noti {
+    padding-left: 20px;
+  }
+  h1 {
+    font-size: 30px;
   }
 `;

@@ -19,7 +19,6 @@ const SideNav = () => {
             <img src='/product.png' alt='Product' />
             <span>Products</span>
           </a>
-          <NotificationsActive/>
         </li>
         <li>
           <a>
