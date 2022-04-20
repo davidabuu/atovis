@@ -3,6 +3,7 @@ import UserWebLayout from '../../WebLayout/UserWebLayout';
 import Card from '../Card';
 import Header from '../Header';
 import SideNav from '../SideNav';
+import VendorChart from '../VendorChart';
 import { DashboardStyled } from './DashboardStyled';
 
 const Dashboard = () => {
@@ -14,6 +15,7 @@ const Dashboard = () => {
           <div className='head'>
             <Header />
           </div>
+          <VendorChart />
           <div className='cards'>
             <Card heading={'Products Sold'} number={'100'} />
             <Card heading={'Incomplete Orders'} number={'100'} />
