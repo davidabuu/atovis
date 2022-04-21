@@ -1,8 +1,52 @@
-import { Button, Card, Col, Input, Row } from 'antd';
+import { Button, Card, Col, Input, notification, Row } from 'antd';
+import axios from 'axios';
 import React from 'react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Vendors } from '../../utils/ApiList';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled, LogoHolder, FormGroup } from './SignStyled';
 const Login = () => {
+  const [loading, setLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const LoginVendor = async (
+    data: any,
+    event: { preventDefault: () => void }
+  ) => {
+    console.log(data);
+    console.log('Hello');
+    event.preventDefault();
+    setLoading(true);
+    try {
+      await axios.post(
+        `${process.env.APP_BASE_URL}${Vendors.loginDetails}`,
+        data
+      );
+      setLoading(false);
+      console.log(data);
+      setTimeout(() => {
+        notification.success({
+          message: 'Success',
+          description: 'Login Successfully',
+          duration: 5,
+        });
+      }, 1000);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      setTimeout(() => {
+        notification.error({
+          message: 'Error',
+          description: 'Not Registered',
+          duration: 5,
+        });
+      }, 1000);
+    }
+  };
   return (
     <div>
       <UserWebLayout webtitle={'Vendor Sign In'}>
@@ -13,12 +57,19 @@ const Login = () => {
         </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card>
-            <form autoComplete='off'>
+            <form autoComplete='off' onSubmit={handleSubmit(LoginVendor)}>
               <Row gutter={24}>
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>Email Address</label>
-                    <Input size='large' name='newemail' />
+                    <Input
+                      size='large'
+                      type='email'
+                      {...register('email', { required: true })}
+                    />
+                    {errors.email && (
+                      <span className='error'>This field is required</span>
+                    )}
                   </FormGroup>
                 </Col>
               </Row>
@@ -26,7 +77,14 @@ const Login = () => {
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>Password</label>
-                    <Input.Password name='newpass' size='large' />
+                    <Input
+                      type={'password'}
+                      size='large'
+                      {...register('password', { required: true })}
+                    />
+                    {errors.password && (
+                      <span className='error'>This field is required</span>
+                    )}
                   </FormGroup>
                 </Col>
               </Row>
@@ -48,6 +106,8 @@ const Login = () => {
                   <Button
                     style={{ background: 'var(--primary-color)' }}
                     size='large'
+                    htmlType='submit'
+                    loading={loading}
                     block>
                     LOGIN
                   </Button>
@@ -55,7 +115,9 @@ const Login = () => {
               </Row>
               <Row>
                 <Col xs={24} xl={24} lg={24}>
-                 <p className='dont'>Don't have an account <a>Sign Up</a></p>
+                  <p className='dont'>
+                    Don't have an account <a>Sign Up</a>
+                  </p>
                 </Col>
               </Row>
             </form>
