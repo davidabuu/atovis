@@ -21,12 +21,9 @@ const Login = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const LoginVendor = async (data: any,
-    event: { preventDefault: () => void }
-  ) => {
+  const LoginVendor = async (data: any) => {
     console.log(data);
     console.log('Hello');
-    event.preventDefault();
     setLoading(true);
     try {
       await axios.post(
@@ -129,6 +126,7 @@ const Login = () => {
                     size='large'
                     htmlType='submit'
                     loading={loading}
+                    onClick={handleSubmit(LoginVendor)}
                     block>
                     LOGIN
                   </Button>
