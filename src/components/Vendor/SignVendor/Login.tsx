@@ -2,24 +2,28 @@ import { Button, Card, Col, Input, notification, Row } from 'antd';
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { Vendors } from '../../utils/ApiList';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled, LogoHolder, FormGroup } from './SignStyled';
+
+type FormValues = {
+  email: string;
+  password: string;
+};
+
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const LoginVendor = async (
-    data: any,
-    event: { preventDefault: () => void }
-  ) => {
+  } = useForm<FormValues>();
+
+  const LoginVendor = async (data: any) => {
     console.log(data);
     console.log('Hello');
-    event.preventDefault();
     setLoading(true);
     try {
       await axios.post(
@@ -62,10 +66,17 @@ const Login = () => {
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>Email Address</label>
-                    <Input
-                      size='large'
-                      type='email'
-                      {...register('email', { required: true })}
+                    <Controller
+                      control={control}
+                      name="email"
+                      rules={{ required: true }}
+                      render={({ field: { onChange } }) => (
+                        <Input
+                          size='large'
+                          type='email'
+                          onChange={onChange}
+                        />
+                      )}
                     />
                     {errors.email && (
                       <span className='error'>This field is required</span>
@@ -77,10 +88,17 @@ const Login = () => {
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>Password</label>
-                    <Input
-                      type={'password'}
-                      size='large'
-                      {...register('password', { required: true })}
+                    <Controller
+                      control={control}
+                      name="password"
+                      rules={{ required: true }}
+                      render={({ field: { onChange } }) => (
+                        <Input
+                          type={'password'}
+                          size='large'
+                          onChange={onChange}
+                        />
+                      )}
                     />
                     {errors.password && (
                       <span className='error'>This field is required</span>
@@ -108,6 +126,7 @@ const Login = () => {
                     size='large'
                     htmlType='submit'
                     loading={loading}
+                    onClick={handleSubmit(LoginVendor)}
                     block>
                     LOGIN
                   </Button>
