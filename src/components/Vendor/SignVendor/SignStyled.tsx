@@ -8,10 +8,6 @@ export const SignStyled = styled.div`
   form {
     width: 400px;
   }
-  button {
-    color: #fff;
-    width: 200px;
-  }
   .terms {
     margin-left: 5px;
     color: #000;
@@ -51,7 +47,7 @@ export const SignStyled = styled.div`
 export const LogoHolder = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 10px;
   align-items: center;
   transition: ease all 0.5s;
   .img {
@@ -167,7 +163,8 @@ export const HeaderStyled = styled.div`
     justify-content: space-around;
     width: 600px;
   }
-  img, .noti {
+  img,
+  .noti {
     padding-left: 20px;
   }
   h1 {

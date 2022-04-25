@@ -13,10 +13,10 @@ const Header = () => {
             <Input placeholder='Search for a product' type={'text'} />
             <Button type='default' className='searchBtn'>Search</Button>
           </div>
-          <p>
+          <p className='flex'>
             Sign In <ProfileIcon />
           </p>
-          <p>
+          <p className='flex'>
             Cart <img src='/cart.png' className='icon' alt='Hello'></img>
           </p>
         </HeaderStyled>

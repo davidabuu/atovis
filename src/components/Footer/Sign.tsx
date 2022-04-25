@@ -1,12 +1,17 @@
+import { Input,Button } from 'antd';
 import React from 'react';
 
 const Sign = () => {
   return (
     <div>
-      <h4>Sign Up To Recieve Our Emails</h4>
+      <h4 style={{color:'#fff'}}>Sign Up To Recieve Our Emails</h4>
       <div className='search'>
-        <input placeholder='Search for a product' type={'text'} />
-        <input type='button' value='Sign Up' />
+        <div className='search'>
+          <Input placeholder='Search for a product' type={'text'} />
+          <Button type='default' className='searchBtn'>
+            Search
+          </Button>
+        </div>
       </div>
     </div>
   );

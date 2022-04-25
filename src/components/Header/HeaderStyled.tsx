@@ -32,6 +32,11 @@ export const HeaderStyled = styled.div`
   padding: 10px;
   background: var(--primary-color);
   color: #fff;
+  p{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 `;
 
 export const ImgStyle = styled.div`

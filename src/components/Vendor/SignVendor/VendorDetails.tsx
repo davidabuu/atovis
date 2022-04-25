@@ -87,7 +87,7 @@ const VendorDetails = () => {
       </div>
       {bussiness ? (
         <>
-        <h1>Bussiness Details</h1>
+        <h1 className='center'>Bussiness Details</h1>
           <Bussiness />
         </>
       ) : (
@@ -95,7 +95,7 @@ const VendorDetails = () => {
       )}
       {accounts ? (
         <>
-        <h1>Accounts Details</h1>
+        <h1 className='center'>Accounts Details</h1>
           <Accounts />
         </>
       ) : (
