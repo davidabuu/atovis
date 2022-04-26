@@ -1,4 +1,4 @@
-/* @import '~antd/dist/antd.css'; */
+@import '~antd/dist/antd.css';
 html,
 body {
   padding: 0;
@@ -30,7 +30,7 @@ a {
 .center {
   text-align: center;
 }
-.text-color{
+.text-color {
   color: var(--primary-color);
 }
 input:focus {
@@ -74,7 +74,14 @@ input {
 .button:hover {
   color: #fff !important;
 }
-
+.h {
+  width: 100%;
+  background-color: #1b5958;
+  margin-top: 5px;
+  padding: 10px;
+  color: #fff;
+  font-size: 25px;
+}
 @media (max-width: 500px) {
   .select {
     width: 300px !important;

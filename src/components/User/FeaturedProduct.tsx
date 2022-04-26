@@ -27,7 +27,7 @@ const FeaturedProduct = () => {
                     <RatingIcon selected />
                   </div>
                 </div>
-                <Button>Add To Cart</Button>
+                <Button className='buttons'>Add To Cart</Button>
               </div>
                 </div>
             </Col>

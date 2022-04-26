@@ -73,8 +73,34 @@ export const ProductDetailsStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  img {
+    width: 500px;
+    margin-top: 10px;
+    object-fit: cover;
+  }
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  h1,
+  p {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
   ///Responsive Design////////////////////////////
   @media (max-width: 770px) {
     flex-direction: column;
+    img {
+      width: 300px;
+    }
+    h1,
+    p {
+      margin-top: 10px;
+      font-size: 25px;
+      font-weight: bold;
+    }
   }
 `;
