@@ -1,4 +1,5 @@
 import { Button, Row, Col } from 'antd';
+import BeautyStars from 'beauty-stars';
 import React from 'react';
 import { RatingIcon } from 'semantic-ui-react';
 import { RawProuducts } from './RawProduct';
@@ -22,9 +23,13 @@ const FeaturedProduct = () => {
                 <div>
                   <p>{price}</p>
                   <div>
-                    <RatingIcon selected />
-                    <RatingIcon selected />
-                    <RatingIcon selected />
+                  <BeautyStars
+                    size="12px"
+                    gap="7px"
+                    activeColor="#ffaf38"
+                    inactiveColor="#ddd"
+                    value={5}
+                />
                   </div>
                 </div>
                 <Button className='buttons'>Add To Cart</Button>
