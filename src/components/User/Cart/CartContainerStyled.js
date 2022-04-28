@@ -90,7 +90,7 @@ export const CartContainerStyled = styled.div`
     }
     .deletebutton {
         font-size:30px;
-        color:#ffaf38;
+        color:var(--primary-color);
         align-items: center;
         cursor:pointer;
         justify-content:center;
@@ -159,7 +159,7 @@ export const CartContainerStyled = styled.div`
         height: 3.25rem;
         border: 1px solid #ffaf38;
         background: #ffffff;
-        color: #ffaf38;
+        color: var(--primary-color);
         font-size: 1rem;
         margin-bottom: 2.125rem;
     }
