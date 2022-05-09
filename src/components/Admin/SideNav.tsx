@@ -23,6 +23,24 @@ const SideNav = () => {
         <li>
           <a>
             <img src='/delivery.png' alt='Delivery' />
+            <span>Customer</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src='/delivery.png' alt='Delivery' />
+            <span>Vendors</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src='/delivery.png' alt='Delivery' />
+            <span>Promotion</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src='/delivery.png' alt='Delivery' />
             <span>Delivery</span>
           </a>
         </li>
