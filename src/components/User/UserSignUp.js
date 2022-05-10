@@ -18,25 +18,40 @@ const UserSignUp = () => {
   } = useForm();
   const [loading, setLoading] = useState(false);
   const { Option } = Select;
-  const LoginUser = async (data) => {
-    console.log(data)
-    const { password, confirmPassword } = data;
-    // if (password === confirmPassword) {
-    //   notification.error({
-    //     message: 'Password Error',
-    //     description: 'Password do not match',
-    //     duration: 20,
-    //   });
-    //   setloading(false);
-    // }
-  
+  const LoginUser = async (record) => {
+    console.log(record,  'incooming')
+    const { password, confirmPassword } = record;
+    if (password === confirmPassword) {
+      notification.error({
+        message: 'Password Error',
+        description: 'Password do not match',
+        duration: 20,
+      });
+      setloading(false);
+    }
+    try {
       setLoading(true);
-      console.log(data, 'data');
-      const res = await axios.post(`${APP_BASE_URL}${User.register}`, data);
+      console.log(record, 'data');
+      const res = await axios.post(`${APP_BASE_URL}${User.register}`, record);
       console.log(`${APP_BASE_URL}${User.register}`)
       const { data } = res;
       console.log(data);
+      notification.success({
+        message: 'Successful',
+        description: data?.message,
+        duration: 20,
+      })
       setLoading(false);
+    } catch(e) {
+      setLoading(false);
+      if (e.response.data.status === 'error') {
+        notification.error({
+          message: 'Error',
+          description: e.response?.data?.message,
+          duration: 20,
+        })
+      }
+    }
   };
   return (
     <UserWebLayout webtitle='Sign Up'>
