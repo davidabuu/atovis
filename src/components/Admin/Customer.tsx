@@ -106,7 +106,6 @@ const Customer = () => {
       status: 'Status',
     },
   ];
-
   const columns = [
     {
       title: 'Product Image',

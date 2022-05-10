@@ -7,11 +7,6 @@ import { Vendors } from '../../utils/ApiList';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled, LogoHolder, FormGroup } from './SignStyled';
 
-type FormValues = {
-  email: string;
-  password: string;
-};
-
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const {
@@ -19,9 +14,9 @@ const Login = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm;
 
-  const LoginVendor = async (data: any) => {
+  const LoginVendor = async (data) => {
     console.log(data);
     console.log('Hello');
     setLoading(true);

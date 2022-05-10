@@ -2,7 +2,7 @@ import { Button, Card, Col, Input, notification, Row } from 'antd';
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import {
   FormGroup,
   LogoHolder,
@@ -13,16 +13,15 @@ const UserLogin = () => {
   const [loading, setLoading] = useState(false);
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const LoginVendor = async (
-    data: any,
-    event: { preventDefault: () => void }
+  const LoginUser = async (
+    data
   ) => {
     console.log(data);
     console.log('Hello');
-    event.preventDefault();
     setLoading(true);
     try {
       setLoading(false);
@@ -56,15 +55,23 @@ const UserLogin = () => {
         </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card>
-            <form autoComplete='off' onSubmit={handleSubmit(LoginVendor)}>
+            <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
               <Row gutter={24}>
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>Email Address</label>
-                    <Input
-                      size='large'
-                      type='text'
-                      {...register('email', { required: true })}
+                    <Controller
+                      control={control}
+                      name="email"
+                      rules={{ required: true }}
+                      render={({ field: { onChange } }) => (
+                        <Input
+                          size='large'
+                          type='email'
+                          onChange={onChange}
+                          {...register('email', { required: true })}
+                        />
+                      )}
                     />
                     {errors.email && (
                       <span className='error'>This field is required</span>
