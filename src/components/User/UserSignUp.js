@@ -21,25 +21,22 @@ const UserSignUp = () => {
   const LoginUser = async (data) => {
     console.log(data)
     const { password, confirmPassword } = data;
-    if (password === confirmPassword) {
-      notification.error({
-        message: 'Password Error',
-        description: 'Password do not match',
-        duration: 20,
-      });
-      setloading(false);
-    }
-    try {
+    // if (password === confirmPassword) {
+    //   notification.error({
+    //     message: 'Password Error',
+    //     description: 'Password do not match',
+    //     duration: 20,
+    //   });
+    //   setloading(false);
+    // }
+  
       setLoading(true);
+      console.log(data, 'data');
       const res = await axios.post(`${APP_BASE_URL}${User.register}`, data);
-
+      console.log(`${APP_BASE_URL}${User.register}`)
       const { data } = res;
       console.log(data);
       setLoading(false);
-    } catch (error) {
-        setLoading(false);
-      console.log('Error');
-    }
   };
   return (
     <UserWebLayout webtitle='Sign Up'>
