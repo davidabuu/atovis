@@ -3,6 +3,7 @@ import { Button, Select } from 'antd';
 import Layout from '../Layout/Layout';
 import { ProductDetailsStyled } from './UserStyled';
 import { PlusSquareIcon, MinusIcon } from '@chakra-ui/icons';
+import Image from 'next/image';
 const ProductDetails = () => {
   const { Option } = Select;
   return (
@@ -10,7 +11,7 @@ const ProductDetails = () => {
       <div>
         <h1 className='center text-color h'>PRODUCT OVERVIEW</h1>
         <ProductDetailsStyled>
-          <img src='/imh.png' alt='Alt' />
+          <Image src='/imh.png' alt='Alt' />
           <div className='product-info'>
             <p>Product name and information</p>
             <h1>$54.99</h1>

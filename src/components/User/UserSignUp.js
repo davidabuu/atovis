@@ -1,5 +1,6 @@
 import { Card, Col, Input, Button, Select, Row, notification } from 'antd';
 import axios from 'axios';
+import Image from 'next/image';
 import React from 'react';
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
@@ -57,7 +58,7 @@ const UserSignUp = () => {
     <UserWebLayout webtitle='Sign Up'>
       <LogoHolder>
         <div className='img'>
-          <img src='/logo2.png' alt='Log' />
+          <Image src='/logo2.png' alt='Log' />
         </div>
       </LogoHolder>
       <SignStyled style={{ marginTop: '20px' }}>

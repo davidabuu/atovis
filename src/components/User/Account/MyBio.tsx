@@ -5,6 +5,7 @@ import {
   LogoHolder,
   SignStyled,
 } from '../../Vendor/SignVendor/SignStyled';
+import Image from 'next/image'
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 const MyBio = () => {
   const { Option } = Select;
@@ -12,7 +13,7 @@ const MyBio = () => {
     <UserWebLayout webtitle='My Bio'>
       <LogoHolder>
         <div className='img'>
-          <img src='/logo2.png' alt='Log' />
+          <Image src='/logo2.png' alt='Log' />
         </div>
       </LogoHolder>
       <SignStyled style={{ marginTop: '20px' }}>

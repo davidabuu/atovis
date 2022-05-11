@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { LogoHolder } from '../../Vendor/SignVendor/SignStyled';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
@@ -8,7 +9,7 @@ const Policy = () => {
       <div>
       <LogoHolder>
           <div className='img'>
-            <img src='/logo2.png' alt='Log' />
+            <Image src='/logo2.png' alt='Log' />
           </div>
         </LogoHolder>
         <div className='center'>

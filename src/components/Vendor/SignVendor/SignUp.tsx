@@ -1,4 +1,5 @@
 import { Button, Card, Col, Input, Row } from 'antd';
+import Image from 'next/image';
 import React from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled, LogoHolder, FormGroup } from './SignStyled';
@@ -8,7 +9,7 @@ const SignUp = () => {
       <UserWebLayout webtitle={'Vendor Sign In'}>
         <LogoHolder>
           <div className='img'>
-            <img src='/logo2.png' alt='Log' />
+          <Image src='/logo2.png' alt='Log' />
           </div>
         </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>

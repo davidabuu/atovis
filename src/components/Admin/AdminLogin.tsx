@@ -1,5 +1,6 @@
 import { Button, Card, Col, Input, notification, Row } from 'antd';
 import axios from 'axios';
+import Image from 'next/image';
 import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -16,13 +17,9 @@ const AdminLogin = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const LoginVendor = async (
-    data: any,
-    event: { preventDefault: () => void }
-  ) => {
+  const LoginVendor = async (data: any) => {
     console.log(data);
     console.log('Hello');
-    event.preventDefault();
     setLoading(true);
     try {
       setLoading(false);
@@ -51,7 +48,7 @@ const AdminLogin = () => {
       <UserWebLayout webtitle={'Admin In'}>
         <LogoHolder>
           <div className='img'>
-            <img src='/logo2.png' alt='Log' />
+            <Image src='/logo2.png' alt='Log' />
           </div>
         </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>
@@ -89,12 +86,11 @@ const AdminLogin = () => {
               </Row>
               <Row>
                 <Col xs={24} xl={24} lg={24}>
-                <div className='center'>
-             <Button className='button'>LOGIN</Button>
-             </div>
+                  <div className='center'>
+                    <Button className='button'>LOGIN</Button>
+                  </div>
                 </Col>
               </Row>
-              
             </form>
           </Card>
         </SignStyled>

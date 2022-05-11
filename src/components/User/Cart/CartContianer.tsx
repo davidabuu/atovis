@@ -5,13 +5,14 @@ import { PlusSquareIcon, MinusIcon } from '@chakra-ui/icons';
 import { Delete } from '@material-ui/icons';
 import { RawProuducts } from '../RawProduct';
 import Layout from '../../Layout/Layout';
+import Image from 'next/image';
 export default function CartContainer() {
   return (
     <Layout>
       <CartContainerStyled>
       <div className='product-cart'>
         <h2 className='desktopHeading'>Your Shopping Cart</h2>
-        <h4 className='mobileHeading'>USER'S CART</h4>
+        <h4 className='mobileHeading'>USERS CART</h4>
         <div className='wrapper'>
           <table className='cart-collection'>
             <tr>
@@ -68,7 +69,7 @@ export default function CartContainer() {
             <div className='cartMobileWrapper'>
               <div className='productFlex'>
                 <h3>{info}</h3>
-                <img src='/imh.png' alt='null' />
+                <Image src='/imh.png' alt='null' />
               </div>
               <div className='productFlex'>
                 <h3>Quantity</h3>

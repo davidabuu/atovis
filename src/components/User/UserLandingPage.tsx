@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import Layout from '../Layout/Layout';
 import CategoryCard from './CategoryCard';
@@ -8,7 +9,7 @@ const UserLandingPage = () => {
   return (
     <Layout>
       <HomePage>
-        <img src='/home.png' className='img' alt='Help' />
+        <Image src='/home.png' className='img' alt='Help' />
        <div className='category'>
        <CategoryCard  />
        </div>

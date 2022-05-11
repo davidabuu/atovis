@@ -7,6 +7,7 @@ import Seller from './Seller';
 import { useForm } from 'react-hook-form';
 import Bussiness from './Bussiness';
 import Accounts from './Accounts';
+import Image from 'next/image';
 const VendorDetails = () => {
   const [seller, showSeller] = useState(false);
   const [bussiness, showBussiness] = useState(false);
@@ -41,7 +42,7 @@ const VendorDetails = () => {
       <div>
         <LogoHolders>
           <div className='img'>
-            <img src='/logo2.png' alt='Log' />
+          <Image src='/logo2.png' alt='Log' />
           </div>
         </LogoHolders>
         <Layout>
