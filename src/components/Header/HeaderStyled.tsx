@@ -30,6 +30,9 @@ export const HeaderStyled = styled.div`
   align-items: center;
   justify-content: space-around;
   padding: 10px;
+  img{
+    width:100px;
+  }
   background: var(--primary-color);
   color: #fff;
   p{

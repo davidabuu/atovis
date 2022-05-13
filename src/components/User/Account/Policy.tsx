@@ -9,7 +9,7 @@ const Policy = () => {
       <div>
       <LogoHolder>
           <div className='img'>
-            <Image src='/logo2.png' alt='Log' />
+            <img src='/logo2.png' alt='Log' />
           </div>
         </LogoHolder>
         <div className='center'>

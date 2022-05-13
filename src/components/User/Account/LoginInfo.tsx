@@ -9,7 +9,7 @@ const LoginInfo = () => {
       <UserWebLayout webtitle={'Login Info'}>
         <LogoHolder>
           <div className='img'>
-            <Image src='/logo2.png' alt='Log' />
+            <img src='/logo2.png' alt='Log' />
           </div>
         </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>

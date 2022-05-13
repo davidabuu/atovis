@@ -36,6 +36,9 @@ export const FooterStyle = styled.div`
 export const FooterDivStyle = styled.div`
   background-color: var(--primary-color);
   color: #fff;
+  .img{
+    width:100px;
+  }
   display: flex;
   align-items: center;
   justify-content: space-around;

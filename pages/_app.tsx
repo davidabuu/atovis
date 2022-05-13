@@ -4,16 +4,15 @@ import 'antd/dist/antd.css';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import SEO from '../next-seo.config';
-import { ChakraProvider } from '@chakra-ui/react'
-
+import {Provider} from 'react-redux'
+import {store} from '../src/store'
 function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
   return (
-    <>
-      <ChakraProvider>
+    <Provider store={store}>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
-      </ChakraProvider>
-    </>
+    
+    </Provider>
   );
 }
 /**a comment */
