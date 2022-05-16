@@ -23,7 +23,7 @@ const UserLogin = () => {
   } = useForm();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
+  const { user,  isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
   useEffect(() => {
@@ -36,7 +36,7 @@ const UserLogin = () => {
       });
     }
     dispatch(reset());
-  }, [user, isError, isSuccess, dispatch]);
+  }, [user, isError, isSuccess, message, dispatch]);
   const LoginUser = async (
     data
   ) => {
