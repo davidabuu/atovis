@@ -1,10 +1,12 @@
 import React from 'react'
 import LoginInfo from '../../src/components/User/Account/LoginInfo'
 
-export const Login = () => {
+const UserInfo = () => {
   return (
     <div>
-        <LoginInfo/>
+      <LoginInfo/>
     </div>
   )
 }
+
+export default UserInfo
