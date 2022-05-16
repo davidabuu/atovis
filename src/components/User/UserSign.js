@@ -1,9 +1,11 @@
 import { Button, Card, Col, Input, notification, Row } from 'antd';
-import axios from 'axios';
-import Image from 'next/image';
+import router from 'next/router';
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, reset } from '../../redux/User/authSlice';
 import {
   FormGroup,
   LogoHolder,
@@ -11,39 +13,38 @@ import {
 } from '../Vendor/SignVendor/SignStyled';
 import UserWebLayout from '../WebLayout/UserWebLayout';
 const UserLogin = () => {
-  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    Aos.init({ duration: 300 });
+  }, []);
   const {
-    register,
-    control,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm();
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+  useEffect(() => {
+    if (isError) {
+      setLoading(false)
+      notification.error({
+        message: ' Error',
+        description: message,
+        duration: 1000,
+      });
+    }
+    dispatch(reset());
+  }, [user, isError, isSuccess, dispatch]);
   const LoginUser = async (
     data
   ) => {
-    console.log(data);
-    console.log('Hello');
-    setLoading(true);
-    try {
-      setLoading(false);
-      console.log(data);
-      setTimeout(() => {
-        notification.success({
-          message: 'Success',
-          description: 'Login Successfully',
-          duration: 5,
-        });
-      }, 1000);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-      setTimeout(() => {
-        notification.error({
-          message: 'Error',
-          description: 'Not Registered',
-          duration: 5,
-        });
-      }, 1000);
+    if(isSuccess){
+      router.push('/')
+    }else{
+      setLoading(true);
+      dispatch(login(record));
     }
   };
   return (
@@ -51,7 +52,7 @@ const UserLogin = () => {
       <UserWebLayout webtitle={'Sign In'}>
         <LogoHolder>
           <div className='img'>
-            <Image src='/logo2.png' alt='Log' />
+            <img src='/logo2.png' alt='Log' />
           </div>
         </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>
@@ -70,7 +71,6 @@ const UserLogin = () => {
                           size='large'
                           type='email'
                           onChange={onChange}
-                          {...register('email', { required: true })}
                         />
                       )}
                     />
@@ -87,7 +87,6 @@ const UserLogin = () => {
                     <Input
                       type={'password'}
                       size='large'
-                      {...register('password', { required: true })}
                     />
                     {errors.password && (
                       <span className='error'>This field is required</span>
@@ -111,7 +110,7 @@ const UserLogin = () => {
               <Row>
                 <Col xs={24} xl={24} lg={24}>
                 <div className='center'>
-             <Button className='button'>LOGIN</Button>
+             <Button className='button' loading={loading}>{loading ? 'Authenticating...' : 'LOGIN'}</Button>
              </div>
                 </Col>
               </Row>
