@@ -1,6 +1,5 @@
 import axios from 'axios';
-import * as dotenv from 'dotenv';
-dotenv.config();
+
 //Base URL
 const API_URL = process.env.APP_BASE_URL;
 //Register User
