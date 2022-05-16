@@ -21,6 +21,7 @@
     "axios": "^0.26.1",
     "beauty-stars": "^1.1.0",
     "chart.js": "^3.7.1",
+    "dotenv": "^16.0.1",
     "framer-motion": "^6.2.9",
     "infinite-react-carousel": "^1.2.11",
     "next": "11.1.0",

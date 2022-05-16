@@ -1,4 +1,6 @@
 import axios from 'axios';
+import * as dotenv from 'dotenv';
+dotenv.config();
 //Base URL
 const API_URL = process.env.APP_BASE_URL;
 
@@ -15,7 +17,7 @@ const login = async (data) => {
   const response = await axios.post(`${API_URL}/login`, data);
   if (response.data) {
     console.log(response.data);
-    return response.data
+    return response.data;
   }
 };
 const authSevice = {
