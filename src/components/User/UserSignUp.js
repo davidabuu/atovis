@@ -40,7 +40,7 @@ const UserSignUp = () => {
       });
     }
     dispatch(reset());
-  }, [user, isError, isSuccess, dispatch]);
+  }, [user, isError, isSuccess, message, dispatch]);
   const LoginUser = async (record) => {
     const { password, confirmPassword } = record;
     console.log(password, confirmPassword);
