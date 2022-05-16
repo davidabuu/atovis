@@ -63,7 +63,6 @@ export const FeaturedProductStyled = styled.div`
       display:grid
       grid-template-columns:
   }
-  ///Responsive Design////////////////////////////
   @media (max-width: 770px) {
     margin:1rem 3rem;
   }
@@ -89,8 +88,6 @@ export const ProductDetailsStyled = styled.div`
     font-size: 25px;
     font-weight: bold;
   }
-
-  ///Responsive Design////////////////////////////
   @media (max-width: 770px) {
     flex-direction: column;
     img {

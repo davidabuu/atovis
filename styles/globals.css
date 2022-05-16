@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+
 html,
 body {
   padding: 0;
@@ -42,7 +42,7 @@ input {
 input {
   width: 300px;
 }
-*/ .container {
+ .container {
   margin: 1rem 4rem;
 }
 .error {

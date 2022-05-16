@@ -98,7 +98,6 @@ export const Layout = styled.div`
     padding-left: 15px;
     list-style: none;
   }
-  ///////////////////////////////////////RESPONSIVE DESING/////////////////////
   @media (max-width: 650px) {
     ul {
       width: 400px;

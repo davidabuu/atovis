@@ -3,7 +3,6 @@ export const HeadStyle = styled.div`
   .mobile-view {
     display: none;
   }
-  ///////////////////////////////RESPONSIVE DESIGN /////////////////////////////////////////////
   @media (max-width: 800px) {
     input[type='text'] {
       width: 200px;
@@ -65,7 +64,6 @@ export const ImgStyle = styled.div`
       font-size: 20px;
     }
   }
-  /////////////////////////RESPONSIVE DESGIN  ////////////////////////////////////
   @media (max-width: 912px) {
     h1 {
       font-size: 25px;
