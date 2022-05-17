@@ -53,7 +53,7 @@ const UserSignUp = () => {
     } else {
       setLoading(true);
       dispatch(register(record));
-      router.push('/user/sign-in')
+      router.push('/user/verification')
     }
   };
   return (

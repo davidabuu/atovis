@@ -20,8 +20,21 @@ const login = async (data) => {
     return response.data;
   }
 };
+//Forgot Password
+const forgotPassword = async (data) => {
+  const response = await axios.post(`${API_URL}/forgot-password`, data);
+  if (response.data) return response.data;
+};
+
+//Verify Mail
+const verifyMail = async (code) => {
+  const response = await axios.post(`${API_URL}/verify-email`, code);
+  if (response.data) return response.data;
+};
 const authSevice = {
   register,
   login,
+  forgotPassword,
+  verifyMail
 };
 export default authSevice;

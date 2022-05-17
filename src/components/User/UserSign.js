@@ -1,5 +1,4 @@
 import { Button, Card, Col, Input, notification, Row } from 'antd';
-import router from 'next/router';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -13,6 +12,7 @@ import {
 } from '../Vendor/SignVendor/SignStyled';
 import UserWebLayout from '../WebLayout/UserWebLayout';
 import router from 'next/router'
+import Aos from 'aos'
 import Link from 'next/link'
 const UserLogin = () => {
   useEffect(() => {
@@ -40,7 +40,7 @@ const UserLogin = () => {
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch]);
   const LoginUser = async (
-    data
+    record
   ) => {
     if(isSuccess){
       router.push('/user/landing-page')
@@ -101,12 +101,13 @@ const UserLogin = () => {
                 <Col xs={24} xl={24} lg={24}>
                   <div className='checkbox'>
                     <div>
-                      <input id='tandc' type='checkbox' />
                       <label htmlFor='tandc' className='terms'>
-                        Remember me ?
+                        Remember me ? 
                       </label>
                     </div>
+                    <div>
                     <a>Forgot Password</a>
+                    </div>
                   </div>
                 </Col>
               </Row>

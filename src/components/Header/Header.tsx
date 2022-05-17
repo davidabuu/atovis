@@ -1,6 +1,6 @@
 import React from 'react';
-import { CartIcon, ProfileIcon } from '../../../ICONS/figmaIcons';
-
+import {  ProfileIcon, CartIcon } from '../../../ICONS/figmaIcons';
+import Link from 'next/link'
 import { Button, Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
 const Header = () => {
@@ -24,9 +24,13 @@ const Header = () => {
       <div className='mobile-view'>
         <HeaderStyled>
           <img src='/logo.png' alt='Log.png' />
-          <p>
+        <Link href='/user/sign-in'>
+        <a>
+        <p>
             Sign In
           </p>
+        </a>
+        </Link>
           <p>
             <CartIcon/>
           </p>
