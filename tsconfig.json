@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Header/Header.tsx", "ICONS/figmaIcons.tsx", "src/components/Layout/Layout.js", "src/components/Vendor/ImgLanding.jtsx", "pages/_app.tsx", "src/components/WebLayout/UserWebLayout.tsx", "src/components/Vendor/Header.tsx", "pages/vendor/customer.tsx", "pages/admin/login.tsx", "src/components/User/UserSign.js", "src/components/User/UserSignUp.js", "pages/user/sign-up.js", "src/components/Vendor/SignVendor/Login.tsx", "src/components/User/CatCard.js", "src/components/Vendor/Card.js", "src/components/Vendor/SignVendor/SignLayout.js", "src/store.js", "src/components/utils/ApiList.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Header/Header.tsx", "ICONS/figmaIcons.tsx", "src/components/Layout/Layout.js", "src/components/Vendor/ImgLanding.jtsx", "pages/_app.tsx", "src/components/WebLayout/UserWebLayout.tsx", "src/components/Vendor/Header.tsx", "pages/vendor/customer.tsx", "pages/admin/login.tsx", "src/components/User/UserSign.js", "src/components/User/UserSignUp.js", "pages/user/sign-up.js", "src/components/Vendor/SignVendor/Login.tsx", "src/components/User/CatCard.js", "src/components/Vendor/Card.js", "src/components/Vendor/SignVendor/SignLayout.js", "src/store.js", "src/components/utils/ApiList.js", "src/components/LandingPage/LandingStyle.js"],
   "exclude": ["node_modules"]
 }
