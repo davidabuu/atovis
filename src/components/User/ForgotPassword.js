@@ -30,7 +30,7 @@ const ForgotPassword = () => {
       });
     }
     dispatch(reset());
-  }, [isError, dispatch]);
+  }, [isError, dispatch, error]);
   const UserForgotPassword = (record) => {
     setLoading(isLoading);
     dispatch(forgotPassword(record));

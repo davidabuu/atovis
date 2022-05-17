@@ -3,8 +3,8 @@ import { ProfileIcon } from '../../../ICONS/figmaIcons';
 
 import { Button, Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
-import { CartIcon } from '../../../ICONS/Cart';
-import { ShoppingCart, PersonAdd, Person } from '@material-ui/icons';
+;
+import { ShoppingCart,  Person } from '@material-ui/icons';
 import Link from 'next/link';
 const Header = () => {
   return (
