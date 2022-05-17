@@ -8,7 +8,7 @@ const initialState = {
   isLoading: false,
   isSuccess:false,
 };
-//Forgot Password
+//Verify Mail
 export const verifyMail = createAsyncThunk(
   'auth/verify-mail',
   async (data, thunkAPI) => {
@@ -37,13 +37,13 @@ export const verifySlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(forgotPassword.pending, (state) => {
+      .addCase(verifyMail.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(forgotPassword.fulfilled, (state, action) => {
+      .addCase(verifyMail.fulfilled, (state, action) => {
         (state.isLoading = false), (state.code = action.payload), (state.isSuccess = true);
       })
-      .addCase(forgotPassword.rejected, (state, action) => {
+      .addCase(verifyMail.rejected, (state, action) => {
         (state.isLoading = false), (state.isError = true), (state.code = '');
         state.message = action.payload;
       });
