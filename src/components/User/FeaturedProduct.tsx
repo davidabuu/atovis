@@ -1,6 +1,5 @@
 import { Button, Row, Col } from 'antd';
 import BeautyStars from 'beauty-stars';
-import Image from 'next/image';
 import React from 'react';
 import { RawProuducts } from './RawProduct';
 import { FeaturedProductStyled } from './UserStyled';
@@ -17,7 +16,7 @@ const FeaturedProduct = () => {
           {RawProuducts.map(({ id, info, price }) => (
             <Col key={id} xs={12} xl={6} lg={6}>
               <div className='ft'>
-                <Image src='/imh.png' className='.img' alt='Home' />
+                <img src='/imh.png' className='.img' alt='Home' />
                 <p>{info}</p>
                 <div className='center'>
                 <div>
