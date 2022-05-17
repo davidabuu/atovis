@@ -6,5 +6,8 @@ export const LandingStyled = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  img{
+    margin-bottom:10px;
+  }
   background-color: var(--primary-color);
 `;

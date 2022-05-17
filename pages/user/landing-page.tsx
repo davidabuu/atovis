@@ -4,7 +4,7 @@ import UserWebLayout from '../../src/components/WebLayout/UserWebLayout'
 
 const Landing = () => {
   return (
-    <UserWebLayout webtitle='Home Page'>
+    <UserWebLayout webtitle='User Page'>
         <UserLandingPage/>
     </UserWebLayout>
   )

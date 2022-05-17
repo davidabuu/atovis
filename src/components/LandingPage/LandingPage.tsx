@@ -10,7 +10,7 @@ const LandingPage = () => {
     Aos.init({ duration: 300 });
   }, []);
   return (
-    <LandingStyled data-aos='fade-up'>
+    <LandingStyled data-aos='fade-down'>
       <img src='/logo.png' alt='Logo' />
       <Link href='/user/sign-up'>
         <a>

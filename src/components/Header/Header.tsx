@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileIcon } from '../../../ICONS/figmaIcons';
+import { CartIcon, ProfileIcon } from '../../../ICONS/figmaIcons';
 
 import { Button, Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
@@ -28,7 +28,7 @@ const Header = () => {
             Sign In
           </p>
           <p>
-            <img src='/cart.png' className='icon' alt='Hello'></img>
+            <CartIcon/>
           </p>
         </HeaderStyled>
       </div>

@@ -12,6 +12,8 @@ import {
   SignStyled,
 } from '../Vendor/SignVendor/SignStyled';
 import UserWebLayout from '../WebLayout/UserWebLayout';
+import router from 'next/router'
+import Link from 'next/link'
 const UserLogin = () => {
   useEffect(() => {
     Aos.init({ duration: 300 });
@@ -41,10 +43,11 @@ const UserLogin = () => {
     data
   ) => {
     if(isSuccess){
-      router.push('/')
+      router.push('/user/landing-page')
     }else{
       setLoading(true);
       dispatch(login(record));
+      router.push('/user/landing-page')
     }
   };
   return (
@@ -125,7 +128,9 @@ const UserLogin = () => {
               <Row>
                 <Col xs={24} xl={24} lg={24}>
                   <p className='dont'>
-                    Do not have an account <a>Sign Up</a>
+                    Do not have an account <Link href='/user/sign-up'>
+                    <a>Sign Up</a>
+                    </Link>
                   </p>
                 </Col>
               </Row>

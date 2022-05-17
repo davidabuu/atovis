@@ -53,6 +53,7 @@ const UserSignUp = () => {
     } else {
       setLoading(true);
       dispatch(register(record));
+      router.push('/user/sign-in')
     }
   };
   return (
@@ -207,7 +208,7 @@ const UserSignUp = () => {
             <Row>
               <Col xs={24} xl={24} lg={24}>
                 <p className='dont'>
-                  Already have an account <a>Sign In</a>
+                  Already have an account <Link href='/user/sign-in'><a>Sign In</a></Link>
                 </p>
               </Col>
             </Row>
