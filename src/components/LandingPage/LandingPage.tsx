@@ -12,7 +12,7 @@ const LandingPage = () => {
   return (
     <LandingStyled data-aos='fade-up'>
       <img src='/logo.png' alt='Logo' />
-      <Link href='/user-sign-up'>
+      <Link href='/user/sign-up'>
         <a>
           <Button type='primary' block>
             CONTINUE
