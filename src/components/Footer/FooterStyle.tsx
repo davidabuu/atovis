@@ -36,8 +36,8 @@ export const FooterStyle = styled.div`
 export const FooterDivStyle = styled.div`
   background-color: var(--primary-color);
   color: #fff;
-  .img{
-    width:100px;
+  .img {
+    width: 100px;
   }
   display: flex;
   align-items: center;
@@ -48,8 +48,15 @@ export const FooterDivStyle = styled.div`
     list-style: none;
   }
   .footer-info {
-    ul li {
-      margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    text-transform:uppercase;
+    ul  {
+      display:flex;
+      font-size: 20px;
+      align-items:center;
+      justify-content:space-around;
+      flex-direction:column;
     }
   }
   .socials {

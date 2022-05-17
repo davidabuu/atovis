@@ -29,15 +29,27 @@ export const HeaderStyled = styled.div`
   align-items: center;
   justify-content: space-around;
   padding: 10px;
-  img{
-    width:100px;
+  img {
+    width: 80px;
   }
   background: var(--primary-color);
   color: #fff;
-  p{
-    display:flex;
+  p {
+    display: flex;
     align-items: center;
     justify-content: space-around;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+    color: #fff;
+  }
+  @media (max-width: 600px) {
+    .flex {
+      transform: translateY(5px);
+    }
   }
 `;
 
@@ -83,7 +95,6 @@ export const ImgStyle = styled.div`
       font-size: 18px;
     }
     .img-info {
-      
       display: flex;
       flex-direction: column;
       align-items: center;

@@ -21,6 +21,15 @@ export const HomePage = styled.div`
     }
     margin: 1rem 3rem;
   }
+  @media (max-width: 600px) {
+    .category {
+      display: none;
+    }
+    .img {
+      width: 400px;
+    }
+    margin: 1rem 3rem;
+  }
 `;
 
 export const CardStyled = styled.div`
@@ -56,12 +65,16 @@ export const FeaturedProductStyled = styled.div`
   .ft{
       margin-top:10px;
   }
+  .but-ton{
+    text-align: center;
+    padding: 5px;
+    margin: 10px 0;
+    width: 170px;
+    background: var(--button-color) !important;
+    color:#fff !important;
+  }
   .img{
       width:60px;
-  }
-  .flex{
-      display:grid
-      grid-template-columns:
   }
   @media (max-width: 770px) {
     margin:1rem 3rem;

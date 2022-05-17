@@ -1,5 +1,4 @@
 import { Facebook, Instagram, Twitter } from '@material-ui/icons';
-import Image from 'next/image';
 import React from 'react';
 import { FooterDivStyle } from './FooterStyle';
 import Sign from './Sign';
@@ -7,7 +6,7 @@ import Sign from './Sign';
 const FooterDiv = () => {
   return (
     <FooterDivStyle>
-      {/* <Image src='/logo.png' alt='Hola' layout='fill' className='img' /> */}
+      <img src='/logo.png' alt='Hola' className='img' />
       <Sign />
       <div className='footer-info'>
         <ul>
@@ -18,7 +17,7 @@ const FooterDiv = () => {
         </ul>
       </div>
       <div>
-        <h4 className='footer-info'>Connect with Us</h4>
+        <p className='footer-info'>CONNECT WITH US</p>
         <div className='social'>
           <Facebook />
           <Instagram />
