@@ -33,7 +33,7 @@ const VerifyMail = () => {
       });
     }
     dispatch(reset());
-  }, [isError, dispatch]);
+  }, [isError, dispatch, message]);
   const Verify = (code) => {
     setLoading(isLoading);
     dispatch(verifyMail(code));
