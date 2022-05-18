@@ -1,5 +1,4 @@
 import { Button, Row, Col } from 'antd';
-import Image from 'next/image';
 import React from 'react';
 import { RatingIcon } from 'semantic-ui-react';
 import { RawProuducts } from './RawProduct';
@@ -20,7 +19,7 @@ const AllCategory = () => {
           {RawProuducts.map(({ id, info, price }) => (
             <Col key={id} xs={12} xl={6} lg={6}>
               <div className='ft'>
-                <Image src='/imh.png' className='.img' alt='Home' />
+                <img src='/imh.png' className='.img' alt='Home' />
                 <p>{info}</p>
                 <div>
                   <p>{price}</p>
