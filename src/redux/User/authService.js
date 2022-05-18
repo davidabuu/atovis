@@ -14,9 +14,10 @@ const register = async (userData) => {
 };
 //Login User
 const login = async (data) => {
-  const response = await axios.post(`${API_URL}/login`, data);
+  const response = await axios.post(`${API_URL}/buyer/login`, data);
   if (response.data) {
     console.log(response.data);
+    localStorage.setItem('user', JSON.stringify(response.data.token));
     return response.data;
   }
 };

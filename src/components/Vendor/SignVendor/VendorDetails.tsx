@@ -1,107 +1,103 @@
+import { Button, Col, Row } from 'antd';
 import React from 'react';
-import { useState, useEffect } from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
-import { LogoHolders, Layout } from './SignStyled';
-import { ArrowForward } from '@material-ui/icons';
-import Seller from './Seller';
-import { useForm } from 'react-hook-form';
-import Bussiness from './Bussiness';
-import Accounts from './Accounts';
-import Image from 'next/image';
+import { VendorStyle, LogoHolders } from './SignStyled';
 const VendorDetails = () => {
-  const [seller, showSeller] = useState(false);
-  const [bussiness, showBussiness] = useState(false);
-  const [accounts, showAccounts] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  useEffect(() => {
-    showSeller(true);
-  }, []);
-  const changeCategory = (tab: string) => {
-    if (tab === 'seller') {
-      showSeller(true);
-      showBussiness(false);
-      showAccounts(false);
-    } else if (tab === 'bussiness') {
-      showBussiness(true);
-      showSeller(false);
-      showAccounts(false);
-    } else if (tab === 'accounts') {
-      showAccounts(true);
-      showSeller(false);
-      showBussiness(false);
-      console.log(accounts);
-    }
-  };
+  // const { sellerDetails, bussinessDetails, paymentDetails } = useSelector(
+  //   (state) => state.vendorDetails
+  // );
   return (
-    <UserWebLayout webtitle={'Vendor Details'}>
-      <div>
-        <LogoHolders>
-          <div className='img'>
-          <Image src='/logo2.png' alt='Log' />
-          </div>
-        </LogoHolders>
-        <Layout>
+    <UserWebLayout webtitle='Vendor Details'>
+       <LogoHolders>
+        <div className='img'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
+      </LogoHolders>
+      <VendorStyle>
+        <h1>SUMMARY</h1>
+        <div className='vendor'>
+        <div>
           <h1>Seller Details</h1>
-          <ul>
-            <a>
-              <li
-                style={{ color: 'var(--primary-color)' }}
-                onClick={() => changeCategory('seller')}
-                onKeyDown={() => changeCategory('seller')}>
-                Seller Details
-              </li>{' '}
-              <ArrowForward />
-            </a>
-            <a>
-              <li
-                onClick={() => changeCategory('bussiness')}
-                onKeyDown={() => changeCategory('bussiness')}>
-                Bussiness Details
-              </li>{' '}
-              <ArrowForward />
-            </a>
-            <a>
-              <li
-                onClick={() => changeCategory('accounts')}
-                onKeyDown={() => changeCategory('accounts')}>
-                Payment Details
-              </li>{' '}
-              <ArrowForward />
-            </a>
-            <a>
-              <li>Summary</li> <ArrowForward />
-            </a>
-          </ul>
-        </Layout>
-        {seller ? (
-          <>
-            <Seller />
-          </>
-        ) : (
-          ''
-        )}
-      </div>
-      {bussiness ? (
-        <>
-        <h1 className='center'>Bussiness Details</h1>
-          <Bussiness />
-        </>
-      ) : (
-        ''
-      )}
-      {accounts ? (
-        <>
-        <h1 className='center'>Accounts Details</h1>
-          <Accounts />
-        </>
-      ) : (
-        ''
-      )}
+          <div className='info'>
+            <div>
+              <h1>FULL NAME</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+            <div>
+              <h1>Phone Number</h1>
+              <p>Abu Codes</p>
+            </div>
+            <div>
+              <h1>Email Address</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1>Business Details</h1>
+          <div className='info'>
+            <div>
+              <h1>Store Name</h1>
+              <p>Abu Codes</p>
+              v
+            </div>
+            <div>
+              <h1>Bussiness Type</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+            <div>
+              <h1>CAC Regisrtation Number</h1>
+              <p>Abu Codes</p>
+            </div>
+            <div>
+              <h1>Address</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1>Personal Details</h1>
+          <div className='info'>
+            <div>
+              <h1>Account Number</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+            <div>
+              <h1>Name</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+            <div>
+              <h1>Type</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+            <div>
+              <h1>Payout Frequency</h1>
+              <p>Abu Codes</p>
+              <hr></hr>
+            </div>
+          </div>
+        </div>
+        </div>
+        <Row>
+              <Col xs={24} xl={24} lg={24}>
+                <Button
+                  size='large'
+                  htmlType='submit'
+                  className='button'
+
+                  block>
+                    REGISTER
+                </Button>
+              </Col>
+            </Row>
+      </VendorStyle>
     </UserWebLayout>
   );
 };

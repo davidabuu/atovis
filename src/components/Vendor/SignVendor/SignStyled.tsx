@@ -170,3 +170,37 @@ export const HeaderStyled = styled.div`
     font-size: 30px;
   }
 `;
+
+export const VendorStyle = styled.div`
+  margin: 5rem;
+  h1 {
+    color: var(--primary-color);
+  }
+  .vendor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #f4f4f4;
+    padding: 10px;
+    h1 {
+      font-size: 20px;
+      color: var(--primary-color);
+    }
+    .info {
+      h1,
+       {
+        margin-top: 5px;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .vendor {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left:50px;
+       h1 {
+        font-size: 17px;
+      }
+    }
+  }
+`;

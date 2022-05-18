@@ -6,6 +6,7 @@ const initialState = {
   message: '',
   isError: false,
   isLoading: false,
+  isSuccess: false,
 };
 //Forgot Password
 export const forgotPassword = createAsyncThunk(
@@ -36,13 +37,16 @@ export const passwordSlice = createSlice({
     builder
       .addCase(forgotPassword.pending, (state) => {
         state.isLoading = true;
+        state.isSuccess = false;
       })
       .addCase(forgotPassword.fulfilled, (state, action) => {
-        (state.isLoading = false), (state.email = action.payload);
+        (state.isLoading = false),
+          (state.email = action.payload),
+          (state.isSuccess = true);
       })
       .addCase(forgotPassword.rejected, (state, action) => {
         (state.isLoading = false), (state.isError = true), (state.email = null);
-        state.message = action.payload;
+        (state.message = action.payload), (state.isSuccess = false);
       });
   },
 });

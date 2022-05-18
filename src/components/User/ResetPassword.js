@@ -4,15 +4,14 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { verifyMail, reset } from '../../redux/User/verifySlice';
+import { forgotPassword, reset } from '../../redux/User/forgetPassowordSlice';
 import {
   FormGroup,
   LogoHolder,
   SignStyled,
 } from '../Vendor/SignVendor/SignStyled';
 import UserWebLayout from '../WebLayout/UserWebLayout';
-import router from 'next/router';
-const VerifyMail = () => {
+const ResetPassword = () => {
   const dispatch = useDispatch();
   const {
     handleSubmit,
@@ -21,7 +20,7 @@ const VerifyMail = () => {
   } = useForm();
   const [loading, setLoading] = useState(false);
   const { isError, isLoading, message, isSuccess } = useSelector(
-    (state) => state.verify
+    (state) => state.forgotPass
   );
   useEffect(() => {
     if (isError) {
@@ -34,21 +33,31 @@ const VerifyMail = () => {
     }
     dispatch(reset());
   }, [isError, dispatch, message]);
-  const Verify = (code) => {
+  const UserPasswordReset = (record) => {
     setLoading(isLoading);
-    dispatch(verifyMail(code));
-    if (isSuccess) {
-      notification.success({
-        message: ' Success',
-        description: 'Code is correct redirecting...',
+    const { password, confirmPassword } = record;
+    console.log(password, confirmPassword);
+    if (password !== confirmPassword) {
+      notification.error({
+        message: 'Password Error',
+        description: 'Password do not match',
         duration: 1000,
       });
-      router.push('/user/sign-in');
+    } else {
+      setLoading(true);
+      dispatch(register(record));
+      if (isSuccess) {
+        notification.success({
+            message: 'Success',
+            description: 'Password reset was a success',
+            duration: 1000,
+          });
+      }
     }
   };
   return (
     <div>
-      <UserWebLayout webtitle={'Verify Mail'}>
+      <UserWebLayout webtitle={'Reset Password'}>
         <LogoHolder>
           <div className='img'>
             <img src='/logo2.png' alt='Log' />
@@ -56,20 +65,47 @@ const VerifyMail = () => {
         </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card>
-            <form autoComplete='off' onSubmit={handleSubmit(Verify)}>
-              <Row gutter={24}>
+            <form autoComplete='off' onSubmit={handleSubmit(UserPasswordReset)}>
+              <Row>
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
-                    <label>ENTER CODE</label>
+                    <label>Password</label>
                     <Controller
                       control={control}
-                      name='number'
+                      name='password'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input size='large' type='number' onChange={onChange} />
+                        <Input.Password
+                          size='large'
+                          type='password'
+                          onChange={onChange}
+                          minLength={'8'}
+                        />
                       )}
                     />
-                    {errors.email && (
+                    {errors.password && (
+                      <span className='error'>This field is required</span>
+                    )}
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={24} xl={24} lg={24}>
+                  <FormGroup>
+                    <label>Confirm Password</label>
+                    <Controller
+                      control={control}
+                      name='confirmPassword'
+                      rules={{ required: true }}
+                      render={({ field: { onChange } }) => (
+                        <Input.Password
+                          size='large'
+                          type='password'
+                          onChange={onChange}
+                        />
+                      )}
+                    />
+                    {errors.confirmPassword && (
                       <span className='error'>This field is required</span>
                     )}
                   </FormGroup>
@@ -82,7 +118,7 @@ const VerifyMail = () => {
                       loading={loading}
                       className='button'
                       htmlType='submit'>
-                      {loading ? 'Authenticating...' : 'ENTER CODE'}
+                      {loading ? 'Authenticating...' : 'ENTER NEW PASSWORD'}
                     </Button>
                   </div>
                 </Col>
@@ -95,4 +131,4 @@ const VerifyMail = () => {
   );
 };
 
-export default VerifyMail;
+export default ResetPassword;

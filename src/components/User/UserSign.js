@@ -1,19 +1,19 @@
-import { Button, Card, Col, Input, notification, Row } from 'antd';
+import { Card, Col, Input, Button, Row, notification } from 'antd';
+import Link from 'next/link';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
+import { useState, useEffect } from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { useSelector, useDispatch } from 'react-redux';
 import { login, reset } from '../../redux/User/authSlice';
+import router from 'next/router';
 import {
   FormGroup,
   LogoHolder,
   SignStyled,
 } from '../Vendor/SignVendor/SignStyled';
 import UserWebLayout from '../WebLayout/UserWebLayout';
-import router from 'next/router'
-import Aos from 'aos'
-import Link from 'next/link'
 const UserLogin = () => {
   useEffect(() => {
     Aos.init({ duration: 300 });
@@ -25,12 +25,12 @@ const UserLogin = () => {
   } = useForm();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { user,  isError, isSuccess, message } = useSelector(
+  const { user, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
   useEffect(() => {
     if (isError) {
-      setLoading(false)
+      setLoading(false);
       notification.error({
         message: ' Error',
         description: message,
@@ -39,25 +39,31 @@ const UserLogin = () => {
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch]);
-  const LoginUser = async (
-    record
-  ) => {
-    if(isSuccess){
-      router.push('/user/landing-page')
-    }else{
+  const LoginUser = async (record) => {
+    console.log(record)
+    if (isError) {
+      notification.error({
+        message: ' Error',
+        description: message,
+        duration: 1000,
+      });
+    } else {
+      console.log(record)
       setLoading(true);
       dispatch(login(record));
-      router.push('/user/landing-page')
+      if (isSuccess) {
+        router.push('/user/landing-page');
+      }
     }
   };
   return (
-    <div>
-      <UserWebLayout webtitle={'Sign In'}>
-        <LogoHolder>
-          <div className='img'>
-            <img src='/logo2.png' alt='Log' />
-          </div>
-        </LogoHolder>
+    <UserWebLayout webtitle='Sign In'>
+      <LogoHolder>
+        <div className='img'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
+      </LogoHolder>
+      <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
@@ -67,14 +73,10 @@ const UserLogin = () => {
                     <label>Email Address</label>
                     <Controller
                       control={control}
-                      name="email"
+                      name='email'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input
-                          size='large'
-                          type='email'
-                          onChange={onChange}
-                        />
+                        <Input size='large' type='email' onChange={onChange} />
                       )}
                     />
                     {errors.email && (
@@ -87,9 +89,18 @@ const UserLogin = () => {
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>Password</label>
-                    <Input
-                      type={'password'}
-                      size='large'
+                    <Controller
+                      control={control}
+                      name='password'
+                      rules={{ required: true }}
+                      render={({ field: { onChange } }) => (
+                        <Input.Password
+                          size='large'
+                          type='password'
+                          onChange={onChange}
+                          minLength={'8'}
+                        />
+                      )}
                     />
                     {errors.password && (
                       <span className='error'>This field is required</span>
@@ -97,49 +108,44 @@ const UserLogin = () => {
                   </FormGroup>
                 </Col>
               </Row>
-              <Row gutter={24}>
+              <Row>
+                <Col>
+                <Link href='/user/forgot-password'>
+                <a>Forgot Password</a>
+                </Link>
+                </Col>
+              </Row>
+              <Row>
                 <Col xs={24} xl={24} lg={24}>
-                  <div className='checkbox'>
-                    <div>
-                      <label htmlFor='tandc' className='terms'>
-                        Remember me ? 
-                      </label>
-                    </div>
-                    <div>
-                    <a>Forgot Password</a>
-                    </div>
+                  <div className='center'>
+                    <Button
+                      loading={loading}
+                      className='button'
+                      htmlType='submit'>
+                      {loading ? 'Authenticating...' : 'Sign In'}
+                    </Button>
                   </div>
                 </Col>
               </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                <div className='center'>
-             <Button className='button' loading={loading}>{loading ? 'Authenticating...' : 'LOGIN'}</Button>
-             </div>
-                </Col>
-              </Row>
-              <p className='center'>OR</p>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                <div className='center'>
-             <Button className='buttons'>SIGN IN WITH GOOGLE</Button>
-             </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                  <p className='dont'>
-                    Do not have an account <Link href='/user/sign-up'>
-                    <a>Sign Up</a>
-                    </Link>
-                  </p>
-                </Col>
-              </Row>
             </form>
+            <p className='center'>OR</p>
+            <div className='center'>
+              <Button className='buttons'>SIGN IN WITH GOOGLE</Button>
+            </div>
+            <Row>
+              <Col xs={24} xl={24} lg={24}>
+                <p className='dont'>
+                  Do not have an account{' '}
+                  <Link href='/user/sign-up'>
+                    <a>Sign Up</a>
+                  </Link>
+                </p>
+              </Col>
+            </Row>
           </Card>
         </SignStyled>
-      </UserWebLayout>
-    </div>
+      </div>
+    </UserWebLayout>
   );
 };
 

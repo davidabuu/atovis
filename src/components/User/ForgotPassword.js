@@ -1,4 +1,5 @@
 import { Button, Card, Col, Input, notification, Row } from 'antd';
+import router from 'next/router';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -19,7 +20,9 @@ const ForgotPassword = () => {
     formState: { errors },
   } = useForm();
   const [loading, setLoading] = useState(false);
-  const { isError, isLoading, message } = useSelector((state) => state.forgotPass);
+  const { isError, isLoading, message, isSuccess } = useSelector(
+    (state) => state.forgotPass
+  );
   useEffect(() => {
     if (isError) {
       setLoading(false);
@@ -34,6 +37,14 @@ const ForgotPassword = () => {
   const UserForgotPassword = (record) => {
     setLoading(isLoading);
     dispatch(forgotPassword(record));
+    if (isSuccess) {
+      notification.success({
+        message: ' Success',
+        description: 'Pls kindly check your mail',
+        duration: 1000,
+      });
+      router.push('/user/reset-password');
+    }
   };
   return (
     <div>
@@ -73,7 +84,7 @@ const ForgotPassword = () => {
                       loading={loading}
                       className='button'
                       htmlType='submit'>
-                      {loading ? 'Authenticating...' : 'Sign Up'}
+                      {loading ? 'Authenticating...' : 'Please Enter Your Mail'}
                     </Button>
                   </div>
                 </Col>

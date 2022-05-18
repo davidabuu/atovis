@@ -58,6 +58,10 @@ input {
   width: 300px;
   color: #fff !important;
 }
+.vendor-btn{
+  color: #fff !important;
+  background: var(--primary-color) !important;
+}
 .buttons {
   text-align: center;
   background: var(--button-color) !important;
