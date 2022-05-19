@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import router from 'next/router'
 //Base URL
 const API_URL = process.env.APP_BASE_URL;
 //Register User
@@ -9,6 +9,7 @@ const register = async (userData) => {
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data.token));
+    router.push('/user/verification')
   }
   return response.data;
 };
@@ -18,6 +19,7 @@ const login = async (data) => {
   if (response.data) {
     console.log(response.data);
     localStorage.setItem('user', JSON.stringify(response.data.token));
+    router.push('/user/landing-page')
     return response.data;
   }
 };
