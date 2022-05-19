@@ -2,7 +2,6 @@ import React from 'react';
 import { Button,  Input } from 'antd';
 import { NotificationsActive } from '@material-ui/icons';
 import { HeaderStyled } from './SignVendor/SignStyled';
-import Image from 'next/image';
 const Header = () => {
   return (
     <HeaderStyled>
@@ -15,7 +14,7 @@ const Header = () => {
         <div className='noti'>
           <NotificationsActive />
         </div>
-        <Image src='/profile.png' alt='Hello' />
+        <img src='/profile.png' alt='Hello' />
       </div>
     </HeaderStyled>
   );

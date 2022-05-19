@@ -3,7 +3,7 @@ import Layout from '../../src/components/Layout/Layout'
 import AllCategory from '../../src/components/User/AllCategory'
 import UserWebLayout from '../../src/components/WebLayout/UserWebLayout'
 
-const Landing = () => {
+const AllProductCat = () => {
   return (
     <UserWebLayout webtitle='All Products'>
         <Layout>
@@ -13,4 +13,4 @@ const Landing = () => {
   )
 }
 
-export default Landing
+export default AllProductCat
