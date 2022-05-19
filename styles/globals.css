@@ -153,6 +153,11 @@ img{
   height: 100%;
   object-fit: cover;
 }
-.swiper-pagination-bullet-active {
+.swiper-pagination-bullet {
   background-color: #fff !important;
 }
+.swiper-pagination-bullet-active {
+  background-color: var(--button-color) !important;
+}
+
+
