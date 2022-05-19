@@ -26,7 +26,7 @@ export const HomePage = styled.div`
       display: none;
     }
     .img {
-      width: 400px;
+      width: 300px;
     }
     margin: 1rem 3rem;
   }
@@ -56,28 +56,30 @@ export const FeaturedProductStyled = styled.div`
   padding: 10px;
   .feature {
     display: flex;
-    font-weight:bold;
+    font-weight: bold;
     align-items: center;
     justify-content: space-between;
-    padding:0 10px;
+    padding: 0 10px;
     color: var(--primary-color);
   }
-  .ft{
-      margin-top:10px;
+  .ft {
+    margin-top: 10px;
   }
-  .but-ton{
+  .but-ton {
     text-align: center;
     padding: 5px;
     margin: 10px 0;
-    width: 170px;
+    width: 150px;
     background: var(--button-color) !important;
-    color:#fff !important;
-  }
-  .img{
-      width:60px;
+    color: #fff !important;
   }
   @media (max-width: 770px) {
-    margin:1rem 3rem;
+    margin: 1rem 1rem;
+    img {
+      width: 150px;
+    }
+  }
+  @media (max-width: 500px) {
   }
 `;
 

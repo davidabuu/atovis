@@ -38,25 +38,17 @@ export const FooterDivStyle = styled.div`
   color: #fff;
   .img {
     width: 100px;
+    margin-top: 15px;
   }
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
-  height: 200px;
   li {
     list-style: none;
   }
   .footer-info {
-    color: #fff;
-    text-align: center;
-    text-transform:uppercase;
-    ul  {
-      display:flex;
-      font-size: 20px;
-      align-items:center;
-      justify-content:space-around;
-      flex-direction:column;
+    ul li {
+      margin-top: 15px;
     }
   }
   .socials {
@@ -74,7 +66,7 @@ export const FooterDivStyle = styled.div`
   }
   @media (max-width: 912px) {
     flex-direction: column;
-    height: 74vh;
+    justify-content: center;
   }
 `;
 

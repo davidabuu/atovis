@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import React from 'react';
 import 'antd/dist/antd.css';
+import "swiper/css/bundle";
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import SEO from '../next-seo.config';

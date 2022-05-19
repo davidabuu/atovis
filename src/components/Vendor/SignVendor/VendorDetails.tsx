@@ -8,95 +8,91 @@ const VendorDetails = () => {
   // );
   return (
     <UserWebLayout webtitle='Vendor Details'>
-       <LogoHolders>
-        <div className='img'>
-          <img src='/logo2.png' alt='Log' />
-        </div>
-      </LogoHolders>
+      <div className='img'>
+        <img src='/logo2.png' alt='Log' />
+      </div>
       <VendorStyle>
         <h1>SUMMARY</h1>
         <div className='vendor'>
-        <div>
-          <h1>Seller Details</h1>
-          <div className='info'>
-            <div>
-              <h1>FULL NAME</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
+          <div>
+            <h1>Seller Details</h1>
+            <div className='info'>
+              <div>
+                <h1>FULL NAME</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
+              <div>
+                <h1>Phone Number</h1>
+                <p>Abu Codes</p>
+              </div>
+              <div>
+                <h1>Email Address</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
             </div>
-            <div>
-              <h1>Phone Number</h1>
-              <p>Abu Codes</p>
+          </div>
+          <div>
+            <h1>Business Details</h1>
+            <div className='info'>
+              <div>
+                <h1>Store Name</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
+              <div>
+                <h1>Bussiness Type</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
+              <div>
+                <h1>CAC Regisrtation Number</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
+              <div>
+                <h1>Address</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
             </div>
-            <div>
-              <h1>Email Address</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
+          </div>
+          <div>
+            <h1>Personal Details</h1>
+            <div className='info'>
+              <div>
+                <h1>Account Number</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
+              <div>
+                <h1>Name</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
+              <div>
+                <h1>Type</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
+              <div>
+                <h1>Payout Frequency</h1>
+                <p>Abu Codes</p>
+                <hr></hr>
+              </div>
             </div>
           </div>
         </div>
-        <div>
-          <h1>Business Details</h1>
-          <div className='info'>
-            <div>
-              <h1>Store Name</h1>
-              <p>Abu Codes</p>
-              v
-            </div>
-            <div>
-              <h1>Bussiness Type</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
-            </div>
-            <div>
-              <h1>CAC Regisrtation Number</h1>
-              <p>Abu Codes</p>
-            </div>
-            <div>
-              <h1>Address</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
-            </div>
-          </div>
+        <div className='center'>
+          <Row>
+            <Col xs={24} xl={24} lg={24}>
+              <Button size='large' htmlType='submit' className='button' block>
+                REGISTER
+              </Button>
+            </Col>
+          </Row>
         </div>
-        <div>
-          <h1>Personal Details</h1>
-          <div className='info'>
-            <div>
-              <h1>Account Number</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
-            </div>
-            <div>
-              <h1>Name</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
-            </div>
-            <div>
-              <h1>Type</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
-            </div>
-            <div>
-              <h1>Payout Frequency</h1>
-              <p>Abu Codes</p>
-              <hr></hr>
-            </div>
-          </div>
-        </div>
-        </div>
-        <Row>
-              <Col xs={24} xl={24} lg={24}>
-                <Button
-                  size='large'
-                  htmlType='submit'
-                  className='button'
-
-                  block>
-                    REGISTER
-                </Button>
-              </Col>
-            </Row>
       </VendorStyle>
     </UserWebLayout>
   );

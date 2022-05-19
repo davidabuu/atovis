@@ -176,6 +176,9 @@ export const VendorStyle = styled.div`
   h1 {
     color: var(--primary-color);
   }
+  .img {
+    text-align: center;
+  }
   .vendor {
     display: flex;
     align-items: center;
@@ -187,20 +190,23 @@ export const VendorStyle = styled.div`
       color: var(--primary-color);
     }
     .info {
-      h1,
-       {
+      h1 {
         margin-top: 5px;
       }
     }
+  }
+  button {
+    width: 300px !important;
   }
   @media (max-width: 800px) {
     .vendor {
       flex-direction: column;
       align-items: flex-start;
-      padding-left:50px;
-       h1 {
+      padding-left: 50px;
+      h1 {
         font-size: 17px;
       }
     }
   }
+  margin:3rem;
 `;

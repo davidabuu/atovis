@@ -11,7 +11,7 @@ const FeaturedProduct = () => {
     Aos.init({ duration: 300 });
   }, []);
   return (
-    <FeaturedProductStyled data-aos='zoom-in'>
+    <FeaturedProductStyled>
       <div className='feature'>
         <p>FeaturedProduct</p>
         <p className='text-color'>See All</p>

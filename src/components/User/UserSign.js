@@ -36,11 +36,13 @@ const UserLogin = () => {
         description: message,
         duration: 1000,
       });
+    } else if (isSuccess) {
+      router.push('/user/landing-page');
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch]);
   const LoginUser = async (record) => {
-    console.log(record)
+    console.log(record);
     if (isError) {
       notification.error({
         message: ' Error',
@@ -48,12 +50,9 @@ const UserLogin = () => {
         duration: 1000,
       });
     } else {
-      console.log(record)
+      console.log(record);
       setLoading(true);
       dispatch(login(record));
-      if (isSuccess) {
-        router.push('/user/landing-page');
-      }
     }
   };
   return (
@@ -110,9 +109,9 @@ const UserLogin = () => {
               </Row>
               <Row>
                 <Col>
-                <Link href='/user/forgot-password'>
-                <a>Forgot Password</a>
-                </Link>
+                  <Link href='/user/forgot-password'>
+                    <a>Forgot Password</a>
+                  </Link>
                 </Col>
               </Row>
               <Row>

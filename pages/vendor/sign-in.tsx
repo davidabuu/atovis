@@ -5,7 +5,7 @@ const SignInVendor= () => {
   return (
     <div>
         <Login/>
-    </div>
+  </div>
   )
 }
 

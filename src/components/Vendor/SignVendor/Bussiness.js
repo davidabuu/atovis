@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { Button, Card, Col, Input, Row, Select } from 'antd';
 import { LogoHolders } from './SignStyled';
 import { SignStyled, FormGroup } from './SignStyled';
-import { bussinessRegister } from '../../../redux/Vendor/vendorAuthSlice';
+import { bussinessRegister } from '../../../redux/Vendor/vendorInfoSlice';
 import { useDispatch } from 'react-redux';
 import router from 'next/router';
 import { useState } from 'react';
