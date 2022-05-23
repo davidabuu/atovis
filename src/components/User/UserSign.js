@@ -42,7 +42,6 @@ const UserLogin = () => {
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch]);
   const LoginUser = async (record) => {
-    console.log(record);
     if (isError) {
       notification.error({
         message: ' Error',
@@ -50,7 +49,6 @@ const UserLogin = () => {
         duration: 1000,
       });
     } else {
-      console.log(record);
       setLoading(true);
       dispatch(login(record));
     }

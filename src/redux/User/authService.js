@@ -1,5 +1,6 @@
 import axios from 'axios';
 import router from 'next/router'
+import { storeInLocalStorage } from '../../components/utils/usableFunction';
 //Base URL
 const API_URL = process.env.APP_BASE_URL;
 //Register User
@@ -17,9 +18,11 @@ const register = async (userData) => {
 const login = async (data) => {
   const response = await axios.post(`${API_URL}/buyer/login`, data);
   if (response.data) {
-    console.log(response.data);
-    localStorage.setItem('user', JSON.stringify(response.data.token));
+    console.log(response.data.data.account.firstName);
+    storeInLocalStorage('user', response.data.token)
+    storeInLocalStorage('name', response.data.data.account.firstName)
     router.push('/user/landing-page')
+
     return response.data;
   }
 };
@@ -41,3 +44,4 @@ const authSevice = {
   verifyMail
 };
 export default authSevice;
+

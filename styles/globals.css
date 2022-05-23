@@ -154,7 +154,7 @@ img{
   object-fit: cover;
 }
 .swiper-pagination-bullet {
-  background-color: #fff !important;
+  background-color: red !important;
 }
 .swiper-pagination-bullet-active {
   background-color: var(--button-color) !important;

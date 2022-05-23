@@ -3,10 +3,11 @@ import { ProfileIcon } from '../../../ICONS/figmaIcons';
 
 import { Button, Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
-;
-import { ShoppingCart,  Person } from '@material-ui/icons';
+import { ShoppingCart, Person } from '@material-ui/icons';
 import Link from 'next/link';
+import { getFromLocalStorage } from '../utils/usableFunction';
 const Header = () => {
+  const name = getFromLocalStorage('name');
   return (
     <HeadStyle>
       <div className='desktop'>
@@ -19,7 +20,13 @@ const Header = () => {
             </Button>
           </div>
           <p className='flex'>
-            Sign In <ProfileIcon />
+            {name !== undefined ? (
+              <p>`Hello ${name}`</p>
+            ) : (
+              <>
+                Sign In <Person />{' '}
+              </>
+            )}
           </p>
           <p className='flex'>
             Cart <ShoppingCart />
@@ -30,20 +37,19 @@ const Header = () => {
         <HeaderStyled>
           <img src='/logo.png' alt='Log.png' />
           <Link href='/user/sign-in'>
-          <a>
-          <p className='flex'>
-            Sign In <Person />
-          </p>
-          </a>
-
+            <a>
+              <p className='flex'>
+                Sign In <Person />
+              </p>
+            </a>
           </Link>
-         <Link href='/user/cart'>
-         <a>
-         <p className='flex'>
-            Cart <ShoppingCart />
-          </p>
-         </a>
-         </Link>
+          <Link href='/user/cart'>
+            <a>
+              <p className='flex'>
+                Cart <ShoppingCart />
+              </p>
+            </a>
+          </Link>
         </HeaderStyled>
       </div>
     </HeadStyle>
