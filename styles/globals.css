@@ -93,7 +93,7 @@ img{
   color: #fff;
   font-size: 25px;
 }
-@media(max-width:600px){
+@media(max-width:1100px){
   .swip{
     width: 400px !important;
   }
@@ -104,7 +104,7 @@ img{
   }
   .swip{
     width: 300px !important;
-  }
+  }''
   .select {
     width: 300px !important;
   }
@@ -154,10 +154,12 @@ img{
   object-fit: cover;
 }
 .swiper-pagination-bullet {
-  background-color: red !important;
+  background: #fff !important;
+  opacity: 5 !important;
 }
 .swiper-pagination-bullet-active {
   background-color: var(--button-color) !important;
 }
+
 
 

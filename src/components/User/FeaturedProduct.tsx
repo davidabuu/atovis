@@ -17,9 +17,9 @@ const FeaturedProduct = () => {
         <p className='text-color'>See All</p>
       </div>
       <div className='ft'>
-        <Row gutter={25}>
+        <Row gutter={25} justify='space-around'>
           {RawProuducts.map(({ id, info, price }) => (
-            <Col key={id} xs={12} xl={6} lg={6}>
+            <Col key={id} xl={6} lg={6}>
               <div className='ft'>
                 <img src='/imh.png' className='.img' alt='Home' />
                 <p>{info}</p>

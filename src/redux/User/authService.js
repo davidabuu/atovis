@@ -20,7 +20,7 @@ const login = async (data) => {
   if (response.data) {
     console.log(response.data.data.account.firstName);
     storeInLocalStorage('user', response.data.token)
-    storeInLocalStorage('name', response.data.data.account.firstName)
+    storeInLocalStorage('name', JSON.stringify(response.data.data.account.firstName))
     router.push('/user/landing-page')
 
     return response.data;

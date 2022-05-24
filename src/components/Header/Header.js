@@ -1,13 +1,15 @@
-import React from 'react';
-import { ProfileIcon } from '../../../ICONS/figmaIcons';
-
+import React, { useEffect, useState } from 'react';
 import { Button, Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
 import { ShoppingCart, Person } from '@material-ui/icons';
 import Link from 'next/link';
 import { getFromLocalStorage } from '../utils/usableFunction';
 const Header = () => {
-  const name = getFromLocalStorage('name');
+  const [user, setUserName] = useState('');
+  useEffect(() => {
+    const name = JSON.parse(localStorage.getItem('name'))
+    setUserName(name);
+  }, []);
   return (
     <HeadStyle>
       <div className='desktop'>
@@ -20,11 +22,11 @@ const Header = () => {
             </Button>
           </div>
           <p className='flex'>
-            {name !== undefined ? (
-              <p>`Hello ${name}`</p>
+            {user ? (
+              <p>{`Hello ${user}`}</p>
             ) : (
               <>
-                Sign In <Person />{' '}
+                Sign In <Person />
               </>
             )}
           </p>
@@ -39,7 +41,13 @@ const Header = () => {
           <Link href='/user/sign-in'>
             <a>
               <p className='flex'>
-                Sign In <Person />
+                {user ? (
+                  <p>{`Hello ${user}`}</p>
+                ) : (
+                  <>
+                    Sign In <Person />
+                  </>
+                )}
               </p>
             </a>
           </Link>

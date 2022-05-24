@@ -11,8 +11,14 @@ export const HomePage = styled.div`
   img {
     width: 100px;
   }
+  @media(max-width:1400px){
+    .img{
+      width:400px;
+    }
+    margin: 1rem 3rem;
+  }
   ///Responsive Design////////////////////////////
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     .category {
       display: none;
     }
@@ -48,6 +54,20 @@ export const CardStyled = styled.div`
     justify-content: space-around;
     text-align: center;
   }
+  @media(max-width:1300px){
+    width:400px;
+    .card{
+      width: 300px;
+    }
+    padding:5px;
+  }
+  @media(max-width:1000px){
+    width:350px;
+    .card{
+      width: 300px;
+    }
+    padding:5px;
+  }
 `;
 
 export const FeaturedProductStyled = styled.div`
@@ -73,13 +93,14 @@ export const FeaturedProductStyled = styled.div`
     background: var(--button-color) !important;
     color: #fff !important;
   }
+  @media (max-width: 1100px) {
+    margin: 1rem 1rem;
+  }
   @media (max-width: 770px) {
     margin: 1rem 1rem;
     img {
       width: 150px;
     }
-  }
-  @media (max-width: 500px) {
   }
 `;
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Button, Select } from 'antd';
+import { Button} from 'antd';
 import Layout from '../Layout/Layout';
 import { ProductDetailsStyled } from './UserStyled';
 import { PlusSquareIcon, MinusIcon } from '@chakra-ui/icons';
 const ProductDetails = () => {
-  const { Option } = Select;
   return (
     <Layout>
       <div>

@@ -45,11 +45,18 @@ export const HeaderStyled = styled.div`
     justify-content: space-around;
     padding-top: 10px;
     color: #fff;
+    p{
+      transform: translateY(10px);
+    }
   }
   @media (max-width: 600px) {
     .flex {
       transform: translateY(5px);
+      p{
+        transform: translateY(10px);
+      }
     }
+    
   }
 `;
 

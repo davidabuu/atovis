@@ -5,7 +5,7 @@ import { CardStyled } from './UserStyled'
 const CategoryCard = () => {
   return (
     <CardStyled>
-        <h1 className='text-color'>Category OverView</h1>
+        <h3 className='text-color'>Category Overview</h3>
         <div className='card'>
             <CatCard cat={'Mobile'}/>
             <CatCard cat={'Furnitures'}/>
