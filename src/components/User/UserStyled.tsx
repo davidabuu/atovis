@@ -11,9 +11,9 @@ export const HomePage = styled.div`
   img {
     width: 100px;
   }
-  @media(max-width:1400px){
-    .img{
-      width:400px;
+  @media (max-width: 1400px) {
+    .img {
+      width: 400px;
     }
     margin: 1rem 3rem;
   }
@@ -54,19 +54,19 @@ export const CardStyled = styled.div`
     justify-content: space-around;
     text-align: center;
   }
-  @media(max-width:1300px){
-    width:400px;
-    .card{
+  @media (max-width: 1300px) {
+    width: 400px;
+    .card {
       width: 300px;
     }
-    padding:5px;
+    padding: 5px;
   }
-  @media(max-width:1000px){
-    width:350px;
-    .card{
+  @media (max-width: 1000px) {
+    width: 350px;
+    .card {
       width: 300px;
     }
-    padding:5px;
+    padding: 5px;
   }
 `;
 
@@ -111,12 +111,18 @@ export const ProductDetailsStyled = styled.div`
   img {
     width: 500px;
     margin-top: 10px;
-    object-fit: cover;
+    object-fit: contain;
   }
   .product-info {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
   }
   h1,
   p {
@@ -126,14 +132,59 @@ export const ProductDetailsStyled = styled.div`
   }
   @media (max-width: 770px) {
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     img {
       width: 300px;
     }
     h1,
     p {
       margin-top: 10px;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: bold;
     }
+    .btn {
+      margin-bottom: 10px;
+    }
+  }
+`;
+export const AddressStyled = styled.div`
+  .address {
+    background-color: var(--button-color);
+    padding: 10px;
+    color: #fff !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  span {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  a {
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    border-radius: 10px;
+    width: 500px;
+  }
+  .total {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .btn {
+    text-align: center;
+    background: var(--primary-color) !important;
+    border-radius: 10px !important;
+    padding: 15px;
+    height: 40px !important;
+    margin: 10px 0;
+    width: 300px;
+    color: #fff !important;
   }
 `;

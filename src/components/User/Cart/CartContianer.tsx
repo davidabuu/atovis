@@ -48,8 +48,8 @@ export default function CartContainer() {
             </table>
           </div>
 
-          <div className='cart-total-holder'>
-            <div className='cart-action-button'>
+          <div className='checkHide'>
+            <div className='checkout-flex cart-action-button'>
               <Link href='/'>
                 <a className='btn-main'>Continue Shopping</a>
               </Link>
@@ -97,6 +97,14 @@ export default function CartContainer() {
               </div>
             </div>
           ))}
+           <div className='cart-action-button'>
+              <Link href='/'>
+                <a className='btn-main'>Continue Shopping</a>
+              </Link>
+              <Link href={'checkout'}>
+                <a className='btn-main fill'>Checkout</a>
+              </Link>
+            </div>
         </div>
       </CartContainerStyled>
     </Layout>

@@ -5,6 +5,25 @@ export const CartContainerStyled = styled.div`
         margin-top: 4.5rem;
         padding: 1rem;
     }
+    .checkout {
+        width: 21.438rem;
+        height: 3.25rem;
+        background: #ffaf38;
+        border-radius: 50px;
+        color: #ffffff;
+        font-size: 1.3rem;
+        margin-bottom: 2.125rem;
+    }
+    .continueShopping {
+        width: 21.438rem;
+        height: 3.25rem;
+        border: 1px solid var(--primary-color);
+        border-radius: 50px;
+        background: #ffffff;
+        color: #000;
+        font-size: 1.3rem;
+        margin-bottom: 2.125rem;
+    }
     .spin{
         display:flex;
         position:absolute;
@@ -154,6 +173,20 @@ export const CartContainerStyled = styled.div`
         font-weight: bold;
         margin-bottom: 0.3rem;
     }
+    .checkout-flex{
+        display:flex;
+        align-items:center;
+        justify-content:space-around;
+        a{
+            background: var(--primary-color);
+            color: #fff;
+            width:150px;
+            padding:5px;
+            font-size: 1rem;
+            text-align:center;
+        }
+    }
+    
     .checkout {
         width: 100%;
         height: 3.25rem;
@@ -163,7 +196,7 @@ export const CartContainerStyled = styled.div`
         font-size: 1rem;
         margin-bottom: 2.125rem;
     }
-    @media only screen and (min-width: 650px) {
+    @media(max-width: 900px) {
         .cart-total {
             justify-content: flex-end;
             font-weight: bold;
@@ -200,7 +233,7 @@ export const CartContainerStyled = styled.div`
         .btn-main {
             border: 1px solid var(--primary-color);
             padding: 5px;
-            color: #ffaf38;
+            color: var(--primary-color);
         }
         .fill {
             background: var(--primary-color);
@@ -303,6 +336,9 @@ export const CartContainerStyled = styled.div`
     @media only screen and (max-width: 800px) {
         .cartMobile{
             display:block !important;
+        }
+        .checkHide{
+            display:none;
         }
         .wrapper {
             display: none;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button} from 'antd';
+import { Button } from 'antd';
 import Layout from '../Layout/Layout';
 import { ProductDetailsStyled } from './UserStyled';
 import { PlusSquareIcon, MinusIcon } from '@chakra-ui/icons';
@@ -15,10 +15,17 @@ const ProductDetails = () => {
             <h1>$54.99</h1>
             <br></br>
             <div className='quantity'>
-              <div className='qty'><PlusSquareIcon/></div>1<div className='qty'><MinusIcon/></div>
+              <div className='qty'>
+                <PlusSquareIcon />
+              </div>
+              1
+              <div className='qty'>
+                <MinusIcon />
+              </div>
             </div>
             <br></br>
-            <Button className='button'>Add To Cart</Button>
+            <Button className='btn'>Proceed To Checkout</Button>
+            <Button className='btn'>CHECKOUT</Button>
           </div>
         </ProductDetailsStyled>
       </div>
