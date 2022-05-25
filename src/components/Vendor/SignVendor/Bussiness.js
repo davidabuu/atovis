@@ -99,6 +99,29 @@ const Bussiness = () => {
             <Row>
               <Col xs={24} xl={24} lg={24}>
                 <FormGroup>
+                  <label>State</label>
+                  <Controller
+                    control={control}
+                    name='state'
+                    rules={{ required: true }}
+                    render={({ field: { onChange } }) => (
+                      <Input
+                        size='large'
+                        type='text'
+                        onChange={onChange}
+                        minLength={'8'}
+                      />
+                    )}
+                  />
+                  {errors.state && (
+                    <span className='error'>This field is required</span>
+                  )}
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={24} xl={24} lg={24}>
+                <FormGroup>
                   <label>Address</label>
                   <Controller
                     control={control}

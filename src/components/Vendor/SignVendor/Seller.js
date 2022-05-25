@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Button, Card, Col, Input, notification, Row } from 'antd';
 import { LogoHolders } from './SignStyled';

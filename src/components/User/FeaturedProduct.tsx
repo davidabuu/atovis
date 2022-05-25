@@ -22,7 +22,7 @@ const FeaturedProduct = () => {
           {RawProuducts.map(({ id, info, price }) => (
             <Row gutter={12} key={id}>
               <Col xl={6} lg={6} sm={12} xs={6}>
-                <Link href='/user/product-details'>
+                <Link  href='/user/product-details'>
                   <div className='ft'>
                     <img src='/imh.png' className='.img' alt='Home' />
                     <p>{info}</p>

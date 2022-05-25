@@ -1,18 +1,26 @@
 import axios from 'axios'
 import React from 'react'
 
-const AllProducts = () => {
+const AllProducts = ({json}) => {
+  console.log(json)
     //Base URL
-const API_URL = process.env.APP_BASE_URL;
+
   return (
     <div>AllProducts</div>
   )
 }
 
+const API_URL = process.env.APP_BASE_URL;
 
-AllProducts.getInitalProps = async ()  => {
-    //Fetch Product API
-    const res = await axios.get(`${API_URL}/public/`)
+export default AllProducts;
+
+export const getStaicProps = async () => {
+  const res = await fetch(`${API_URL}/public/products`)
+  const json = await res.json()
+  return {
+    props: {
+      json
+    }
+  }
 }
-export default AllProducts
 
