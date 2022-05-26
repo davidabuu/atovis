@@ -62,8 +62,13 @@ input {
   color: #fff !important;
   background: var(--primary-color) !important;
 }
-.swip{
+.swip {
   width: 500px !important;
+}
+.total {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 2rem;
 }
 .buttons {
   text-align: center;
@@ -75,7 +80,7 @@ input {
   width: 300px;
   color: #fff !important;
 }
-img{
+img {
   object-fit: cover !important;
 }
 .row {
@@ -93,8 +98,8 @@ img{
   color: #fff;
   font-size: 25px;
 }
-@media(max-width:1100px){
-  .swip{
+@media (max-width: 1100px) {
+  .swip {
     width: 400px !important;
   }
 }
@@ -102,9 +107,9 @@ img{
   .sign {
     margin-top: 15px;
   }
-  .swip{
+  .swip {
     width: 300px !important;
-  }''
+  }
   .select {
     width: 300px !important;
   }
@@ -112,8 +117,8 @@ img{
     font-size: 20px;
   }
 }
-@media(max-width:400px){
-  .swip{
+@media (max-width: 400px) {
+  .swip {
     width: 250px !important;
   }
 }
@@ -160,6 +165,14 @@ img{
 .swiper-pagination-bullet-active {
   background-color: var(--button-color) !important;
 }
-
-
-
+.prof {
+  color: var(--primary-color);
+  margin-left: 3rem;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.account-flex{
+  display:flex;
+  overflow: hidden;
+}

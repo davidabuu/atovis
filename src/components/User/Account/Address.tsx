@@ -2,17 +2,10 @@ import { Card, Col, Input, Row } from 'antd';
 import React from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled, LogoHolder, FormGroup } from '../../Vendor/SignVendor/SignStyled';
-import TextArea from 'antd/lib/input/TextArea';
-import Image from 'next/image';
 const Address = () => {
   return (
     <div>
       <UserWebLayout webtitle={'Address Info'}>
-        <LogoHolder>
-          <div className='img'>
-            <img src='/logo2.png' alt='Log' />
-          </div>
-        </LogoHolder>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card>
             <form autoComplete='off'>
@@ -42,7 +35,8 @@ const Address = () => {
                 <Col xs={24} xl={24} lg={24}>
                 <FormGroup>
                     <label>Street Address</label>
-                  <TextArea/>
+                    <Input.TextArea>
+                    </Input.TextArea>
                   </FormGroup>
                 </Col>
               </Row>

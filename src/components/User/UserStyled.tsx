@@ -149,6 +149,9 @@ export const ProductDetailsStyled = styled.div`
   }
 `;
 export const AddressStyled = styled.div`
+  h1 {
+    color: #fff !important;
+  }
   .address {
     background-color: var(--button-color);
     padding: 10px;
@@ -174,17 +177,12 @@ export const AddressStyled = styled.div`
     flex-direction: column;
     margin-top: 10px;
     align-items: center;
-    width: 100%;
     justify-content: flex-end;
   }
-  .btn {
+  .btn-payment {
     text-align: center;
     background: var(--primary-color) !important;
-    border-radius: 10px !important;
-    padding: 15px;
-    height: 40px !important;
     margin: 10px 0;
-    width: 300px;
     color: #fff !important;
   }
 `;

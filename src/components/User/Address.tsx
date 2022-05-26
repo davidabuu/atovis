@@ -20,17 +20,25 @@ const Address = () => {
             </Link>
           </div>
         </div>
-        <div className='total'>
-          <span>
-            <p>Gross Total $45.00</p>
-          </span>
-          <span>Delivery Fee: $500</span>
-          <span>
-            <p>Net Total: $800.00</p>
-          </span>
-          <Button className='btn'>Proceed To Payment</Button>
-        </div>
       </AddressStyled>
+      <div className='total'>
+        <span>
+          <p>Gross Total $45.00</p>
+        </span>
+      </div>
+      <div className='total'>
+        <span>
+          <p>Delivery Fee: $500</p>
+        </span>
+      </div>
+      <div className='total'>
+        <span>
+          <p>Net Total: $800.00</p>
+        </span>
+      </div>
+      <div className='btn-payment total'>
+        <Button>Proceed To Payment</Button>
+      </div>
     </Layout>
   );
 };
