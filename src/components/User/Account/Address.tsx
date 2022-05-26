@@ -1,10 +1,15 @@
 import { Card, Col, Input, Row } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled, LogoHolder, FormGroup } from '../../Vendor/SignVendor/SignStyled';
 const Address = () => {
+  useEffect(() => {
+    Aos.init({ duration: 300 });
+  }, []);
   return (
-    <div>
+    <div data-aos='zoom-in'>
       <UserWebLayout webtitle={'Address Info'}>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card>

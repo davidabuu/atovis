@@ -1,11 +1,11 @@
-import { Card, Col, Input, Button, Row, notification } from 'antd';
+import { Card, Col, Input, Button, Row } from 'antd';
 import React from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
-import { FormGroup, LogoHolder, SignStyled } from '../../Vendor/SignVendor/SignStyled';
+import { FormGroup,  SignStyled } from '../../Vendor/SignVendor/SignStyled';
 const LoginInfo = () => {
   useEffect(() => {
     Aos.init({ duration: 300 });
