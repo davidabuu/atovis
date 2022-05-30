@@ -33,18 +33,49 @@ export const HeaderStyled = styled.div`
     justify-content: space-around;
     padding-top: 10px;
     color: #fff;
-    p{
+    p {
       transform: translateY(10px);
     }
   }
   @media (max-width: 600px) {
     .flex {
       transform: translateY(5px);
-      p{
+      p {
         transform: translateY(10px);
       }
     }
-    
+  }
+  .hide {
+    display: none;
+    transition: ease all 0.5s;
+  }
+  .user-profile {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: ease all 0.5s;
+    ul {
+      padding: 10px;
+      border-radius: 5px;
+      background: var(--button-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+    li {
+      float: left;
+    }
+    a {
+      color: #fff;
+    }
+  }
+  li {
+    list-style: none;
+    text-align: center;
   }
 `;
 
