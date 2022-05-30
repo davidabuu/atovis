@@ -14,6 +14,7 @@ export const FooterStyle = styled.div`
       padding: 10px;
       height: 30px;
       border: none;
+      margin-bottom: 5px;
       margin-right: 10px;
       background: #fff;
       border-radius: 5px;
@@ -35,6 +36,7 @@ export const FooterStyle = styled.div`
 
 export const FooterDivStyle = styled.div`
   background-color: var(--primary-color);
+  padding-left:2rem;
   color: #fff;
   .img {
     width: 100px;
@@ -47,9 +49,7 @@ export const FooterDivStyle = styled.div`
     list-style: none;
   }
   .footer-info {
-    ul li {
-      margin-top: 15px;
-    }
+      margin-top: 10px;
   }
   .socials {
     display: flex;
@@ -66,7 +66,7 @@ export const FooterDivStyle = styled.div`
   }
   @media (max-width: 800px) {
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
   }
 `;
 

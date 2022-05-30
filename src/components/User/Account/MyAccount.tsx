@@ -26,7 +26,7 @@ const MyAccount = () => {
   };
   return (
     <div>
-      <div>
+      <div className='pro-file'>
         <p className='prof'>Profile</p>
         <div className='account-flex'>
           <div>
@@ -37,16 +37,16 @@ const MyAccount = () => {
                   <div className='arrow'>{'>'}</div>
                 </a>
 
-                <a  onClick={Login}>
+                <a onClick={Login}>
                   <li>Login Info</li>
                   <div className='arrow'>{'>'}</div>
                 </a>
-              
-                  <a  onClick={MyAddress}>
-                    <li>Address</li>
-                    <div className='arrow'>{'>'}</div>
-                  </a>
-                
+
+                <a onClick={MyAddress}>
+                  <li>Address</li>
+                  <div className='arrow'>{'>'}</div>
+                </a>
+
                 <Link href='/user/account/orders'>
                   <a>
                     <li>My Orders</li>
@@ -104,7 +104,67 @@ const MyAccount = () => {
             ) : (
               ''
             )}
-            
+          </div>
+        </div>
+      </div>
+      <div className='mobile-profile'>
+        <p className='prof'>Profile</p>
+        <div className='account-flex'>
+          <div>
+            <AccountStyled>
+              <div className='profile mobile-prof'>
+               <Link href='/user/bio'>
+               <a>
+                  <li>My Bio</li>
+                  <div className='arrow'>{'>'}</div>
+                </a>
+
+               </Link>
+                <Link href='/user/sign-in'>
+                  <a>
+                    <li>Login Info</li>
+                    <div className='arrow'>{'>'}</div>
+                  </a>
+                </Link>
+
+                <Link href='/user/address'>
+                  <a>
+                    <li>Address</li>
+                    <div className='arrow'>{'>'}</div>
+                  </a>
+                </Link>
+
+                <Link href='/user/account/orders'>
+                  <a>
+                    <li>My Orders</li>
+                    <div className='arrow'>{'>'}</div>
+                  </a>
+                </Link>
+              </div>
+            </AccountStyled>
+            <p className='prof'>Legal</p>
+            <AccountStyled>
+              <div className='profile mobile-prof'>
+                <Link href='/user/account/my-bio'>
+                  <a>
+                    <li>Privacy Policy</li>
+                    <div className='arrow'>{'>'}</div>
+                  </a>
+                </Link>
+                <Link href='/user/account/login-info'>
+                  <a>
+                    <li>Terms and Conditions</li>
+                    <div className='arrow'>{'>'}</div>
+                  </a>
+                </Link>
+                <Link href='/user/account/address'>
+                  <a>
+                    <li>About Us</li>
+                    <div className='arrow'>{'>'}</div>
+                  </a>
+                </Link>
+              </div>
+            </AccountStyled>
           </div>
         </div>
       </div>

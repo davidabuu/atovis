@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Input } from 'antd';
+import {  Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
 import { ShoppingCart, Person } from '@material-ui/icons';
 import Link from 'next/link';
-import { getFromLocalStorage } from '../utils/usableFunction';
+import { Search2Icon } from '@chakra-ui/icons';
+import { HandIcon } from '../../ICONS/figmaIcons';
 const Header = () => {
+  const { Search } = Input;
   const [user, setUserName] = useState('');
   useEffect(() => {
-    const name = JSON.parse(localStorage.getItem('name'))
+    const name = JSON.parse(localStorage.getItem('name'));
     setUserName(name);
   }, []);
   return (
@@ -16,14 +18,11 @@ const Header = () => {
         <HeaderStyled>
           <img src='/logo.png' alt='Log.png' />
           <div className='search'>
-            <Input placeholder='Search for a product' type={'text'} />
-            <Button type='default' className='searchBtn'>
-              Search
-            </Button>
+            <Search placeholder='Search for a product' type={'text'} style={{width:'350px'}} />
           </div>
           <p className='flex'>
             {user ? (
-              <p>{`Hello ${user}`}</p>
+              <p> &or; {`Hello ${user}`} <HandIcon/></p>
             ) : (
               <>
                 Sign In <Person />
@@ -37,12 +36,16 @@ const Header = () => {
       </div>
       <div className='mobile-view'>
         <HeaderStyled>
+          
           <img src='/logo.png' alt='Log.png' />
+        <div className='search-icon'>
+        <Search2Icon/>
+        </div>
           <Link href='/user/sign-in'>
             <a>
               <p className='flex'>
                 {user ? (
-                  <p>{`Hello ${user}`}</p>
+                  <p>{`Hello ${user}`} <HandIcon/> </p>
                 ) : (
                   <>
                     Sign In <Person />

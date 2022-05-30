@@ -3,18 +3,6 @@ export const HeadStyle = styled.div`
   .mobile-view {
     display: none;
   }
-  @media (max-width: 800px) {
-    input[type='text'] {
-      width: 200px;
-      border: none;
-    }
-    input[type='button'] {
-      background-color: var(--button-color);
-      color: #fff;
-      border: none;
-      width: 60px;
-    }
-  }
   @media (max-width: 700px) {
     .desktop {
       display: none;

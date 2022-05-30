@@ -22,7 +22,7 @@ const PaymentAccount = () => {
     router.push('/vendor/vendor-details');
   };
   return (
-    <UserWebLayout webtitl='Bussiness Info'>
+    <UserWebLayout webtitle='Bussiness Info'>
       <LogoHolders>
         <div className='img'>
           <img src='/logo2.png' alt='Log' />

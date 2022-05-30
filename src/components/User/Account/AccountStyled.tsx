@@ -33,4 +33,10 @@ export const AccountStyled = styled.div`
   a:hover {
     background-color: #f4f4f4;
   }
+  @media (max-width: 500px) {
+    .mobile-prof {
+        width: 350px;
+        margin-left: 2rem;
+    }
+  }
 `;

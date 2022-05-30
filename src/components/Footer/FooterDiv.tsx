@@ -9,12 +9,10 @@ const FooterDiv = () => {
       <img src='/logo.png' alt='Hola' className='img' />
       <Sign />
       <div className='footer-info'>
-        <ul>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Private Policy</li>
-          <li>Terms and Condition</li>
-        </ul>
+          <p >About Us</p>
+          <p >Contact Us</p>
+          <p >Private Policy</p>
+          <p >Terms and Condition</p>
       </div>
       <div>
         <p className='footer-info'>CONNECT WITH US</p>
@@ -25,7 +23,7 @@ const FooterDiv = () => {
         </div>
       </div>
       <div>
-        <p>&copy; Atovis 2022, Inc</p>
+        <p>&copy; Atovis 2022, All Rights Reserved Inc</p>
       </div>
     </FooterDivStyle>
   );
