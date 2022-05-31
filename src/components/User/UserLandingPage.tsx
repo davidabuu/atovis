@@ -14,7 +14,7 @@ const UserLandingPage = () => {
           <CategoryCard />
         </div>
       </HomePage>
-      <FeaturedProduct />
+      {/* <FeaturedProduct /> */}
       <AllProducts json={undefined}/>
     </Layout>
   );

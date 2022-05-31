@@ -7,6 +7,7 @@ import { FeaturedProductStyled } from './UserStyled';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import Link from 'next/link';
+import Image from 'next/link';
 const FeaturedProduct = () => {
   useEffect(() => {
     Aos.init({ duration: 300 });
@@ -24,7 +25,7 @@ const FeaturedProduct = () => {
               <Col xl={6} lg={6} sm={12} xs={6}>
                 <Link  href='/user/product-details'>
                   <div className='ft'>
-                    <img src='/imh.png' className='.img' alt='Home' />
+                    <Image src ='/imh.png' width={150} height={40} className='.img' alt='Home' />
                     <p>{info}</p>
                     <div>
                       <div>

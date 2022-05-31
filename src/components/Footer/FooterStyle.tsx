@@ -64,7 +64,7 @@ export const FooterDivStyle = styled.div`
     cursor: pointer;
     justify-content: space-around;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 850px) {
     flex-direction: column;
     align-items: flex-start;
   }

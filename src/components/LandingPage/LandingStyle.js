@@ -10,4 +10,7 @@ export const LandingStyled = styled.div`
     margin-bottom:10px;
   }
   background-color: var(--primary-color);
+  a{
+    transition: ease 0.5s all;
+  }
 `;

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import Image from 'next/image';
 import "swiper/css/pagination";
 
 
@@ -20,16 +21,18 @@ export default function App() {
         modules={[Pagination]}
 
       >
-       <div style={{width:'500px'}}>
+       <div>
        <SwiperSlide>
-          <img src='/home.png' alt='Home' className='swip'/>
+          <div className='swip'>
+          <Image src='/home.png' layout='fill' alt='Home'/>
+          </div>
         </SwiperSlide>
        </div>
         <SwiperSlide>
-          <img src='/home.png' className='swip' alt='Home'/>
+        <Image src='/home.png' width={350} height={200} alt='Home' className='swip'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src='/home.png'  className='swip' alt='Home'/>
+        <Image src='/home.png' width={350} height={200} alt='Home' className='swip'/>
         </SwiperSlide>
       </Swiper>
     </>

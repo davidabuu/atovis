@@ -3,8 +3,8 @@ import { Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
 import { ShoppingCart, Person, ArrowDropDown } from '@material-ui/icons';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Search2Icon } from '@chakra-ui/icons';
-import { HandIcon } from '../../ICONS/figmaIcons';
 const Header = () => {
   const { Search } = Input;
   const [user, setUserName] = useState('');
@@ -14,14 +14,14 @@ const Header = () => {
   }
   useEffect(() => {
     const name = JSON.parse(localStorage.getItem('name'));
-    setMenuOpen(false)
+    setMenuOpen(false);
     setUserName(name);
   }, []);
   return (
     <HeadStyle>
       <div className='desktop'>
         <HeaderStyled>
-          <img src='/logo.png' alt='Log.png' />
+          <Image src='/logo.png' width={200} height={80} alt='Log.png' />
           <div className='search'>
             <Search
               placeholder='Search for a product'
@@ -34,7 +34,7 @@ const Header = () => {
               {user ? (
                 <p>
                   <ArrowDropDown />
-                  {`Hello ${user}`} <HandIcon />
+                  {`Hello ${user}`} <Image src='/hand.png' alt='Hand' width='500px' height='20px'/>
                 </p>
               ) : (
                 <>
@@ -66,7 +66,7 @@ const Header = () => {
       </div>
       <div className='mobile-view'>
         <HeaderStyled>
-          <img src='/logo.png' alt='Log.png' />
+        <Image src='/logo.png' width={150} height={80} alt='Log.png' />
           <div className='search-icon'>
             <Search2Icon />
           </div>
@@ -77,7 +77,7 @@ const Header = () => {
                   <p>
                     {' '}
                     <ArrowDropDown />
-                    {`Hello ${user}`} <HandIcon />{' '}
+                    {`Hello ${user}`} <Image src='/hand.png' alt='Hand' width={30} height={10} objectFit='contain'/>
                   </p>
                 ) : (
                   <>
@@ -90,6 +90,7 @@ const Header = () => {
           <Link href='/user/cart'>
             <a>
               <p className='flex'>
+
                 Cart <ShoppingCart />
               </p>
             </a>

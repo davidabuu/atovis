@@ -63,8 +63,9 @@ input {
   color: #fff !important;
   background: var(--primary-color) !important;
 }
-.swip {
+.swip{
   width: 500px !important;
+  position: unset !important;
 }
 .total {
   display: flex;
