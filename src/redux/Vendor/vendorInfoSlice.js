@@ -63,3 +63,4 @@ export const vendorSellerDetailsSlice = createSlice({
 export const { reset, sellerRegister, bussinessRegister, paymentRegister } =
   vendorSellerDetailsSlice.actions;
 export default vendorSellerDetailsSlice.reducer;
+

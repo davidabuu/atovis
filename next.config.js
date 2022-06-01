@@ -4,8 +4,12 @@ const nextConfig = {
 }
 
 module.exports = {
-  env: {
-    APP_BASE_URL:  'https://atoovis-server.herokuapp.com/v1'
-  },
+   env: {
+     APP_BASE_URL:'https://api.otrex.site/v1'
+   },
+  // webpack(config) {
+  //   config.infrastructureLogging = { debug: /PackFileCache/ }
+  //   return config;
+  // }
   staticPageGenerationTimeout: 1000,
 }

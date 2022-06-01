@@ -93,6 +93,9 @@ export const FeaturedProductStyled = styled.div`
     background: var(--button-color) !important;
     color: #fff !important;
   }
+  img{
+    width:200px;
+  }
   @media (max-width: 1100px) {
     margin: 1rem 1rem;
   }

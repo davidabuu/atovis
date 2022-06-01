@@ -37,6 +37,9 @@ export const HeaderStyled = styled.div`
       transform: translateY(10px);
     }
   }
+  .hand {
+    width: 30px;
+  }
   @media (max-width: 600px) {
     .flex {
       transform: translateY(5px);

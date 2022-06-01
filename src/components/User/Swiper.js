@@ -23,16 +23,14 @@ export default function App() {
       >
        <div>
        <SwiperSlide>
-          <div className='swip'>
-          <Image src='/home.png' layout='fill' alt='Home'/>
-          </div>
+       <img src='/home.png'  alt='Home' className='swip'/>
         </SwiperSlide>
        </div>
         <SwiperSlide>
-        <Image src='/home.png' width={350} height={200} alt='Home' className='swip'/>
+        <img src='/home.png'  alt='Home' className='swip'/>
         </SwiperSlide>
         <SwiperSlide>
-        <Image src='/home.png' width={350} height={200} alt='Home' className='swip'/>
+        <img src='/home.png'  alt='Home' className='swip'/>
         </SwiperSlide>
       </Swiper>
     </>

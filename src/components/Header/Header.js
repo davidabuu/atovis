@@ -21,7 +21,9 @@ const Header = () => {
     <HeadStyle>
       <div className='desktop'>
         <HeaderStyled>
-          <Image src='/logo.png' width={200} height={80} alt='Log.png' />
+       <div className=''>
+        <Image src ='/logo.png' width={2080} height={853}  alt='Home' />
+       </div>
           <div className='search'>
             <Search
               placeholder='Search for a product'
@@ -34,7 +36,7 @@ const Header = () => {
               {user ? (
                 <p>
                   <ArrowDropDown />
-                  {`Hello ${user}`} <Image src='/hand.png' alt='Hand' width='500px' height='20px'/>
+                  {`Hello ${user}`} <img src='/hand.png' alt='Hand' className='hand' />
                 </p>
               ) : (
                 <>
@@ -60,13 +62,13 @@ const Header = () => {
             </div>
           </p>
           <p className='flex'>
-            Cart <ShoppingCart />
+           <p>Cart<ShoppingCart /> </p>
           </p>
         </HeaderStyled>
       </div>
       <div className='mobile-view'>
         <HeaderStyled>
-        <Image src='/logo.png' width={150} height={80} alt='Log.png' />
+        <Image src ='/logo.png' width={2080} height={853}  alt='Home' />
           <div className='search-icon'>
             <Search2Icon />
           </div>
@@ -77,7 +79,7 @@ const Header = () => {
                   <p>
                     {' '}
                     <ArrowDropDown />
-                    {`Hello ${user}`} <Image src='/hand.png' alt='Hand' width={30} height={10} objectFit='contain'/>
+                    {`Hello ${user}`}  <img src='/hand.png' alt='Hand' className='hand' />
                   </p>
                 ) : (
                   <>

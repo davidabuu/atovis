@@ -82,9 +82,9 @@ input {
   width: 300px;
   color: #fff !important;
 }
-img {
+/* img {
   object-fit: cover !important;
-}
+} */
 .row {
   display: flex;
 }
