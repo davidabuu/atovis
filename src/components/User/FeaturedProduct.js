@@ -30,7 +30,7 @@ const FeaturedProduct = () => {
   }, []);
   console.log(product);
   return (
-    <FeaturedProductStyled>
+    <FeaturedProductStyled data-aos='zoom-in'>
       {loading ? (
         <div className='flexx'>
           <Spin />
@@ -38,7 +38,7 @@ const FeaturedProduct = () => {
           <p>Fetching Products</p>
         </div>
       ) : (
-        <div data-aos='fade-in'>
+        <div>
           <div className='feature'>
             <p>FeaturedProduct</p>
             <p className='text-color'>See All</p>

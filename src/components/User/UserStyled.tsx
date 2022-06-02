@@ -104,6 +104,9 @@ export const FeaturedProductStyled = styled.div`
     img {
       width: 150px;
     }
+    .but-ton {
+      width: 150px;
+    }
   }
 `;
 
