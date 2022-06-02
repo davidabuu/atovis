@@ -45,10 +45,10 @@ const ProductDetails = () => {
   }, [isLoading, dispatch, id]);
   const { name, description, price, quantity, imageUrl } = productDetails;
   return (
-    <Layout>
+    <>
       <div>
         {loading ? (
-          <div className='flexx'>
+          <div className='flexx' style={{minHeight:'80vh'}}>
             <Spin />
             <p>Fetching Data</p>
           </div>
@@ -76,7 +76,7 @@ const ProductDetails = () => {
           </div>
         )}
       </div>
-    </Layout>
+    </>
   );
 };
 
