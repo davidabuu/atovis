@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CartContainerStyled } from './CartContainerStyled';
-import { PlusSquareIcon, MinusIcon } from '@chakra-ui/icons';
+//import { PlusSquareIcon, MinusIcon } from '@chakra-ui/icons';
 import { Delete } from '@material-ui/icons';
 import { RawProuducts } from '../RawProduct';
 import Layout from '../../Layout/Layout';
@@ -72,11 +72,11 @@ export default function CartContainer() {
                   <h3>Quantity</h3>
                   <div className='cart-increment'>
                     <div className='qty'>
-                      <PlusSquareIcon />
+                      +
                     </div>
                     1
                     <div className='qty'>
-                      <MinusIcon />
+                    -
                     </div>
                   </div>
                 </div>
