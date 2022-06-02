@@ -28,11 +28,11 @@ export default function CartContainer() {
                   <td>
                     <div className='quantity'>
                       <div className='qty'>
-                        <PlusSquareIcon />
+                        {/* <PlusSquareIcon /> */}
                       </div>
                       1
                       <div className='qty'>
-                        <MinusIcon />
+                        {/* <MinusIcon /> */}
                       </div>
                     </div>
                   </td>
