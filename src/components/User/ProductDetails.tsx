@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'antd';
 import Layout from '../Layout/Layout';
 import { ProductDetailsStyled } from './UserStyled';
-import { PlusSquareIcon, MinusIcon } from '@chakra-ui/icons';
+import { PlusOneOutlined } from '@material-ui/icons';
 const ProductDetails = () => {
   return (
     <Layout>
@@ -16,11 +16,11 @@ const ProductDetails = () => {
             <br></br>
             <div className='quantity'>
               <div className='qty'>
-                <PlusSquareIcon />
+                <PlusOneOutlined/>
               </div>
               1
               <div className='qty'>
-                <MinusIcon />
+                 - 
               </div>
             </div>
             <br></br>

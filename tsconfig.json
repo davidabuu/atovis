@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/Vendor/SignVendor/VendorDetails.js", "src/redux/Vendor/vendorInfoSlice.js", "src/components/Vendor/SignVendor/VendorDetails.js", "src/redux/User/Product/ProductDetailSlice.js", "src/ICONS/figmaIcons.tsx", "src/components/Header/Header.js", "src/components/User/FeaturedProduct.js"  ],
+, "src/components/Vendor/SignVendor/VendorDetails.js", "src/redux/Vendor/vendorInfoSlice.js", "src/components/Vendor/SignVendor/VendorDetails.js", "src/redux/User/Product/ProductDetailSlice.js", "src/ICONS/figmaIcons.tsx", "src/components/Header/Header.js", "src/components/User/FeaturedProduct.js", "src/components/User/SkeletonProduct.js", "src/components/User/Skeleton.js", "pages/user/product/[_id].js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -89,7 +89,7 @@ export const FeaturedProductStyled = styled.div`
     text-align: center;
     padding: 5px;
     margin: 10px 0;
-    width: 150px;
+    width: 200px;
     background: var(--button-color) !important;
     color: #fff !important;
   }

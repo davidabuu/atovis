@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
-import { ShoppingCart, Person, ArrowDropDown } from '@material-ui/icons';
+import { ShoppingCart, Person, ArrowDropDown, SearchSharp } from '@material-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search2Icon } from '@chakra-ui/icons';
 const Header = () => {
   const { Search } = Input;
   const [user, setUserName] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const userMenuOpen = () => {
-    setMenuOpen(!menuOpen)
-  }
+    setMenuOpen(!menuOpen);
+  };
   useEffect(() => {
     const name = JSON.parse(localStorage.getItem('name'));
     setMenuOpen(false);
@@ -21,9 +20,9 @@ const Header = () => {
     <HeadStyle>
       <div className='desktop'>
         <HeaderStyled>
-       <div className=''>
-        <Image src ='/logo.png' width={2080} height={853}  alt='Home' />
-       </div>
+          <div className=''>
+            <Image src='/logo.png' width={2080} height={853} alt='Home' />
+          </div>
           <div className='search'>
             <Search
               placeholder='Search for a product'
@@ -31,16 +30,30 @@ const Header = () => {
               style={{ width: '350px' }}
             />
           </div>
-          <p className='flex' >
-            <div style={{cursor:'pointer', transition:'ease all 0.5s'}} onClick={userMenuOpen}>
+          <p className='flex'>
+            <div
+              style={{ cursor: 'pointer', transition: 'ease all 0.5s' }}
+              onClick={userMenuOpen}>
               {user ? (
-                <p>
-                  <ArrowDropDown />
-                  {`Hello ${user}`} <img src='/hand.png' alt='Hand' className='hand' />
+                <p className=''>
+                  <div>
+                    {' '}
+                    <ArrowDropDown />
+                  </div>
+                  <div>
+                    {' '}
+                    {`Hello ${user}`}{' '}
+                    <img src='/hand.png' alt='Hand' className='hand' />
+                  </div>
                 </p>
               ) : (
                 <>
-                  <ArrowDropDown /> Sign In <Person />
+                  <div>
+                    <ArrowDropDown />
+                  </div>{' '}
+                  <div className=''>
+                    <p>Sign In</p> <Person />
+                  </div>
                 </>
               )}
               <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
@@ -62,15 +75,18 @@ const Header = () => {
             </div>
           </p>
           <p className='flex'>
-           <p>Cart<ShoppingCart /> </p>
+            <p>
+              Cart
+              <ShoppingCart />{' '}
+            </p>
           </p>
         </HeaderStyled>
       </div>
       <div className='mobile-view'>
         <HeaderStyled>
-        <Image src ='/logo.png' width={2080} height={853}  alt='Home' />
+          <Image src='/logo.png' width={2080} height={853} alt='Home' />
           <div className='search-icon'>
-            <Search2Icon />
+            <SearchSharp />
           </div>
           <Link href='/user/sign-in'>
             <a>
@@ -79,7 +95,8 @@ const Header = () => {
                   <p>
                     {' '}
                     <ArrowDropDown />
-                    {`Hello ${user}`}  <img src='/hand.png' alt='Hand' className='hand' />
+                    {`Hello ${user}`}{' '}
+                    <img src='/hand.png' alt='Hand' className='hand' />
                   </p>
                 ) : (
                   <>
@@ -92,7 +109,6 @@ const Header = () => {
           <Link href='/user/cart'>
             <a>
               <p className='flex'>
-
                 Cart <ShoppingCart />
               </p>
             </a>
