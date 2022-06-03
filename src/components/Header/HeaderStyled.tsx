@@ -9,6 +9,9 @@ export const HeadStyle = styled.div`
     }
     .mobile-view {
       display: block;
+      .user-profile {
+        color: red !important;
+      }
     }
   }
 `;
@@ -40,25 +43,37 @@ export const HeaderStyled = styled.div`
   .hand {
     width: 30px;
   }
-  @media (max-width: 600px) {
-    .flex {
-      transform: translateY(5px);
-      p {
-        transform: translateY(10px);
-      }
-    }
-  }
   .hide {
+    position: absolute;
+    opacity: 0;
     display: none;
     transition: ease all 0.5s;
-  }
-  .user-profile {
     position: absolute;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    transition: ease all 0.5s;
+    ul {
+      padding: 10px;
+      border-radius: 5px;
+      background: var(--button-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+  }
+  .user-profile {
+    position: absolute;
+    display: flex;
+    opacity: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    visibility: visible;
     transition: ease all 0.5s;
     ul {
       padding: 10px;
@@ -79,6 +94,23 @@ export const HeaderStyled = styled.div`
   li {
     list-style: none;
     text-align: center;
+  }
+  @media (max-width: 700px) {
+    .user-profile {
+      transform: translateY(60px);
+      z-index: 2;
+    }
+    .hide {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    .flex {
+      transform: translateY(5px);
+      p {
+        transform: translateY(10px);
+      }
+    }
   }
 `;
 

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
-import { ShoppingCart, Person, ArrowDropDown, SearchSharp } from '@material-ui/icons';
+import {
+  ShoppingCart,
+  Person,
+  ArrowDropDown,
+  SearchSharp,
+} from '@material-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
 const Header = () => {
@@ -52,7 +57,11 @@ const Header = () => {
                     <ArrowDropDown />
                   </div>{' '}
                   <div className=''>
-                    <p>Sign In</p> <Person />
+                    <Link href='/user/sign-in'>
+                      <a>
+                        <p>Sign In</p> <Person />
+                      </a>
+                    </Link>
                   </div>
                 </>
               )}
@@ -74,7 +83,7 @@ const Header = () => {
               </div>
             </div>
           </p>
-          <p className='flex'>
+          <p className='cart'>
             <p>
               Cart
               <ShoppingCart />{' '}
@@ -88,24 +97,41 @@ const Header = () => {
           <div className='search-icon'>
             <SearchSharp />
           </div>
-          <Link href='/user/sign-in'>
-            <a>
-              <p className='flex'>
-                {user ? (
-                  <p>
-                    {' '}
-                    <ArrowDropDown />
-                    {`Hello ${user}`}{' '}
-                    <img src='/hand.png' alt='Hand' className='hand' />
-                  </p>
-                ) : (
-                  <>
-                    <ArrowDropDown /> Sign In <Person />
-                  </>
-                )}
-              </p>
-            </a>
-          </Link>
+          <a>
+            <p className='flex'>
+              {user ? (
+                <p>
+                  {' '}
+                  <ArrowDropDown  onClick={userMenuOpen} />
+                  {`Hello ${user}`}{' '}
+                  <img src='/hand.png' alt='Hand' className='hand' />
+                </p>
+              ) : (
+                <div>
+                  <Link href='/user/sign-in'>
+                    <a>
+                      Sign In <Person />
+                    </a>
+                  </Link>
+                </div>
+              )}
+            </p>
+          </a>
+          <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
+            <ul>
+              <li>
+                <Link href='/profile'>
+                  <a>My Profile</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/profile'>
+                  <a>My Orders</a>
+                </Link>
+              </li>
+              <li>Logout</li>
+            </ul>
+          </div>
           <Link href='/user/cart'>
             <a>
               <p className='flex'>
