@@ -65,7 +65,7 @@ const Header = () => {
                   </div>
                 </>
               )}
-              <div className='hide'>
+              <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
                 <ul >
                   <li>
                     <Link href='/profile'>
@@ -83,8 +83,8 @@ const Header = () => {
               </div>
             </div>
           </p>
-          <p className='cart'>
-            <p>
+          <p>
+            <p className='cart'>
               Cart
               <ShoppingCart />{' '}
             </p>

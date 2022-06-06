@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HomePage = styled.div`
-  margin: 2rem 7rem;
+  margin: 2rem 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +11,18 @@ export const HomePage = styled.div`
   img {
     width: 100px;
   }
+  .desktop-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 600px;
+    border-radius: 10px;
+    background: #f4f4f4;
+  }
+  .mobile-card {
+    display: none;
+  }
   @media (max-width: 1400px) {
     .img {
       width: 400px;
@@ -19,8 +31,27 @@ export const HomePage = styled.div`
   }
   ///Responsive Design////////////////////////////
   @media (max-width: 900px) {
-    .category {
+    flex-direction: column;
+    .desktop-card {
       display: none;
+    }
+    .mobile-card {
+      margin-top: 10px;
+      display: block;
+      // display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+   //   width: 450px;
+      border-radius: 10px;
+      background: #f4f4f4;
+      padding: 20px;
+      .card {
+        display: flex;
+        width: 400px;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
     .img {
       width: 500px;
@@ -28,9 +59,6 @@ export const HomePage = styled.div`
     margin: 1rem 3rem;
   }
   @media (max-width: 600px) {
-    .category {
-      display: none;
-    }
     .img {
       width: 300px;
     }
@@ -43,10 +71,16 @@ export const CardStyled = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  width: 500px;
+  width: 400px;
   border-radius: 10px;
-  background: #f4f4f4;
   padding: 10px;
+  @media (max-width: 900px) {
+    margin-top: 10px;
+    width: 600px;
+    .card {
+      width: 200px;
+    }
+  }
   .card {
     width: 350px;
     display: flex;
@@ -93,8 +127,8 @@ export const FeaturedProductStyled = styled.div`
     background: var(--button-color) !important;
     color: #fff !important;
   }
-  img{
-    width:200px;
+  img {
+    width: 200px;
   }
   @media (max-width: 1100px) {
     margin: 1rem 1rem;

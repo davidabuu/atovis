@@ -9,12 +9,12 @@ const UserLandingPage = () => {
   return (
     <Layout>
       <HomePage>
-        <Swipers  />
-        <div className='category'>
+        <Swipers />
+        <div>
           <CategoryCard />
         </div>
       </HomePage>
-       <FeaturedProduct /> 
+      <FeaturedProduct />
       {/* <AllProducts json={undefined}/> */}
     </Layout>
   );

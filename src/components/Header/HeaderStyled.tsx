@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 export const HeadStyle = styled.div`
-  @media (max-width: 700px) {
+  .mobile-view {
+    display: none;
+  }
+  .cart{
+    transform:translateY(10px);
+  } @media (max-width: 700px) {
     .desktop {
       display: none;
     }
@@ -8,7 +13,7 @@ export const HeadStyle = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-around;
-      width:100%;
+      width: 100%;
     }
   }
 `;
@@ -47,13 +52,6 @@ export const HeaderStyled = styled.div`
     position: absolute;
     opacity: 0;
     display: none;
-    transition: ease all 0.5s;
-    position: absolute;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
     transition: ease all 0.5s;
     ul {
       padding: 10px;
