@@ -65,8 +65,8 @@ const Header = () => {
                   </div>
                 </>
               )}
-              <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
-                <ul>
+              <div className='hide'>
+                <ul >
                   <li>
                     <Link href='/profile'>
                       <a>My Profile</a>
@@ -91,8 +91,8 @@ const Header = () => {
           </p>
         </HeaderStyled>
       </div>
-      <div className='mobile-view'>
         <HeaderStyled>
+        <div className='mobile-view'>
           <Image src='/logo.png' width={2080} height={853} alt='Home' />
           <div className='search-icon'>
             <SearchSharp />
@@ -118,7 +118,7 @@ const Header = () => {
             </p>
           </a>
           <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
-            <ul>
+            <ul className='ul'>
               <li>
                 <Link href='/profile'>
                   <a>My Profile</a>
@@ -139,8 +139,8 @@ const Header = () => {
               </p>
             </a>
           </Link>
+          </div>
         </HeaderStyled>
-      </div>
     </HeadStyle>
   );
 };

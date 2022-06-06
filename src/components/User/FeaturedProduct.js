@@ -34,7 +34,6 @@ const FeaturedProduct = () => {
       {loading ? (
         <div className='flexx'>
           <Spin />
-          <br></br>
           <p>Fetching Products</p>
         </div>
       ) : (

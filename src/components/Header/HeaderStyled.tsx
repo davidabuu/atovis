@@ -1,17 +1,14 @@
 import styled from 'styled-components';
 export const HeadStyle = styled.div`
-  .mobile-view {
-    display: none;
-  }
   @media (max-width: 700px) {
     .desktop {
       display: none;
     }
     .mobile-view {
-      display: block;
-      .user-profile {
-        color: red !important;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width:100%;
     }
   }
 `;
@@ -22,6 +19,9 @@ export const HeaderStyled = styled.div`
   padding: 10px;
   img {
     width: 80px;
+  }
+  .ul {
+    display: none;
   }
   background: var(--primary-color);
   color: #fff;
@@ -100,8 +100,9 @@ export const HeaderStyled = styled.div`
       transform: translateY(60px);
       z-index: 2;
     }
+
     .hide {
-      display: none;
+      display: none !important;
     }
   }
   @media (max-width: 600px) {

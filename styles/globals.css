@@ -117,6 +117,9 @@ input {
 .cart{
   transform: translateY(10px) !important;
 }
+.mobile-hide ul{
+  display: none !important;
+}
 @media (max-width: 1100px) {
   .swip {
     width: 400px !important;

@@ -9,7 +9,7 @@ const UserLandingPage = () => {
   return (
     <Layout>
       <HomePage>
-        <Swipers />
+        <Swipers  />
         <div className='category'>
           <CategoryCard />
         </div>
