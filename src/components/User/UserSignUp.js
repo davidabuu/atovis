@@ -53,7 +53,6 @@ const UserSignUp = () => {
     } else {
       setLoading(true);
       dispatch(register(record));
-      ifif
     }
   };
   return (

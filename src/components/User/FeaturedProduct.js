@@ -30,7 +30,7 @@ const FeaturedProduct = () => {
   }, []);
   console.log(product);
   return (
-    <FeaturedProductStyled data-aos='zoom-in'>
+    <FeaturedProductStyled data-aos='zoom-in' data-aos-once='true'>
       {loading ? (
         <div className='flexx'>
           <Spin />

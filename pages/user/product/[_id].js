@@ -32,29 +32,32 @@ const ProductDetails = () => {
   const router = useRouter();
   let id = router.query._id;
   const dispatch = useDispatch();
-  const { productDetails, isError, isLoading, message } = useSelector(
-    (state) => state.singleProduct
+  const viewCode = useSelector(
+    (state) => (state.singleProduct)
   );
+  //console.log(productDetails);
   const [loading, setLoading] = useState(false);
+  const {productDetails} = viewCode
   useEffect(() => {
-    if (isLoading) {
-      setLoading(true);
-    }else {
-    dispatch(singleProductInfo(id))
-    };
-  }, [isLoading, dispatch, id]);
-  const { name, description, price, quantity, imageUrl } = productDetails;
+    // if (isLoading == false) {
+    //   setLoading(true);
+    // } else {
+      dispatch(singleProductInfo(id));
+      setLoading(false);
+    // }
+  }, [setLoading, dispatch]);
+   const { name, description, price, quantity, imageUrl } = productDetails.data;
   return (
     <>
       <div>
         {loading ? (
-          <div className='flexx' style={{minHeight:'80vh'}}>
+          <div className='flexx' style={{ minHeight: '80vh' }}>
             <Spin />
             <p>Fetching Data</p>
           </div>
         ) : (
           <div>
-            <h1 className='center text-color h'>PRODUCT OVERVIEW</h1>
+             <h1 className='center text-color h'>PRODUCT OVERVIEW</h1>
             <ProductDetailsStyled>
               <img src={imageUrl} alt='Alt' />
               <div className='product-info'>
@@ -69,10 +72,8 @@ const ProductDetails = () => {
                   <div className='qty'>-</div>
                 </div>
                 <br></br>
-                <Button className='btn'>Proceed To Checkout</Button>
-                <Button className='btn'>CHECKOUT</Button>
               </div>
-            </ProductDetailsStyled>
+            </ProductDetailsStyled> 
           </div>
         )}
       </div>

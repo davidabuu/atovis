@@ -5,29 +5,26 @@ export const HomePage = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .img {
-    width: 500px;
-  }
-  img {
-    width: 100px;
-  }
+  // .img {
+  //   width: 500px;
+  // }
+  // img {
+  //   width: 100px;
+  // }
   .desktop-card {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    width: 600px;
+    width: 400px;
     border-radius: 10px;
     background: #f4f4f4;
+    img{
+      width:100px;
+    }
   }
   .mobile-card {
     display: none;
-  }
-  @media (max-width: 1400px) {
-    .img {
-      width: 400px;
-    }
-    margin: 1rem 3rem;
   }
   ///Responsive Design////////////////////////////
   @media (max-width: 900px) {
@@ -53,7 +50,7 @@ export const HomePage = styled.div`
         justify-content: space-between;
       }
     }
-    .img {
+    img {
       width: 500px;
     }
     margin: 1rem 3rem;
@@ -149,14 +146,13 @@ export const ProductDetailsStyled = styled.div`
   align-items: center;
   justify-content: space-around;
   img {
-    width: 500px;
+    width: 400px;
     margin-top: 10px;
     object-fit: contain;
   }
-  .product-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  p{
+    text-align:justify;
+    font-size:10px;
   }
   .quantity {
     display: flex;
