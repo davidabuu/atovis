@@ -19,8 +19,8 @@ export const HomePage = styled.div`
     width: 400px;
     border-radius: 10px;
     background: #f4f4f4;
-    img{
-      width:100px;
+    img {
+      width: 100px;
     }
   }
   .mobile-card {
@@ -39,7 +39,7 @@ export const HomePage = styled.div`
       align-items: center;
       justify-content: space-around;
       flex-direction: column;
-   //   width: 450px;
+      //   width: 450px;
       border-radius: 10px;
       background: #f4f4f4;
       padding: 20px;
@@ -139,32 +139,52 @@ export const FeaturedProductStyled = styled.div`
       width: 150px;
     }
   }
+  @media (max-width: 400px) {
+    margin: 1rem 0.5rem;
+    img {
+      width: 140px;
+    }
+    .but-ton {
+      width: 140px;
+    }
+  }
 `;
 
 export const ProductDetailsStyled = styled.div`
   display: flex;
   align-items: center;
+  min-height: 60vh;
   justify-content: space-around;
   img {
     width: 400px;
     margin-top: 10px;
     object-fit: contain;
   }
-  p{
-    text-align:justify;
-    font-size:10px;
+  p {
+    text-align: justify;
+    font-size: 15px !important;
+    width: 350px;
+  }
+  .qty {
+    cursor:pointer;
+    font-size: 25px;
+    background: var(--primary-color);
+    color: #fff;
+    width:40px;
+    text-align:center;
+    border-radius:5px;
   }
   .quantity {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 300px;
+    font-size:15px;
   }
   h1,
   p {
     margin-top: 10px;
     font-size: 25px;
-    font-weight: bold;
   }
   @media (max-width: 770px) {
     flex-direction: column;
@@ -177,7 +197,6 @@ export const ProductDetailsStyled = styled.div`
     p {
       margin-top: 10px;
       font-size: 20px;
-      font-weight: bold;
     }
     .btn {
       margin-bottom: 10px;

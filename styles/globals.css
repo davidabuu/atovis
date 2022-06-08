@@ -82,6 +82,17 @@ input {
   width: 300px;
   color: #fff !important;
 }
+.cart-btn{
+  cursor: pointer;
+  text-align: center;
+  background: var(--primary-color) !important;
+  border-radius: 10px !important;
+  padding: 15px;
+  height: 40px !important;
+  margin: 10px 0;
+  width: 300px;
+  color: #fff !important;
+}
 /* img {
   object-fit: cover !important;
 } */
@@ -100,7 +111,6 @@ input {
 .h {
   width: 100%;
   background-color: #1b5958;
-  margin-top: 5px;
   padding: 10px;
   color: #fff;
   font-size: 25px;
@@ -125,9 +135,33 @@ input {
     width: 400px !important;
   }
 }
+@media(max-width:900px){
+  .cat-img{
+    width:100px !important;
+  }
+  .cart-btn{
+    text-align: center;
+    background: var(--primary-color) !important;
+    border-radius: 10px !important;
+    padding: 15px;
+    height: 40px !important;
+    margin: 10px 0;
+    width: 200px;
+    color: #fff !important;
+  }
+}
 @media (max-width: 500px) {
   .sign {
     margin-top: 15px;
+  }
+  .mobile-card{
+    width:350px;
+  }
+  .mobile-card .card{
+    width: 300px !important;
+  }
+  .mobile-card > a {
+    text-align: center;
   }
   .swip {
     width: 300px !important;

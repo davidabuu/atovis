@@ -1,13 +1,13 @@
 import { Button, Row, Col, Spin } from 'antd';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { RawProuducts } from './RawProduct';
 import BeautyStars from 'beauty-stars';
 import { FeaturedProductStyled } from './UserStyled';
 import axios from 'axios';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import Link from 'next/link';
+import { storeInLocalStorage } from '../utils/usableFunction';
 const FeaturedProduct = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -28,6 +28,9 @@ const FeaturedProduct = () => {
     };
     fetchAllProducts();
   }, []);
+  const onClick = (_id) => {
+  storeInLocalStorage('id', _id);
+  }
   console.log(product);
   return (
     <FeaturedProductStyled data-aos='zoom-in' data-aos-once='true'>
@@ -47,7 +50,7 @@ const FeaturedProduct = () => {
               {product.map(({ _id, name, price, imageUrl }) => (
                 <Row gutter={12} key={_id}>
                   <Col xl={6} lg={6} sm={12} xs={6}>
-                    <Link href={`/user/product/${_id}`}>
+                    <Link href={`/user/product/${_id}`} onClick={onClick(_id)}>
                       <div className='ft product-card'>
                         <img src={imageUrl} className='img' alt='Home' />
                         <div>

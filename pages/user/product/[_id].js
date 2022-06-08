@@ -1,83 +1,62 @@
-import { useRouter } from 'next/router';
-// import axios from 'axios';
-// import React, {useEffect} from 'react';
-// const SingleProductInfo = () => {
-//   // const router = useRouter();
-//   // console.log(router.query._id);
-//   // const API_URL = process.env.APP_BASE_URL;
-//   // useEffect(() => {
-//   //   //Fetch All Products
-//   //   const fetchAllProducts = async () => {
-//   //     try {
-//   //       const res = await axios.get(`${API_URL}/public/products/${router.query._id}`);
-
-//   //       console.log(res.data.data);
-//   //     } catch (error) {
-//   //       console.log(error);
-//   //     }
-//   //   };
-//   //   fetchAllProducts();
-//   // }, []);
-//   return <div></div>;
-// };
-
-// export default SingleProductInfo;
 import React, { useEffect, useState } from 'react';
 import { Button, Layout, Spin } from 'antd';
-import { PlusOneOutlined } from '@material-ui/icons';
 import { ProductDetailsStyled } from '../../../src/components/User/UserStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { singleProductInfo } from '../../../src/redux/User/Product/ProductDetailSlice';
+import UserWebLayout from '../../../src/components/WebLayout/UserWebLayout';
 const ProductDetails = () => {
-  const router = useRouter();
-  let id = router.query._id;
   const dispatch = useDispatch();
-  const viewCode = useSelector(
-    (state) => (state.singleProduct)
-  );
-  //console.log(productDetails);
+  const productRedux = useSelector((state) => state.singleProduct);
   const [loading, setLoading] = useState(false);
-  const {productDetails} = viewCode
+  const { productDetails, isLoading } = productRedux;
   useEffect(() => {
-    // if (isLoading == false) {
-    //   setLoading(true);
-    // } else {
-      dispatch(singleProductInfo(id));
-      setLoading(false);
-    // }
+    //The id is to get a particular product based on the id
+    const id = JSON.parse(localStorage.getItem('id'));
+    console.log(id);
+    dispatch(singleProductInfo(id));
+    setLoading(false);
   }, [setLoading, dispatch]);
-   const { name, description, price, quantity, imageUrl } = productDetails.data;
   return (
-    <>
+    <UserWebLayout webtitle='Product Detail'>
       <div>
-        {loading ? (
+        {isLoading ? (
           <div className='flexx' style={{ minHeight: '80vh' }}>
             <Spin />
             <p>Fetching Data</p>
           </div>
         ) : (
           <div>
-             <h1 className='center text-color h'>PRODUCT OVERVIEW</h1>
+            <h1 className='center text-color h'>PRODUCT OVERVIEW</h1>
             <ProductDetailsStyled>
-              <img src={imageUrl} alt='Alt' />
+              <img src={productDetails.data.imageUrl} alt='Alt' />
               <div className='product-info'>
-                <p>{`${name}${description}`}</p>
-                <h1>${price}</h1>
+                <p>
+                  <b>Product Name: </b>
+                  {`${productDetails.data.name}`}
+                </p>
+                <p>
+                  <b>Description: </b>
+                  {`${productDetails.data.description}`}
+                </p>
+                <p>
+                  <b>Quantity Left: </b>
+                  {` ${productDetails.data.quantityLeft}`}
+                </p>
+                <h2>Price: &#8358;{productDetails.data.price}</h2>
+
                 <br></br>
                 <div className='quantity'>
-                  <div className='qty'>
-                    <PlusOneOutlined />
-                  </div>
-                  {quantity}
+                  <div className='qty'>+</div>
+                  <div>{productDetails.data.quantity}</div>
                   <div className='qty'>-</div>
                 </div>
-                <br></br>
+                <Button className='cart-btn'>Add To Cart</Button>
               </div>
-            </ProductDetailsStyled> 
+            </ProductDetailsStyled>
           </div>
         )}
       </div>
-    </>
+    </UserWebLayout>
   );
 };
 

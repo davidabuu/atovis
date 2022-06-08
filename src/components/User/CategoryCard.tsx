@@ -30,13 +30,15 @@ const CategoryCard = () => {
          {/* <div> <CatCard cat={'Mobile'} /></div> */}
           <CatCard cat={'Furnitures'} />
           <CatCard cat={'Laptops'} />
-          <CatCard cat={'For Women'} />
         </div>
         <div className='card'>
           {/* <CatCard cat={'Electronics'} /> */}
           <CatCard cat={'For men'} />
           <CatCard cat={'Accesscories'} />
-          <CatCard cat={'Jewlery'} />
+        </div>
+        <div className='card'>
+          {/* <CatCard cat={'Electronics'} /> */}
+          <a>See More</a>
         </div>
       </div>
     </CardStyled>

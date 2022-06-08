@@ -5,7 +5,7 @@ const initialState = {
   productDetails: {},
   isError: false,
   isSuccess: false,
-  isLoading: false,
+  isLoading: true,
   message:''
 };
 // Get Single Product
