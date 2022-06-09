@@ -8,7 +8,7 @@ export const SignStyled = styled.div`
   form {
     width: 400px;
   }
-  .card {
+  .card-div {
    // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
     border-radius: 15px;
     input{

@@ -64,7 +64,7 @@ const UserSignUp = () => {
       </LogoHolder>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
-          <Card className='card'>
+          <Card className='card-div'>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
               <Row gutter={24}>
                 <Col xs={24} xl={24} lg={24}>
