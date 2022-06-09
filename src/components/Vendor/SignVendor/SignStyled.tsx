@@ -8,6 +8,14 @@ export const SignStyled = styled.div`
   form {
     width: 400px;
   }
+  .card {
+   // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    input{
+      border-radius: 15px;
+      background:#f8f8f8;
+    }
+  }
   .terms {
     margin-left: 5px;
     color: #000;
@@ -208,5 +216,5 @@ export const VendorStyle = styled.div`
       }
     }
   }
-  margin:3rem;
+  margin: 3rem;
 `;

@@ -25,7 +25,7 @@ a {
   margin-left: 2px;
 }
 .search-icon {
-  cursor:pointer;
+  cursor: pointer;
   transform: translateY(5px);
 }
 .center {
@@ -63,8 +63,8 @@ input {
   color: #fff !important;
   background: var(--primary-color) !important;
 }
-.swip{
-  width: 500px !important;
+.swip {
+  width: 800px !important;
   position: unset !important;
 }
 .total {
@@ -82,7 +82,7 @@ input {
   width: 300px;
   color: #fff !important;
 }
-.cart-btn{
+.cart-btn {
   cursor: pointer;
   text-align: center;
   background: var(--primary-color) !important;
@@ -102,7 +102,7 @@ input {
 .button:hover {
   color: #fff !important;
 }
-.flexx{
+.flexx {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,7 +115,7 @@ input {
   color: #fff;
   font-size: 25px;
 }
-.product-card{
+.product-card {
   background-color: #fff;
   border-radius: 5px;
   font-weight: bold;
@@ -124,29 +124,37 @@ input {
   padding: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
 }
-.cart{
+.cart {
   transform: translateY(10px) !important;
 }
-.mobile-hide ul{
+.mobile-hide ul {
   display: none !important;
+}
+.ant-select-selector {
+  border-radius: 15px !important;
+  background:#f8f8f8 !important;
+}
+.ant-input-affix-wrapper {
+  border-radius: 15px !important;
+  background:#f8f8f8 !important;
 }
 @media (max-width: 1100px) {
   .swip {
     width: 400px !important;
   }
 }
-@media(max-width:900px){
-  .cat-img{
-    width:100px !important;
+@media (max-width: 900px) {
+  .cat-img {
+    width: 100px !important;
   }
-  .cart-btn{
+  .cart-btn {
     text-align: center;
     background: var(--primary-color) !important;
     border-radius: 10px !important;
     padding: 15px;
     height: 40px !important;
     margin: 10px 0;
-    width: 200px;
+    width: 150px;
     color: #fff !important;
   }
 }
@@ -154,17 +162,21 @@ input {
   .sign {
     margin-top: 15px;
   }
-  .mobile-card{
-    width:350px;
+  .mobile-card {
+    width: 350px;
   }
-  .mobile-card .card{
-    width: 300px !important;
+  .mobile-card .card {
+    width: 400px !important;
+  }
+  .cat-img {
+    width: 100px;
   }
   .mobile-card > a {
     text-align: center;
   }
   .swip {
-    width: 300px !important;
+    width: 390px !important;
+    border-radius: 10px !important;
   }
   .select {
     width: 300px !important;
@@ -173,9 +185,33 @@ input {
     font-size: 20px;
   }
 }
+.searchs,
+.logo {
+  display: none;
+}
+@media (max-width: 700px) {
+  .searchs,
+  .logo {
+    display: block;
+    margin: 5px 0px;
+  }
+  .searchs,
+  .logo {
+    text-align: center;
+  }
+}
 @media (max-width: 400px) {
   .swip {
     width: 250px !important;
+  }
+  .mobile-card {
+    width: 300px !important;
+  }
+  .card {
+    width: 100px !important;
+  }
+  .cat-img {
+    width: 50px !important;
   }
 }
 .flex {
@@ -210,7 +246,7 @@ input {
 
 .swiper-slide img {
   display: block;
-  width: 100%;
+  width: 600px;
   height: 100%;
   object-fit: cover;
 }

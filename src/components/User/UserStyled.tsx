@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HomePage = styled.div`
-  margin: 2rem 4rem;
+  margin: 2rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,12 +40,13 @@ export const HomePage = styled.div`
       justify-content: space-around;
       flex-direction: column;
       //   width: 450px;
-      border-radius: 10px;
+      border-radius: 5px;
+      width:450px;
       background: #f4f4f4;
       padding: 20px;
       .card {
         display: flex;
-        width: 400px;
+        width: 450px;
         align-items: center;
         justify-content: space-between;
       }
@@ -74,9 +75,6 @@ export const CardStyled = styled.div`
   @media (max-width: 900px) {
     margin-top: 10px;
     width: 600px;
-    .card {
-      width: 200px;
-    }
   }
   .card {
     width: 350px;
@@ -99,6 +97,8 @@ export const CardStyled = styled.div`
     }
     padding: 5px;
   }
+  @media(max-width:650px){}
+  
 `;
 
 export const FeaturedProductStyled = styled.div`
@@ -168,7 +168,7 @@ export const ProductDetailsStyled = styled.div`
   .qty {
     cursor:pointer;
     font-size: 25px;
-    background: var(--primary-color);
+    background: var(--button-color);
     color: #fff;
     width:40px;
     text-align:center;
@@ -187,6 +187,7 @@ export const ProductDetailsStyled = styled.div`
     font-size: 25px;
   }
   @media (max-width: 770px) {
+    margin-left:10px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -197,6 +198,9 @@ export const ProductDetailsStyled = styled.div`
     p {
       margin-top: 10px;
       font-size: 20px;
+    }
+    p{
+      width:300px;
     }
     .btn {
       margin-bottom: 10px;

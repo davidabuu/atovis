@@ -24,23 +24,6 @@ const CategoryCard = () => {
           <CatCard cat={'Jewlery'} />
         </div>
       </div>
-      <div className='mobile-card'>
-        <h3 className='text-color'>Category Overview</h3>
-        <div className='card'>
-         {/* <div> <CatCard cat={'Mobile'} /></div> */}
-          <CatCard cat={'Furnitures'} />
-          <CatCard cat={'Laptops'} />
-        </div>
-        <div className='card'>
-          {/* <CatCard cat={'Electronics'} /> */}
-          <CatCard cat={'For men'} />
-          <CatCard cat={'Accesscories'} />
-        </div>
-        <div className='card'>
-          {/* <CatCard cat={'Electronics'} /> */}
-          <a>See More</a>
-        </div>
-      </div>
     </CardStyled>
   );
 };

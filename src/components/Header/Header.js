@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
-import {
-  ShoppingCart,
-  Person,
-  ArrowDropDown,
-  SearchSharp,
-} from '@material-ui/icons';
+import { ShoppingCart, Person, ArrowDropDown } from '@material-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
+import { LogoHolder } from '../Vendor/SignVendor/SignStyled';
 const Header = () => {
   const { Search } = Input;
   const [user, setUserName] = useState('');
@@ -31,6 +27,7 @@ const Header = () => {
           <div className='search'>
             <Search
               placeholder='Search for a product'
+              enterButton='Search'
               type={'text'}
               style={{ width: '350px' }}
             />
@@ -66,19 +63,33 @@ const Header = () => {
                 </>
               )}
               <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
-                <ul >
+                <ul>
                   <li>
                     <Link href='/profile'>
-                      <a>My Profile</a>
+                      <a>Category</a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/profile'>
-                      <a>My Orders</a>
+                      <a>Favourites</a>
                     </Link>
                   </li>
                   {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-                  <li>Logout</li>
+                  <li>
+                    <Link href='/profile'>
+                      <a>Notifications</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/profile'>
+                      <a>Accounts</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/profile'>
+                      <a>Logout</a>
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -91,56 +102,80 @@ const Header = () => {
           </p>
         </HeaderStyled>
       </div>
+      <div className=''>
+          <div className='logo'>
+            <img src='/logo2.png' alt='Log' />
+          </div>
+        <div className='searchs'>
+          <Search
+            placeholder='Search for a product'
+            enterButton='Search'
+            type={'text'}
+            style={{ width: '300px' }}
+          />
+        </div>
         <HeaderStyled>
-        <div className='mobile-view'>
-          <Image src='/logo.png' width={2080} height={853} alt='Home' />
-          <div className='search-icon'>
-            <SearchSharp />
-          </div>
-          <a>
-            <p className='flex'>
-              {user ? (
-                <p>
-                  {' '}
-                  <ArrowDropDown  onClick={userMenuOpen} />
-                  {`Hello ${user}`}{' '}
-                  <img src='/hand.png' alt='Hand' className='hand' />
-                </p>
-              ) : (
-                <div>
-                  <Link href='/user/sign-in'>
-                    <a>
-                      Sign In <Person />
-                    </a>
-                  </Link>
-                </div>
-              )}
-            </p>
-          </a>
-          <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
-            <ul className='ul'>
-              <li>
-                <Link href='/profile'>
-                  <a>My Profile</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/profile'>
-                  <a>My Orders</a>
-                </Link>
-              </li>
-              <li>Logout</li>
-            </ul>
-          </div>
-          <Link href='/user/cart'>
+          <div className='mobile-view'>
             <a>
               <p className='flex'>
-                Cart <ShoppingCart />
+                {user ? (
+                  <p>
+                    {' '}
+                    <ArrowDropDown onClick={userMenuOpen} />
+                    {`Hello ${user}`}{' '}
+                    <img src='/hand.png' alt='Hand' className='hand' />
+                  </p>
+                ) : (
+                  <div>
+                    <Link href='/user/sign-in'>
+                      <a>
+                        Sign In <Person />
+                      </a>
+                    </Link>
+                  </div>
+                )}
               </p>
             </a>
-          </Link>
+            <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
+              <ul className='ul'>
+                <li>
+                  <Link href='/profile'>
+                    <a>Category</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/profile'>
+                    <a>Favourites</a>
+                  </Link>
+                </li>
+                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+                <li>
+                  <Link href='/profile'>
+                    <a>Notifications</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/profile'>
+                    <a>Accounts</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/profile'>
+                    <a>Logout</a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <Link href='/user/cart'>
+              <a>
+                <p className='flex'>
+                  Cart <ShoppingCart />
+                </p>
+              </a>
+            </Link>
           </div>
         </HeaderStyled>
+      </div>
     </HeadStyle>
   );
 };

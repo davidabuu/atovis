@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Layout, Spin } from 'antd';
+import { Button,  Spin } from 'antd';
 import { ProductDetailsStyled } from '../../../src/components/User/UserStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { singleProductInfo } from '../../../src/redux/User/Product/ProductDetailSlice';
 import UserWebLayout from '../../../src/components/WebLayout/UserWebLayout';
+import Layout from '../../../src/components/Layout/Layout';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const productRedux = useSelector((state) => state.singleProduct);
@@ -18,7 +19,7 @@ const ProductDetails = () => {
   }, [setLoading, dispatch]);
   return (
     <UserWebLayout webtitle='Product Detail'>
-      <div>
+      <Layout>
         {isLoading ? (
           <div className='flexx' style={{ minHeight: '80vh' }}>
             <Spin />
@@ -50,12 +51,15 @@ const ProductDetails = () => {
                   <div>{productDetails.data.quantity}</div>
                   <div className='qty'>-</div>
                 </div>
-                <Button className='cart-btn'>Add To Cart</Button>
+                <div className='center'>
+                  {' '}
+                  <Button className='cart-btn'>Add To Cart</Button>
+                </div>
               </div>
             </ProductDetailsStyled>
           </div>
         )}
-      </div>
+      </Layout>
     </UserWebLayout>
   );
 };

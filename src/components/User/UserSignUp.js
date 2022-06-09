@@ -1,5 +1,5 @@
 import { Card, Col, Input, Button, Select, Row, notification } from 'antd';
-import  Link from 'next/link'
+import Link from 'next/link';
 import React from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
@@ -27,12 +27,12 @@ const UserSignUp = () => {
   const [loading, setLoading] = useState(false);
   const { Option } = Select;
   const dispatch = useDispatch();
-  const { user,  isError, isSuccess, message } = useSelector(
+  const { user, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
   useEffect(() => {
     if (isError) {
-      setLoading(false)
+      setLoading(false);
       notification.error({
         message: ' Error',
         description: message,
@@ -64,7 +64,7 @@ const UserSignUp = () => {
       </LogoHolder>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
-          <Card>
+          <Card className='card'>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
               <Row gutter={24}>
                 <Col xs={24} xl={24} lg={24}>
@@ -207,7 +207,10 @@ const UserSignUp = () => {
             <Row>
               <Col xs={24} xl={24} lg={24}>
                 <p className='dont'>
-                  Already have an account <Link href='/user/sign-in'><a>Sign In</a></Link>
+                  Already have an account{' '}
+                  <Link href='/user/sign-in'>
+                    <a>Sign In</a>
+                  </Link>
                 </p>
               </Col>
             </Row>
