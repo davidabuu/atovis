@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
-import { ShoppingCart, Person, ArrowDropDown } from '@material-ui/icons';
+import { ShoppingCart, Person, ArrowDropDown, Menu } from '@material-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import { LogoHolder } from '../Vendor/SignVendor/SignStyled';
@@ -103,9 +103,9 @@ const Header = () => {
         </HeaderStyled>
       </div>
       <div className=''>
-          <div className='logo'>
-            <img src='/logo2.png' alt='Log' />
-          </div>
+        <div className='logo'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
         <div className='searchs'>
           <Search
             placeholder='Search for a product'
@@ -121,7 +121,10 @@ const Header = () => {
                 {user ? (
                   <p>
                     {' '}
-                    <ArrowDropDown onClick={userMenuOpen} />
+                    <div>
+                      {' '}
+                      <Menu onClick={userMenuOpen} />
+                    </div>
                     {`Hello ${user}`}{' '}
                     <img src='/hand.png' alt='Hand' className='hand' />
                   </p>

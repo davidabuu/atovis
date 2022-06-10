@@ -9,11 +9,12 @@ export const SignStyled = styled.div`
     width: 400px;
   }
   .card-div {
-   // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
+    margin: 0 5px;
+    // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
     border-radius: 15px;
-    input{
+    input {
       border-radius: 15px;
-      background:#f8f8f8;
+      background: #f8f8f8;
     }
   }
   .terms {

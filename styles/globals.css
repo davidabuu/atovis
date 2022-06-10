@@ -130,6 +130,12 @@ input {
 .mobile-hide ul {
   display: none !important;
 }
+.product-overview{
+  margin-top:5px;
+  color:#fff;
+  background-color: var(--primary-color);
+  padding:7px;
+}
 .ant-select-selector {
   border-radius: 15px !important;
   background:#f8f8f8 !important;

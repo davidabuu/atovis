@@ -153,7 +153,7 @@ export const FeaturedProductStyled = styled.div`
 export const ProductDetailsStyled = styled.div`
   display: flex;
   align-items: center;
-  min-height: 60vh;
+  min-height: 30vh;
   justify-content: space-around;
   img {
     width: 400px;

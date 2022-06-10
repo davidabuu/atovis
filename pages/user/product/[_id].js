@@ -1,22 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import { Button,  Spin } from 'antd';
+import { Button, Spin } from 'antd';
 import { ProductDetailsStyled } from '../../../src/components/User/UserStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { singleProductInfo } from '../../../src/redux/User/Product/ProductDetailSlice';
 import UserWebLayout from '../../../src/components/WebLayout/UserWebLayout';
 import Layout from '../../../src/components/Layout/Layout';
+import { addToUserCart } from '../../../src/redux/User/Cart/CartSlice';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const productRedux = useSelector((state) => state.singleProduct);
+  const cartRedux = useSelector((state) => state.cartSlice);
   const [loading, setLoading] = useState(false);
   const { productDetails, isLoading } = productRedux;
+  const { isError, message, isSuccess } = cartRedux;
+  let count = 1;
+  ``;
+  let id;
+  let quantity;
   useEffect(() => {
     //The id is to get a particular product based on the id
-    const id = JSON.parse(localStorage.getItem('id'));
+    id = JSON.parse(localStorage.getItem('id'));
     console.log(id);
     dispatch(singleProductInfo(id));
+    quantity = productDetails.data.quantityLeft;
     setLoading(false);
   }, [setLoading, dispatch]);
+  const onAdd = () => {
+    count++;
+    console.log(count);
+    if (count >= quantity) {
+      count = quantity;
+    }
+  };
+  const onMinus = () => {
+    count--;
+    if (count < 0) {
+      count = 0;
+    }
+  };
+  const AddToCart = (id) => {
+    setLoading(true);
+    dispatch(addToUserCart(id, count));
+  };
   return (
     <UserWebLayout webtitle='Product Detail'>
       <Layout>
@@ -27,7 +52,7 @@ const ProductDetails = () => {
           </div>
         ) : (
           <div>
-            <h1 className='center text-color h'>PRODUCT OVERVIEW</h1>
+            <h1 className='center text-color product-overview'>PRODUCT OVERVIEW</h1>
             <ProductDetailsStyled>
               <img src={productDetails.data.imageUrl} alt='Alt' />
               <div className='product-info'>
@@ -47,13 +72,22 @@ const ProductDetails = () => {
 
                 <br></br>
                 <div className='quantity'>
-                  <div className='qty'>+</div>
-                  <div>{productDetails.data.quantity}</div>
-                  <div className='qty'>-</div>
+                  <div className='qty' onClick={onAdd}>
+                    +
+                  </div>
+                  <div>{count}</div>
+                  <div className='qty' onClick={onMinus}>
+                    -
+                  </div>
                 </div>
                 <div className='center'>
                   {' '}
-                  <Button className='cart-btn'>Add To Cart</Button>
+                  <Button
+                    className='cart-btn'
+                    onClick={AddToCart}
+                    loading={loading}>
+                    {loading ? 'Adding' : 'Add To Cart'}
+                  </Button>
                 </div>
               </div>
             </ProductDetailsStyled>

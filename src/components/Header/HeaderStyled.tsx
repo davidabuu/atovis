@@ -52,6 +52,7 @@ export const HeaderStyled = styled.div`
     position: absolute;
     opacity: 0;
     display: none;
+    transform:translate(-20px, 50px);
     transition: ease all 0.5s;
     ul {
       padding: 10px;
@@ -73,6 +74,7 @@ export const HeaderStyled = styled.div`
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
     z-index: 3;
     opacity: 1;
+    transform:translate(-20px, 50px);
     text-align: center;
     align-items: center;
     justify-content: space-around;
