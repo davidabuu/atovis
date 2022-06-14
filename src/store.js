@@ -6,6 +6,7 @@ import verifyMail from './redux/User/verifySlice';
 import vendorSlice from './redux/Vendor/vendorInfoSlice';
 import vendorAuth from './redux/Vendor/vendorAuthSlice';
 import cartSlice from './redux/User/Cart/CartSlice';
+import categorySlice from './redux/Category/categorySlice'
 import singleProduct from './redux/User/Product/ProductDetailSlice';
 export const store = configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
     vendorAuth,
     singleProduct,
     cartSlice,
+    categorySlice
   },
 });

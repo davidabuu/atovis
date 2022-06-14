@@ -51,8 +51,8 @@ export const HeaderStyled = styled.div`
   .hide {
     position: absolute;
     opacity: 0;
-    display: none;
-    transform:translate(-20px, 50px);
+    visibility: hidden;
+    transform: translate(-20px, 10px);
     transition: ease all 0.5s;
     ul {
       padding: 10px;
@@ -74,7 +74,7 @@ export const HeaderStyled = styled.div`
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
     z-index: 3;
     opacity: 1;
-    transform:translate(-20px, 50px);
+    transform: translate(-20px, 0px);
     text-align: center;
     align-items: center;
     justify-content: space-around;
@@ -90,6 +90,9 @@ export const HeaderStyled = styled.div`
       justify-content: space-around;
       flex-direction: column;
     }
+    a:hover {
+      color: var(--button-color) !important;
+    }
     li {
       float: left;
       color: var(--primary-color);
@@ -100,12 +103,17 @@ export const HeaderStyled = styled.div`
     text-align: center;
   }
   @media (max-width: 700px) {
-    .searchs, .logo{
-      display:block;
-      margin:5px 0px;
+    .searchs,
+    .logo {
+      display: block;
+      margin: 5px 0px;
     }
-    .logo{
-      text-align:center;
+    .logo {
+      text-align: center;
+    }
+    h3 {
+      color: #fff;
+      transform: translateY(3px);
     }
     .user-profile {
       transform: translate(-100px, 100px);

@@ -4,7 +4,7 @@ import cartService from './cartService';
 const initialState = {
   cartItems: [],
   isError: false,
-  quantity:0,
+  quantity: 0,
   productId: null,
   isSuccess: false,
   isLoading: false,
@@ -28,7 +28,7 @@ export const fetchUserCart = createAsyncThunk(
 //This function is used to add to the user's cart item
 export const addToUserCart = createAsyncThunk(
   'cart/addToCart',
-  async (productId,quantity, thunkAPI) => {
+  async (productId, quantity, thunkAPI) => {
     try {
       return await cartService.addToCart((productId, quantity));
     } catch (error) {
@@ -74,26 +74,6 @@ export const cartSlice = createSlice({
         (state.isLoading = false),
           (state.isSuccess = true),
           (state.cartItems = action.payload);
-      })
-      .addCase(fetchUserCart.rejected, (state, action) => {
-        (state.isLoading = false),
-          (state.isError = true),
-          (state.cartItems = null);
-        state.message = action.payload;
-      })
-      .addCase(addToUserCart.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(addToUserCart.fulfilled, (state, action) => {
-        (state.isLoading = false),
-          (state.isSuccess = true),
-          (state.cartItems = action.payload);
-      })
-      .addCase(addToUserCart.rejected, (state, action) => {
-        (state.isLoading = false),
-          (state.isError = true),
-          (state.cartItems = null);
-        state.message = action.payload;
       })
       .addCase(deleteAnItem.pending, (state) => {
         state.isLoading = true;

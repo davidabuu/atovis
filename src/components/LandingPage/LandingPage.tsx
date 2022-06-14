@@ -18,7 +18,7 @@ const LandingPage = () => {
     <LandingStyled data-aos='fade-down'>
       <Image src='/logo.png' alt='Logo' width={200} objectFit='cover' height={77} />
       <br></br>
-      <Link href='/user/sign-up'>
+      <Link href='/user/landing-page'>
         <a onClick={onClick}>
           <Button type='primary' loading={loading} block>
             CONTINUE

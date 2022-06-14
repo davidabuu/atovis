@@ -4,8 +4,8 @@ import axios from 'axios';
 const API_URL = process.env.APP_BASE_URL;
 //Register User
 const getAllCategories = async () => {
-  const response = await get.post(`${API_URL}/public/category`);
-
+  const response = await axios.get(`${API_URL}/info/category`);
+  console.log(response)
   if (response.data) {
     return response.data;
   }

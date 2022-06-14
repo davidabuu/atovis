@@ -56,7 +56,9 @@ const Header = () => {
                   <div className=''>
                     <Link href='/user/sign-in'>
                       <a>
-                        <p>Sign In</p> <Person />
+                        <p>
+                          Sign In <Person />
+                        </p>
                       </a>
                     </Link>
                   </div>
@@ -103,29 +105,16 @@ const Header = () => {
         </HeaderStyled>
       </div>
       <div className=''>
-        <div className='logo'>
-          <img src='/logo2.png' alt='Log' />
-        </div>
-        <div className='searchs'>
-          <Search
-            placeholder='Search for a product'
-            enterButton='Search'
-            type={'text'}
-            style={{ width: '300px' }}
-          />
-        </div>
         <HeaderStyled>
           <div className='mobile-view'>
+            <div className=''>
+              <Image src='/logo.png' width={2080} height={853} alt='Home' />
+            </div>
             <a>
               <p className='flex'>
                 {user ? (
                   <p>
-                    {' '}
-                    <div>
-                      {' '}
-                      <Menu onClick={userMenuOpen} />
-                    </div>
-                    {`Hello ${user}`}{' '}
+                    <h3>{`Hello ${user}`}</h3>
                     <img src='/hand.png' alt='Hand' className='hand' />
                   </p>
                 ) : (
@@ -139,36 +128,6 @@ const Header = () => {
                 )}
               </p>
             </a>
-            <div className={`${menuOpen ? 'user-profile' : 'hide'}`}>
-              <ul className='ul'>
-                <li>
-                  <Link href='/profile'>
-                    <a>Category</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/profile'>
-                    <a>Favourites</a>
-                  </Link>
-                </li>
-                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-                <li>
-                  <Link href='/profile'>
-                    <a>Notifications</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/profile'>
-                    <a>Accounts</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/profile'>
-                    <a>Logout</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
             <Link href='/user/cart'>
               <a>
                 <p className='flex'>
@@ -178,6 +137,14 @@ const Header = () => {
             </Link>
           </div>
         </HeaderStyled>
+        <div className='searchs'>
+          <Search
+            placeholder='Search for a product'
+            enterButton='Search'
+            type={'text'}
+            style={{ width: '300px' }}
+          />
+        </div>
       </div>
     </HeadStyle>
   );

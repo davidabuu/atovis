@@ -9,11 +9,10 @@ import { addToUserCart } from '../../../src/redux/User/Cart/CartSlice';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const productRedux = useSelector((state) => state.singleProduct);
-  const cartRedux = useSelector((state) => state.cartSlice);
+  // const cartRedux = useSelector((state) => state.cartSlice);
   const [loading, setLoading] = useState(false);
   const { productDetails, isLoading } = productRedux;
-  const { isError, message, isSuccess } = cartRedux;
-  let count = 1;
+  const [count, setCount] = useState(1)
   ``;
   let id;
   let quantity;
@@ -22,18 +21,18 @@ const ProductDetails = () => {
     id = JSON.parse(localStorage.getItem('id'));
     console.log(id);
     dispatch(singleProductInfo(id));
-    quantity = productDetails.data.quantityLeft;
+    quantity = 12
     setLoading(false);
   }, [setLoading, dispatch]);
   const onAdd = () => {
-    count++;
+    setCount(count + 1);
     console.log(count);
     if (count >= quantity) {
       count = quantity;
     }
   };
   const onMinus = () => {
-    count--;
+    setCount(count - 1)
     if (count < 0) {
       count = 0;
     }

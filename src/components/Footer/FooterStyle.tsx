@@ -34,9 +34,18 @@ export const FooterStyle = styled.div`
   }
 `;
 
+export const MobileStyle = styled.div`
+  display: flex;
+  align-items: center;
+  background: #fff;
+  justify-content: space-around;
+  a:hover{
+    color:var(--primary-color) !important;
+  }
+`;
 export const FooterDivStyle = styled.div`
   background-color: var(--primary-color);
-  padding-left:2rem;
+  padding-left: 2rem;
   color: #fff;
   .img {
     width: 100px;
@@ -49,7 +58,7 @@ export const FooterDivStyle = styled.div`
     list-style: none;
   }
   .footer-info {
-      margin-top: 10px;
+    margin-top: 10px;
   }
   .socials {
     display: flex;

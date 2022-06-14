@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk
 } from '@reduxjs/toolkit';
-import vendorAuthService from './vendorAuthService';
+import categoryService from './categoryService';
 const initialState = {
  category: [],
  isError: false,
@@ -8,12 +8,12 @@ const initialState = {
  isLoading: false,
  message: '',
 };
-// Get
+// Get  
 export const getAllCategory = createAsyncThunk(
- 'auth/register',
- async (vendor, thunkAPI) => {
+ 'Category',
+ async (thunkAPI) => {
    try {
-     return await vendorAuthService.register(vendor);
+     return await categoryService.getAllCategories();
    } catch (error) {
      const message =
        (error.response &&
@@ -25,11 +25,11 @@ export const getAllCategory = createAsyncThunk(
  }
 );
 //Login User
-export const login = createAsyncThunk(
- 'auth/login',
- async (vendor, thunkAPI) => {
+export const getCategoryId = createAsyncThunk(
+ 'Single Category',
+ async (id, thunkAPI) => {
    try {
-     return await vendorAuthService.login(vendor);
+     return await categoryService.getCategoryById(id);
    } catch (error) {
      const message =
        (error.response &&
@@ -40,49 +40,49 @@ export const login = createAsyncThunk(
    }
  }
 );
-export const vendorAuthSlice = createSlice({
- name: 'Vendor Auth',
+export const categorySlice= createSlice({
+ name: 'Category Slice',
  initialState,
  reducers: {
-   reset: (state) => {
-     (state.vendor = ''),
-       (state.isLoading = false),
-       (state.isSuccess = false),
-       (state.isError = false);
-   },
+  //  reset: (state) => {
+  //    (state.vendor = ''),
+  //      (state.isLoading = false),
+  //      (state.isSuccess = false),
+  //      (state.isError = false);
+  //  },
  },
  extraReducers: (builder) => {
      builder
-     .addCase(register.pending, (state => {
+     .addCase(getAllCategory.pending, (state => {
          state.isLoading = true
      }))
-     .addCase(register.fulfilled, (state, action) => {
+     .addCase(getAllCategory.fulfilled, (state, action) => {
          state.isLoading = false,
          state.isSuccess = true,
-         state.vendor = action.payload
+         state.category = action.payload
      })
-     .addCase(register.rejected, (state, action) => {
+     .addCase(getAllCategory.rejected, (state, action) => {
          state.isLoading = false,
          state.isError = true,
-         state.vendor = null
+         state.category = null
          state.message = action.payload
      })
-     .addCase(login.pending, (state => {
+     .addCase(getCategoryId.pending, (state => {
        state.isLoading = true
    }))
-   .addCase(login.fulfilled, (state, action) => {
+   .addCase(getCategoryId.fulfilled, (state, action) => {
        state.isLoading = false,
        state.isSuccess = true,
-       state.vendor = action.payload
+       state.category = action.payload
    })
-   .addCase(login.rejected, (state, action) => {
+   .addCase(getCategoryId.rejected, (state, action) => {
        state.isLoading = false,
        state.isError = true,
-       state.vendor = null
+       state.category = null
        state.message = action.payload
    })
  }
 });
 
-export const { reset } = categorySlice.actions;
-export default vendorAuthSlice.reducer;
+//export const { reset } = categorySlice.actions;
+export default categorySlice.reducer;

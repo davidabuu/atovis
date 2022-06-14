@@ -11,6 +11,7 @@ import { storeInLocalStorage } from '../utils/usableFunction';
 const FeaturedProduct = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const API_URL = process.env.APP_BASE_URL;
   useEffect(() => {
     Aos.init({ duration: 300 });
@@ -22,15 +23,18 @@ const FeaturedProduct = () => {
         setProduct(res.data.data);
         console.log(res.data.data);
         setLoading(false);
+        setError(false);
       } catch (error) {
+        setError(true);
+        setLoading(false);
         console.log(error);
       }
     };
     fetchAllProducts();
   }, []);
   const onClick = (_id) => {
-  storeInLocalStorage('id', _id);
-  }
+    storeInLocalStorage('id', _id);
+  };
   console.log(product);
   return (
     <FeaturedProductStyled data-aos='zoom-in' data-aos-once='true'>
@@ -38,6 +42,11 @@ const FeaturedProduct = () => {
         <div className='flexx'>
           <Spin />
           <p>Fetching Products</p>
+        </div>
+      ) : error ? (
+        <div className='flexx'>
+          <h1>Error: Something went wrong</h1>
+          <Button onClick={() => window.location.reload()}>Refresh</Button>
         </div>
       ) : (
         <div>
