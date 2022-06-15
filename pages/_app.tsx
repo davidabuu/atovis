@@ -7,14 +7,16 @@ import type { AppProps } from 'next/app';
 import SEO from '../next-seo.config';
 import { Provider } from 'react-redux';
 import { store} from '../src/store';
-//import { PersistGate } from 'redux-persist/integration/react';
+import { PersistGate } from 'redux-persist/integration/react';
+import {persistStore} from 'redux-persist'
 function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
+  let persistor = persistStore(store)
   return (
     <Provider store={store}>
          <DefaultSeo {...SEO} />
         <Component {...pageProps} />
-      {/* <PersistGate loading={null} persistor={storePersist}>
-      </PersistGate> */}
+      <PersistGate loading={null} persistor={persistor}>
+      </PersistGate>
     </Provider>
   );
 }

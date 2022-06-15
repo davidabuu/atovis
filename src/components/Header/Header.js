@@ -101,7 +101,7 @@ const Header = () => {
           <p>
             <p className='cart'>
               Cart
-              <ShoppingCart />{' '}
+              <ShoppingCart /><p>{totalCount}</p>
             </p>
           </p>
         </HeaderStyled>
@@ -133,7 +133,7 @@ const Header = () => {
             <Link href='/user/cart'>
               <a>
                 <p className='flex'>
-                  Cart <ShoppingCart />
+                  Cart  <ShoppingCart /><p>{totalCount}</p>
                 </p>
               </a>
             </Link>
