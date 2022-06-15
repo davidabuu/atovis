@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { singleProductInfo } from '../../../src/redux/User/Product/ProductDetailSlice';
 import UserWebLayout from '../../../src/components/WebLayout/UserWebLayout';
 import Layout from '../../../src/components/Layout/Layout';
-import { addToUserCart } from '../../../src/redux/User/Cart/CartSlice';
+import { addToCart } from '../../../src/redux/User/Cart/CartSlice';
+// import { addToUserCart } from '../../../src/redux/User/Cart/CartSlice';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const productRedux = useSelector((state) => state.singleProduct);
   // const cartRedux = useSelector((state) => state.cartSlice);
   const [loading, setLoading] = useState(false);
   const { productDetails, isLoading } = productRedux;
-  const [count, setCount] = useState(1)
-  ``;
+  const [count, setCount] = useState(1);
+  const [product, setProduct] = useState('');
   let id;
   let quantity;
   useEffect(() => {
@@ -21,9 +22,14 @@ const ProductDetails = () => {
     id = JSON.parse(localStorage.getItem('id'));
     console.log(id);
     dispatch(singleProductInfo(id));
-    quantity = 12
     setLoading(false);
   }, [setLoading, dispatch]);
+  if (!isLoading) {
+    console.log(productRedux);
+    var AddToCart = () => {
+      dispatch(addToCart(productRedux.productDetails))
+    };
+  }
   const onAdd = () => {
     setCount(count + 1);
     console.log(count);
@@ -32,14 +38,10 @@ const ProductDetails = () => {
     }
   };
   const onMinus = () => {
-    setCount(count - 1)
+    setCount(count - 1);
     if (count < 0) {
       count = 0;
     }
-  };
-  const AddToCart = (id) => {
-    setLoading(true);
-    dispatch(addToUserCart(id, count));
   };
   return (
     <UserWebLayout webtitle='Product Detail'>
@@ -51,7 +53,9 @@ const ProductDetails = () => {
           </div>
         ) : (
           <div>
-            <h1 className='center text-color product-overview'>PRODUCT OVERVIEW</h1>
+            <h1 className='center text-color product-overview'>
+              PRODUCT OVERVIEW
+            </h1>
             <ProductDetailsStyled>
               <img src={productDetails.data.imageUrl} alt='Alt' />
               <div className='product-info'>
@@ -81,10 +85,7 @@ const ProductDetails = () => {
                 </div>
                 <div className='center'>
                   {' '}
-                  <Button
-                    className='cart-btn'
-                    onClick={AddToCart}
-                    loading={loading}>
+                  <Button onClick={AddToCart} className='cart-btn' loading={loading}>
                     {loading ? 'Adding' : 'Add To Cart'}
                   </Button>
                 </div>

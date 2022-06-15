@@ -5,10 +5,12 @@ import { ShoppingCart, Person, ArrowDropDown, Menu } from '@material-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import { LogoHolder } from '../Vendor/SignVendor/SignStyled';
+import { useSelector } from 'react-redux';
 const Header = () => {
   const { Search } = Input;
   const [user, setUserName] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const {totalCount} = useSelector((state) => state.cartSlice)
   const userMenuOpen = () => {
     setMenuOpen(!menuOpen);
   };
