@@ -5,13 +5,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { singleProductInfo } from '../../../src/redux/User/Product/ProductDetailSlice';
 import UserWebLayout from '../../../src/components/WebLayout/UserWebLayout';
 import Layout from '../../../src/components/Layout/Layout';
-import { addToCart } from '../../../src/redux/User/Cart/CartSlice';
+import {
+  addToCart,
+  decreaseItemFromCart,
+} from '../../../src/redux/User/Cart/CartSlice';
 // import { addToUserCart } from '../../../src/redux/User/Cart/CartSlice';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const productRedux = useSelector((state) => state.singleProduct);
   // const cartRedux = useSelector((state) => state.cartSlice);
   const [loading, setLoading] = useState(false);
+  const { cartItems, totalAmount } = useSelector((state) => state.cartSlice);
   const { productDetails, isLoading } = productRedux;
   const [count, setCount] = useState(1);
   const [product, setProduct] = useState('');
@@ -24,24 +28,14 @@ const ProductDetails = () => {
     dispatch(singleProductInfo(id));
     setLoading(false);
   }, [setLoading, dispatch]);
-  if (!isLoading) {
-    console.log(productRedux);
-    var AddToCart = () => {
-      dispatch(addToCart(productRedux.productDetails))
-    };
-  }
-  const onAdd = () => {
-    setCount(count + 1);
-    console.log(count);
-    if (count >= quantity) {
-      count = quantity;
-    }
+  const AddToCart = (cartItem) => {
+    dispatch(addToCart(cartItem));
   };
-  const onMinus = () => {
-    setCount(count - 1);
-    if (count < 0) {
-      count = 0;
-    }
+  const onAdd = (cartItem) => {
+    dispatch(addToCart(cartItem));
+  };
+  const onMinus = (cartItem) => {
+    dispatch(decreaseItemFromCart(cartItem));
   };
   return (
     <UserWebLayout webtitle='Product Detail'>
@@ -75,17 +69,20 @@ const ProductDetails = () => {
 
                 <br></br>
                 <div className='quantity'>
-                  <div className='qty' onClick={onAdd}>
+                  <div className='qty' onClick={onAdd(cartItems)}>
                     +
                   </div>
                   <div>{count}</div>
-                  <div className='qty' onClick={onMinus}>
+                  <div className='qty' onClick={onMinus(cartItems)}>
                     -
                   </div>
                 </div>
                 <div className='center'>
                   {' '}
-                  <Button onClick={AddToCart} className='cart-btn' loading={loading}>
+                  <Button
+                    onClick={AddToCart}
+                    className='cart-btn'
+                    loading={loading}>
                     {loading ? 'Adding' : 'Add To Cart'}
                   </Button>
                 </div>

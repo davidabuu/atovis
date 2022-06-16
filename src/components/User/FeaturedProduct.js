@@ -8,8 +8,10 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import Link from 'next/link';
 import { storeInLocalStorage } from '../utils/usableFunction';
+import { addToCart } from '../../redux/User/Cart/CartSlice';
 const FeaturedProduct = () => {
   const [product, setProduct] = useState([]);
+  const dispatch = useDispatch()
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const API_URL = process.env.APP_BASE_URL;
@@ -35,6 +37,9 @@ const FeaturedProduct = () => {
   const onClick = (_id) => {
     storeInLocalStorage('id', _id);
   };
+  const AddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
   console.log(product);
   return (
     <FeaturedProductStyled data-aos='zoom-in' data-aos-once='true'>
@@ -74,7 +79,7 @@ const FeaturedProduct = () => {
                           />
                         </div>
                         <div>
-                          <Button className='but-ton'>Add To Cart</Button>
+                          <Button onClick={() => AddToCart(product)} className='but-ton'>Add To Cart</Button>
                         </div>
                       </div>
                     </Link>
