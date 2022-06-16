@@ -124,9 +124,6 @@ input {
   padding: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
 }
-.cart {
-  transform: translateY(10px) !important;
-}
 .footer-mobile {
   display: none;
 }

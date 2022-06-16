@@ -84,6 +84,7 @@ const FeaturedProduct = () => {
                         </div>
                       </div>
                     </Link>
+                    <Button onClick={() => AddToCart(product)} className='but-ton'>Add To Cart</Button>
                   </Col>
                 </Row>
               ))}

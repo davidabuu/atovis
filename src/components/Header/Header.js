@@ -10,7 +10,7 @@ const Header = () => {
   const { Search } = Input;
   const [user, setUserName] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
-  const {totalCount} = useSelector((state) => state.cartSlice)
+  const { totalCount } = useSelector((state) => state.cartSlice);
   const userMenuOpen = () => {
     setMenuOpen(!menuOpen);
   };
@@ -52,12 +52,10 @@ const Header = () => {
                 </p>
               ) : (
                 <>
-                  <div>
+                  <div className='flex'>
                     <ArrowDropDown />
-                  </div>{' '}
-                  <div className=''>
                     <Link href='/user/sign-in'>
-                      <a>
+                      <a className='sign'>
                         <p>
                           Sign In <Person />
                         </p>
@@ -101,7 +99,8 @@ const Header = () => {
           <p>
             <p className='cart'>
               Cart
-              <ShoppingCart /><p>{totalCount}</p>
+              <ShoppingCart />
+              <p>{totalCount}</p>
             </p>
           </p>
         </HeaderStyled>
@@ -122,8 +121,8 @@ const Header = () => {
                 ) : (
                   <div>
                     <Link href='/user/sign-in'>
-                      <a>
-                        Sign In <Person />
+                      <a className='signs'>
+                        <p>Sign In</p> <div><Person/></div>
                       </a>
                     </Link>
                   </div>
@@ -131,9 +130,10 @@ const Header = () => {
               </p>
             </a>
             <Link href='/user/cart'>
-              <a>
-                <p className='flex'>
-                  Cart  <ShoppingCart /><p>{totalCount}</p>
+              <a className='sign'>
+                <p className='cart'>
+                  Cart <ShoppingCart />
+                  <p>{totalCount}</p>
                 </p>
               </a>
             </Link>

@@ -3,8 +3,29 @@ export const HeadStyle = styled.div`
   .mobile-view {
     display: none;
   }
-  .cart {
-    transform: translateY(10px);
+  .desktop {
+    .sign {
+      color: #fff !important;
+    }
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-2px);
+    }
+    .cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(14px);
+      p {
+        background: var(--button-color);
+        color: var(--primary-color);
+        font-size: 15px;
+        clip-path: circle();
+        width: 30px;
+      }
+    }
   }
   @media (max-width: 700px) {
     .desktop {
@@ -15,6 +36,41 @@ export const HeadStyle = styled.div`
       align-items: center;
       justify-content: space-around;
       width: 100%;
+      .sign {
+        color: #fff !important;
+        transform: translateY(-10px);
+      }
+      .signs {
+        display: flex;
+        color: #fff !important;
+        align-items: center;
+        transform: translateY(5px);
+        div{
+          transform: translateY(2px);
+        }
+        &:hover{
+          color:var(--button-color) !important;
+        }
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-2px);
+      }
+      .cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(14px);
+        p {
+          background: var(--button-color);
+          color: var(--primary-color);
+          font-size: 15px;
+          clip-path: circle();
+          width: 30px;
+        }
+      }
     }
   }
 `;
@@ -74,7 +130,7 @@ export const HeaderStyled = styled.div`
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
     z-index: 3;
     opacity: 1;
-    transform: translate(-20px, 0px);
+    transform: translate(12px, 0px);
     text-align: center;
     align-items: center;
     justify-content: space-around;

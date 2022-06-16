@@ -24,30 +24,32 @@ export const cartSlice = createSlice({
       state.totalCount = totalCount;
     },
     addToCart: (state, action) => {
-      const itemIndex = state.cartItems.findIndex(
-        (item) => item._id === action.payload._id
-      );
-      if (itemIndex >= 0) {
-        state.cartItems[itemIndex].quantity = +1;
-        toast.info('Increase product quantity', {
-          positon: 'top-right',
-        });
-      } else if (
-        state.cartItems[itemIndex].quantity >=
-        state.cartItems[itemIndex].quantityLeft
-      ) {
-        state.cartItems[itemIndex].quantity =
-          state.cartItems[itemIndex].quantityLeft;
-        toast.success('Item reduced', {
-          positon: 'top-right',
-        });
-      } else {
-        const temp = { ...action.payload, quantity: 1 };
-        state.cartItems.push(temp);
-        toast.success('Item added', {
-          positon: 'top-right',
-        });
-      }
+     const lemp =  {...action.payload, quantity:5}
+      console.log(action.payload)
+      // const itemIndex = state.cartItems.findIndex(
+      //   (item) => item._id === action.payload._id
+      // );
+      // if (itemIndex >= 0) {
+      //   state.cartItems[itemIndex].quantity = +1;
+      //   toast.info('Increase product quantity', {
+      //     positon: 'top-right',
+      //   });
+      // } else if (
+      //   state.cartItems[itemIndex].quantity >=
+      //   state.cartItems[itemIndex].quantityLeft
+      // ) {
+      //   state.cartItems[itemIndex].quantity =
+      //     state.cartItems[itemIndex].quantityLeft;
+      //   toast.success('Item reduced', {
+      //     positon: 'top-right',
+      //   });
+      // } else {
+      //   const temp = { ...action.payload, quantity: 1 };
+      //   state.cartItems.push(temp);
+      //   toast.success('Item added', {
+      //     positon: 'top-right',
+      //   });
+      // }
     },
     deleteItemFromCart: (state, action) => {
       const nextCartItems = state.cartItems.filter(
