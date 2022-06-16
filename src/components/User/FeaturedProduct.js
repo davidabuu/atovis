@@ -9,6 +9,7 @@ import Aos from 'aos';
 import Link from 'next/link';
 import { storeInLocalStorage } from '../utils/usableFunction';
 import { addToCart } from '../../redux/User/Cart/CartSlice';
+import { useDispatch } from 'react-redux';
 const FeaturedProduct = () => {
   const [product, setProduct] = useState([]);
   const dispatch = useDispatch()
