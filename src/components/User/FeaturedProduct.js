@@ -8,11 +8,11 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import Link from 'next/link';
 import { storeInLocalStorage } from '../utils/usableFunction';
-import { addToCart } from '../../redux/User/Cart/CartSlice';
+import { addToCart, clearCart } from '../../redux/User/Cart/CartSlice';
 import { useDispatch } from 'react-redux';
 const FeaturedProduct = () => {
   const [product, setProduct] = useState([]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const API_URL = process.env.APP_BASE_URL;
@@ -38,9 +38,13 @@ const FeaturedProduct = () => {
   const onClick = (_id) => {
     storeInLocalStorage('id', _id);
   };
-  const AddToCart = (product) => {
-    dispatch(addToCart(product))
-  }
+  const AddToCart = (data) => {
+    console.log(data);
+    dispatch(addToCart(data));
+  };
+  const clear = () => {
+    dispatch(clearCart());
+  };
   console.log(product);
   return (
     <FeaturedProductStyled data-aos='zoom-in' data-aos-once='true'>
@@ -57,34 +61,41 @@ const FeaturedProduct = () => {
       ) : (
         <div>
           <div className='feature'>
-            <p>FeaturedProduct</p>
+            <p onClick={clear}>FeaturedProduct</p>
             <p className='text-color'>See All</p>
           </div>
           <div className='ft'>
             <Row gutter={2} justify='space-around'>
-              {product.map(({ _id, name, price, imageUrl }) => (
-                <Row gutter={12} key={_id}>
+              {product.map((data) => (
+                <Row gutter={12} key={data._id}>
                   <Col xl={6} lg={6} sm={12} xs={6}>
-                    <Link href={`/user/product/${_id}`} onClick={onClick(_id)}>
-                      <div className='ft product-card'>
-                        <img src={imageUrl} className='img' alt='Home' />
-                        <div>
-                          <p>{name}</p>
-                          <p>{price}</p>
-                          <BeautyStars
-                            size='12px'
-                            gap='7px'
-                            activeColor='#ffaf38'
-                            inactiveColor='#ddd'
-                            value={5}
-                          />
-                        </div>
-                        <div>
-                          <Button onClick={() => AddToCart(product)} className='but-ton'>Add To Cart</Button>
-                        </div>
+                    <div className='ft product-card'>
+                      <Link
+                        href={`/user/product/${data._id}`}
+                        onClick={onClick(data._id)}>
+                        <a style={{color:'#333'}}>
+                          <img src={data.imageUrl} className='img' alt='Home' />
+                          <div>
+                            <p>{data.name}</p>
+                            <p>{data.price}</p>
+                            <BeautyStars
+                              size='12px'
+                              gap='7px'
+                              activeColor='#ffaf38'
+                              inactiveColor='#ddd'
+                              value={5}
+                            />
+                          </div>
+                        </a>
+                      </Link>
+                      <div>
+                        <Button
+                          onClick={() => AddToCart(data)}
+                          className='but-ton'>
+                          Add To Cart
+                        </Button>
                       </div>
-                    </Link>
-                    <Button onClick={() => AddToCart(product)} className='but-ton'>Add To Cart</Button>
+                    </div>
                   </Col>
                 </Row>
               ))}

@@ -27,16 +27,17 @@ const ProductDetails = () => {
     console.log(id);
     dispatch(singleProductInfo(id));
     setLoading(false);
+    console.log(productDetails);
   }, [setLoading, dispatch]);
-  const AddToCart = (cartItem) => {
-    dispatch(addToCart(cartItem));
-  };
-  const onAdd = (cartItem) => {
-    dispatch(addToCart(cartItem));
-  };
-  const onMinus = (cartItem) => {
-    dispatch(decreaseItemFromCart(cartItem));
-  };
+  // const AddToCart = (cartItem) => {
+  //   dispatch(addToCart(cartItem));
+  // };
+    var AddToCart = () => {
+      dispatch(addToCart(productDetails));
+    };
+  // const onMinus = (cartItem) => {
+  //   dispatch(decreaseItemFromCart(cartItem));
+  // };
   return (
     <UserWebLayout webtitle='Product Detail'>
       <Layout>
@@ -51,34 +52,19 @@ const ProductDetails = () => {
               PRODUCT OVERVIEW
             </h1>
             <ProductDetailsStyled>
-              <img src={productDetails.data.imageUrl} alt='Alt' />
+              <div>
+                <img src={productDetails.data.imageUrl} alt='Alt' />
+              </div>
               <div className='product-info'>
-                <p>
+                <div className='p'>
                   <b>Product Name: </b>
                   {`${productDetails.data.name}`}
-                </p>
-                <p>
+                </div>
+                <div className='description p'>
                   <b>Description: </b>
                   {`${productDetails.data.description}`}
-                </p>
-                <p>
-                  <b>Quantity Left: </b>
-                  {` ${productDetails.data.quantityLeft}`}
-                </p>
-                <h2>Price: &#8358;{productDetails.data.price}</h2>
-
-                <br></br>
-                <div className='quantity'>
-                  <div className='qty' onClick={onAdd(cartItems)}>
-                    +
-                  </div>
-                  <div>{count}</div>
-                  <div className='qty' onClick={onMinus(cartItems)}>
-                    -
-                  </div>
                 </div>
-                <div className='center'>
-                  {' '}
+                <div>
                   <Button
                     onClick={AddToCart}
                     className='cart-btn'

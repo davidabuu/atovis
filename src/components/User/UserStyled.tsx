@@ -41,7 +41,7 @@ export const HomePage = styled.div`
       flex-direction: column;
       //   width: 450px;
       border-radius: 5px;
-      width:450px;
+      width: 450px;
       background: #f4f4f4;
       padding: 20px;
       .card {
@@ -97,8 +97,8 @@ export const CardStyled = styled.div`
     }
     padding: 5px;
   }
-  @media(max-width:650px){}
-  
+  @media (max-width: 650px) {
+  }
 `;
 
 export const FeaturedProductStyled = styled.div`
@@ -154,53 +154,55 @@ export const ProductDetailsStyled = styled.div`
   display: flex;
   align-items: center;
   min-height: 30vh;
+  margin-bottom: 15px;
+  width: 80%;
   justify-content: space-around;
   img {
     width: 400px;
     margin-top: 10px;
     object-fit: contain;
   }
-  p {
+  .description {
     text-align: justify;
     font-size: 15px !important;
     width: 350px;
   }
   .qty {
-    cursor:pointer;
-    font-size: 25px;
+    cursor: pointer;
+    font-size: 20px;
     background: var(--button-color);
     color: #fff;
-    width:40px;
-    text-align:center;
-    border-radius:5px;
+    width: 25px;
+    text-align: center;
+    border-radius: 5px;
   }
   .quantity {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 300px;
-    font-size:15px;
+    width: 70px;
+    font-size: 15px;
   }
-  h1,
-  p {
-    margin-top: 10px;
+  h1,b,
+  .p {
+    margin-top: 5px;
     font-size: 25px;
   }
   @media (max-width: 770px) {
-    margin-left:10px;
+    margin-left: 10px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     img {
       width: 300px;
     }
-    h1,
-    p {
+    h1,b,
+    .p {
       margin-top: 10px;
       font-size: 20px;
     }
-    p{
-      width:300px;
+    p {
+      width: 300px;
     }
     .btn {
       margin-bottom: 10px;

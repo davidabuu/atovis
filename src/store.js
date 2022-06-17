@@ -1,5 +1,5 @@
-//Reducer is going to help us control the state of the application
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import authReducer from './redux/User/authSlice';
 import forgotPassword from './redux/User/forgetPassowordSlice';
 import verifyMail from './redux/User/verifySlice';
@@ -9,12 +9,13 @@ import cartSlice from './redux/User/Cart/CartSlice';
 import storage from 'redux-persist/lib/storage';
 import categorySlice from './redux/Category/categorySlice';
 import singleProduct from './redux/User/Product/ProductDetailSlice';
-import { persistReducer } from 'redux-persist';
+
 const persistConfig = {
-  key: 'root',
-  version: 1,
-  storage,
+    key: 'root',
+    version: 1,
+    storage,
 };
+
 const reducer = combineReducers({
   auth: authReducer,
   forgotPass: forgotPassword,
@@ -25,7 +26,19 @@ const reducer = combineReducers({
   cartSlice,
   categorySlice,
 });
+
 const persistedReducer = persistReducer(persistConfig, reducer);
-export const store = configureStore({
-  reducer:persistedReducer,
+
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: getDefaultMiddleware =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+        }),
 });
+
+const storePersist = persistStore(store);
+
+export { store, storePersist };

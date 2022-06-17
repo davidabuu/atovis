@@ -84,13 +84,12 @@ input {
 }
 .cart-btn {
   cursor: pointer;
-  text-align: center;
   background: var(--primary-color) !important;
   border-radius: 10px !important;
   padding: 15px;
   height: 40px !important;
   margin: 10px 0;
-  width: 300px;
+  width: 150px;
   color: #fff !important;
 }
 /* img {
@@ -127,12 +126,16 @@ input {
 .footer-mobile {
   display: none;
 }
+.product {
+  margin-left: 2rem;
+}
 .mobile-hide ul {
   display: none !important;
 }
 .product-overview {
   margin-top: 5px;
   color: #fff;
+  margin: 5px 2rem;
   background-color: var(--primary-color);
   padding: 7px;
 }
