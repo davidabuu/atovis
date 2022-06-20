@@ -9,49 +9,39 @@ export const cartSlice = createSlice({
   name: 'Cart Items',
   initialState,
   reducers: {
-    getCartTotal: (state, action) => {
-      let { totalAmount, totalCount } = state.cartItems.reduce(
-        (cartTotal, cartItem) => {
-          const { price, quantity } = cartItem;
-          const itemTotal = price * quantity;
-          cartItem.totalAmount += itemTotal;
-          cartTotal.totalCount += quantity;
-          return cartTotal;
-        },
-        { totalAmount: 0, totalCount: 0 }
-      );
-      state.totalAmount = parseInt(totalAmount.toFixed(2));
-      state.totalCount = totalCount;
-    },
-    addToCart: (state, action) => {
+    addToCart:(state, action) => {
       const existingIndex = state.cartItems.findIndex(
         (item) => item._id === action.payload._id
       );
       if (existingIndex >= 0) {
         state.cartItems[existingIndex] = {
-          ...state.cartItems[existingIndex], quantity:+1
-        }
+          ...state.cartItems[existingIndex],
+          quantity: state.cartItems[existingIndex].quantity + 1,
+        };
         toast.success('Item Increase in Quantity', {
           positon: 'top-right',
         });
       } else {
-        const newItem = {...action.payload, quantity: 1}
-        state.cartItems.push(newItem)
+        let newItem = { ...action.payload, quantity: 1 };
+        state.cartItems.push(newItem);
         toast.success('New Item Added', {
           positon: 'top-right',
         });
       }
+
     },
     deleteItemFromCart: (state, action) => {
       state.cartItems.map((cartItem) => {
-        if(cartItem._id === action.payload._id){
-          const nextCartItems = state.cartItems.filter((item) => item._id !== action.payload._id)
+        if (cartItem._id === action.payload._id) {
+          const nextCartItems = state.cartItems.filter(
+            (item) => item._id !== action.payload._id
+          );
           state.cartItems = nextCartItems;
           toast.success('Item Removed', {
             positon: 'top-right',
           });
         }
-      })
+      });
     },
     decreaseItemFromCart: (state, action) => {
       const itemIndex = state.cartItems.findIndex(
@@ -72,6 +62,25 @@ export const cartSlice = createSlice({
       toast.success('Cart Items Cleared', {
         positon: 'top-right',
       });
+    },
+
+    getCartTotal: (state, action) => {
+      let { total, cartQuantity } = state.cartItems.reduce(
+        (cartTotal, cartItem) => {
+          const { price, quantity } = cartItem;
+          const itemTotal = price * quantity;
+          cartTotal.total += itemTotal;
+          cartTotal.cartQuantity += quantity;
+          return cartTotal;
+        },
+        {
+          total: 0,
+          cartQuantity: 0,
+        }
+      );
+      total = parseFloat(total.toFixed(2));
+      state.totalCount = cartQuantity;
+      state.totalAmount = total;
     },
   },
 });

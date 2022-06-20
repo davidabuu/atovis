@@ -1,4 +1,4 @@
-import { Add, Delete, Remove } from '@material-ui/icons';
+import { Add, Delete, Remove, ShoppingCart } from '@material-ui/icons';
 import React, { useEffect } from 'react';
 import { RatingIcon } from 'semantic-ui-react';
 import { CartStyle } from './CartContainerStyled';
@@ -19,15 +19,16 @@ const CartContianer = () => {
   const { cartItems, totalAmount } = useSelector((state) => state.cartSlice);
   useEffect(() => {
     dispatch(getCartTotal());
-  });
-  const deleteItem = (cartItems) => {
-    dispatch(deleteItemFromCart(cartItems));
+  }, [cartItems, dispatch]);
+  const deleteItem = (item) => {
+    dispatch(deleteItemFromCart(item));
   };
-  const decrease = (cartItems) => {
-    dispatch(decreaseItemFromCart(cartItems));
+  const decrease = () => {
+    dispatch(decreaseItemFromCart(item));
   };
-  const increase = (cartItems) => {
-    dispatch(addToCart(cartItems));
+  const increase = (item) => {
+    console.log('Hello');
+    dispatch(addToCart(item));
   };
   const clearAllCartItems = () => {
     dispatch(clearCart());
@@ -38,40 +39,56 @@ const CartContianer = () => {
         <Layout>
           <CartStyle>
             <h1>MY CART</h1>
-            {cartItems.map(
-              (_id, imageUrl, price, description, name, quantity) => (
-                <div className='cart-items' key={_id}>
-                  <img src={imageUrl} alt='Hello' />
-                  <div className='items'>
-                    <div>
-                      <p>
-                        {name}: {description}
-                      </p>
-                      <RatingIcon />
-                      <div style={{ color: 'var(--primary-color)' }}>
-                        <span onClick={deleteItem(cartItems)}>
-                          <Delete />
-                        </span>
+            {cartItems.length == 0 ? (
+              <div className='empty'>
+                <h2>Your Shopping Cart is Empty</h2>
+                <div>
+                  <ShoppingCart />
+                </div>
+              </div>
+            ) : (
+              <>
+                {cartItems.map((item) => (
+                  <div className='cart-items' key={item._id}>
+                    <img src={item.imageUrl} alt='Hello' />
+                    <div className='items'>
+                      <div>
+                        <p>
+                          {item.name} :{' '}
+                          <span className='description'>
+                            {item.description}
+                          </span>
+                        </p>
+                        <RatingIcon />
+                        <div style={{ color: 'var(--primary-color)' }}>
+                          <span
+                            onClick={() => deleteItem(item)}
+                            style={{ cursor: 'pointer' }}>
+                            <Delete />
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div className='quantity'>
-                      <div className='qty' onClick={increase(cartItems)}>
+                      <div className='qty' onClick={() => increase(item)}>
                         <Add />
                       </div>
-                      <div>{quantity}</div>
-                      <div className='qty' onClick={decrease(cartItems)}>
+                      <div>{item.quantity}</div>
+                      <div className='qty' onClick={() => decrease(item)}>
                         <Remove />
                       </div>
-                      <p>&#8358;{price * quantity}</p>
+                      <p>&#8358;{item.price * item.quantity}</p>
                     </div>
                   </div>
+                ))}
+                <div className='total-amount'>
+                  <h2>Total Amount : &#8358;{totalAmount} </h2>
                 </div>
-              )
+                <div className='total-amount'>
+                  <Button onClick={clearAllCartItems}>Clear Cart</Button>
+                </div>
+              </>
             )}
-            <div className='total-amount'>
-              <h2>Total Amount : &#8358;{totalAmount} </h2>
-            </div>
-            <Button onClick={clearAllCartItems}>Clear Cart</Button>
           </CartStyle>
         </Layout>
       </div>

@@ -1,24 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Input } from 'antd';
 import { HeaderStyled, HeadStyle } from './HeaderStyled';
-import { ShoppingCart, Person, ArrowDropDown, Menu } from '@material-ui/icons';
+import { ShoppingCart, Person, ArrowDropDown } from '@material-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
-import { LogoHolder } from '../Vendor/SignVendor/SignStyled';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCartTotal } from '../../redux/User/Cart/CartSlice';
 const Header = () => {
   const { Search } = Input;
   const [user, setUserName] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
-  const { totalCount } = useSelector((state) => state.cartSlice);
+  const dispatch = useDispatch();
+  const { cartItems } = useSelector((state) => state.cartSlice);
+  console.log(totalCount, cartItems);
+  const totalCount = cartItems.reduce((acc, curr) => {
+    return acc + curr.quantity;
+  }, 0);
   const userMenuOpen = () => {
     setMenuOpen(!menuOpen);
+    dispatch(getCartTotal());
   };
   useEffect(() => {
     const name = JSON.parse(localStorage.getItem('name'));
+
     setMenuOpen(false);
     setUserName(name);
-  }, []);
+  }, [name]);
   return (
     <HeadStyle>
       <div className='desktop'>
@@ -96,13 +103,15 @@ const Header = () => {
               </div>
             </div>
           </p>
-          <p>
-            <p className='cart'>
-              Cart
-              <ShoppingCart />
-              <p>{totalCount}</p>
-            </p>
-          </p>
+          <Link href='/user/cart'>
+            <a style={{color:'#fff'}}>
+              <p className='cart'>
+                Cart
+                <ShoppingCart />
+                <p>{totalCount}</p>
+              </p>
+            </a>
+          </Link>
         </HeaderStyled>
       </div>
       <div className=''>
@@ -122,7 +131,10 @@ const Header = () => {
                   <div>
                     <Link href='/user/sign-in'>
                       <a className='signs'>
-                        <p>Sign In</p> <div><Person/></div>
+                        <p>Sign In</p>{' '}
+                        <div>
+                          <Person />
+                        </div>
                       </a>
                     </Link>
                   </div>

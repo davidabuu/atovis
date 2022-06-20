@@ -101,6 +101,7 @@ const FeaturedProduct = () => {
               ))}
             </Row>
           </div>
+          
         </div>
       )}
     </FeaturedProductStyled>

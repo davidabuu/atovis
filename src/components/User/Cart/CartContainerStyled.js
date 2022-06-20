@@ -10,6 +10,26 @@ export const CartStyle = styled.div`
     padding: 10px;
     background-color: var(--primary-color);
   }
+  .empty {
+    display: flex;
+    align-items: center;
+    min-height: 30vh;
+    justify-content: center;
+    flex-direction: column;
+    div {
+      margin-top: 10px;
+      font-size: 30px;
+    }
+  }
+  .total-amount {
+    h2 {
+      color: var(--primary-color);
+    }
+    display: flex;
+    margin: 10px 3rem;
+    font-weight: bold;
+    justify-content: flex-end;
+  }
   .cart-items {
     background: #fff;
     display: flex;
@@ -19,7 +39,9 @@ export const CartStyle = styled.div`
     padding: 10px;
     margin-top: 10px;
     margin: 10px 3rem;
-
+    img {
+      width: 200px;
+    }
     .qty {
       cursor: pointer;
       display: flex;
@@ -32,13 +54,9 @@ export const CartStyle = styled.div`
       width: 30px;
     }
     .items {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 70%;
       p {
-        transform: translateY(10px);
         color: var(--primary-color);
+        width: 500px;
       }
     }
     .quantity {
@@ -47,6 +65,20 @@ export const CartStyle = styled.div`
       justify-content: space-around;
       width: 300px;
       font-size: 15px;
+    }
+  }
+  @media(max-width:700px){
+    .cart-items{
+      margin: 10px 1.5rem;
+    }
+    img {
+      width: 150px;
+    }
+    .items {
+      p {
+        color: var(--primary-color);
+        width: 300px;
+      }
     }
   }
   @media (max-width: 650px) {
