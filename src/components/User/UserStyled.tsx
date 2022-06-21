@@ -183,29 +183,62 @@ export const ProductDetailsStyled = styled.div`
     width: 70px;
     font-size: 15px;
   }
-  h1,b,
+  h1,
+  b,
   .p {
     margin-top: 5px;
     font-size: 25px;
   }
-  @media (max-width: 770px) {
-    margin-left: 10px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  @media (max-width: 1200px) {
+    width: 100%;
     img {
       width: 300px;
     }
-    h1,b,
+  }
+  @media (max-width: 770px) {
+    justify-content: space-around;
+    img {
+      width: 200px;
+      margin: 0px;
+    }
+    .description {
+      text-align: justify;
+      font-size: 15px !important;
+      width: 300px;
+    }
+    h1,
+    b,
     .p {
-      margin-top: 10px;
-      font-size: 20px;
+      margin-top: 2px;
+      font-size: 15px;
+    }
+    h1 {
+      display: none;
     }
     p {
-      width: 300px;
+      width: 200px;
     }
     .btn {
       margin-bottom: 10px;
+    }
+  }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    .description {
+      text-align: justify;
+      font-size: 15px !important;
+      width: 300px;
+    }
+    justify-content: flex-start;
+    .product-info {
+      background: #f4f4f4;
+      width: 100%;
+      margin-top: 5px;
+      border-radius-top: 10px;
+      padding-left: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: var(--primary-color);
     }
   }
 `;

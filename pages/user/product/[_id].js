@@ -32,12 +32,12 @@ const ProductDetails = () => {
   // const AddToCart = (cartItem) => {
   //   dispatch(addToCart(cartItem));
   // };
-    var AddToCart = () => {
-      dispatch(addToCart(productDetails));
-    };
   // const onMinus = (cartItem) => {
   //   dispatch(decreaseItemFromCart(cartItem));
   // };
+  const AddToCart = (data) => {
+    dispatch(addToCart(data))
+  }
   return (
     <UserWebLayout webtitle='Product Detail'>
       <Layout>
@@ -62,11 +62,11 @@ const ProductDetails = () => {
                 </div>
                 <div className='description p'>
                   <b>Description: </b>
-                  {`${productDetails.data.description}`}
+                  {`Beautiful and attractive product`}
                 </div>
                 <div>
                   <Button
-                    onClick={AddToCart}
+                    onClick={() => AddToCart(productDetails.data)}
                     className='cart-btn'
                     loading={loading}>
                     {loading ? 'Adding' : 'Add To Cart'}

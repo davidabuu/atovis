@@ -167,6 +167,13 @@ input {
     color: #fff !important;
   }
 }
+@media (max-width: 800px) {
+  .product-overview {
+    margin: 5px 0.5rem;
+    font-size: 15px;
+  }
+  
+}
 @media (max-width: 650px) {
   .footer-desktop {
     display: none;

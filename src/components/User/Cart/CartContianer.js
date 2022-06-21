@@ -23,7 +23,7 @@ const CartContianer = () => {
   const deleteItem = (item) => {
     dispatch(deleteItemFromCart(item));
   };
-  const decrease = () => {
+  const decrease = (item) => {
     dispatch(decreaseItemFromCart(item));
   };
   const increase = (item) => {
@@ -56,7 +56,7 @@ const CartContianer = () => {
                         <p>
                           {item.name} :{' '}
                           <span className='description'>
-                            {item.description}
+                            {/* {item.description} */}
                           </span>
                         </p>
                         <RatingIcon />
@@ -68,7 +68,6 @@ const CartContianer = () => {
                           </span>
                         </div>
                       </div>
-                    </div>
                     <div className='quantity'>
                       <div className='qty' onClick={() => increase(item)}>
                         <Add />
@@ -77,15 +76,19 @@ const CartContianer = () => {
                       <div className='qty' onClick={() => decrease(item)}>
                         <Remove />
                       </div>
-                      <p>&#8358;{item.price * item.quantity}</p>
+                      <p className='price'>Price: &#8358;{item.price * item.quantity}</p>
                     </div>
+                  </div>
                   </div>
                 ))}
                 <div className='total-amount'>
                   <h2>Total Amount : &#8358;{totalAmount} </h2>
                 </div>
-                <div className='total-amount'>
+                <div className='total-amount cart-btns'>
                   <Button onClick={clearAllCartItems}>Clear Cart</Button>
+                </div>
+                <div className='total-amount cart-btns'>
+                  <Button>Proceed To CheckOut</Button>
                 </div>
               </>
             )}
