@@ -112,4 +112,14 @@ export const CartStyle = styled.div`
       background-color: var(--primary-color);
     }
   }
+  @media(max-width:400px){
+    .cart-items{
+      img{
+        width:130px;
+      }
+      margin: 10px 0.5rem;
+  }
+  .quantity{
+    width: 170px;
+  }
 `;

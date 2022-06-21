@@ -64,6 +64,7 @@ const CartContianer = () => {
                           <span
                             onClick={() => deleteItem(item)}
                             style={{ cursor: 'pointer' }}>
+                              
                             <Delete />
                           </span>
                         </div>

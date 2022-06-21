@@ -9,7 +9,7 @@ export const cartSlice = createSlice({
   name: 'Cart Items',
   initialState,
   reducers: {
-    addToCart:(state, action) => {
+    addToCart: (state, action) => {
       const existingIndex = state.cartItems.findIndex(
         (item) => item._id === action.payload._id
       );
@@ -28,7 +28,6 @@ export const cartSlice = createSlice({
           positon: 'top-right',
         });
       }
-
     },
     deleteItemFromCart: (state, action) => {
       state.cartItems.map((cartItem) => {
@@ -45,9 +44,9 @@ export const cartSlice = createSlice({
     },
     decreaseItemFromCart: (state, action) => {
       const itemIndex = state.cartItems.findIndex(
-        (cartItem) => cartItem._id === action,
-        payload._id
+        (item) => item._id === action.payload._id
       );
+      //console.log(existingIndex);
       if (state.cartItems[itemIndex].quantity > 1) {
         state.cartItems[itemIndex].quantity -= 1;
         toast.success('Item reduced', {
