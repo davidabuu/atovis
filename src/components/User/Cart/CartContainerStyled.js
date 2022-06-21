@@ -95,12 +95,21 @@ export const CartStyle = styled.div`
       img{
         width:150px;
       }
+      margin: 10px 1rem;
     }
   }
   @media(max-width:480px){
     .price{
       margin:0px;
       font-size:15px;
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin: 10px 1rem;
+      font-size:15px;
+      padding: 5px;
+      background-color: var(--primary-color);
     }
   }
 `;
