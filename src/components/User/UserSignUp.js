@@ -57,16 +57,13 @@ const UserSignUp = () => {
   };
   return (
     <UserWebLayout webtitle='Sign Up'>
-      <LogoHolder>
-        <div className='img'>
-          <img src='/logo2.png' alt='Log' />
-        </div>
-      </LogoHolder>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card className='card-div'>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
-              <Row gutter={24}>
+              <h2>Sign Up</h2>
+              <p>Create an Account and get upto 50% on selected products</p>
+              <Row gutter={48} justify='space-between' className='flex'>
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>First Name</label>
@@ -75,7 +72,7 @@ const UserSignUp = () => {
                       name='firstName'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input size='large' type='text' onChange={onChange} />
+                        <input size='large' type='text' onChange={onChange} />
                       )}
                     />
                     {errors.firstName && (
@@ -91,7 +88,7 @@ const UserSignUp = () => {
                       name='lastName'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input size='large' type='text' onChange={onChange} />
+                        <input size='large' type='text' onChange={onChange} />
                       )}
                     />
                     {errors.lastName && (
@@ -109,35 +106,11 @@ const UserSignUp = () => {
                       name='email'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input size='large' type='email' onChange={onChange} />
+                        <input size='large' type='email' onChange={onChange} />
                       )}
                     />
                     {errors.email && (
                       <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>Gender</label>
-                    <Controller
-                      control={control}
-                      name='gender'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <Select
-                          onChange={onChange}
-                          size='large'
-                          style={{ width: '100%' }}>
-                          <Option value='Male'>Male</Option>
-                          <Option value='Female'>Female</Option>
-                        </Select>
-                      )}
-                    />
-                    {errors.gender && (
-                      <span className='error'>Gender is required</span>
                     )}
                   </FormGroup>
                 </Col>
@@ -151,7 +124,7 @@ const UserSignUp = () => {
                       name='password'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input.Password
+                        <input
                           size='large'
                           type='password'
                           onChange={onChange}
@@ -174,7 +147,7 @@ const UserSignUp = () => {
                       name='confirmPassword'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input.Password
+                        <input
                           size='large'
                           type='password'
                           onChange={onChange}
@@ -207,7 +180,7 @@ const UserSignUp = () => {
             <Row>
               <Col xs={24} xl={24} lg={24}>
                 <p className='dont'>
-                  Already have an account{' '}
+                  Already have an account?{' '}
                   <Link href='/user/sign-in'>
                     <a>Sign In</a>
                   </Link>

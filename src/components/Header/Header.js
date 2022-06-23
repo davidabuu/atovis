@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Input } from 'antd';
-import { HeaderStyled, HeadStyle } from './HeaderStyled';
+import { HeaderStyled, HeadStyle, MobileStyled } from './HeaderStyled';
 import { ShoppingCart, Person, ArrowDropDown } from '@material-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCartTotal } from '../../redux/User/Cart/CartSlice';
+import { LogoHolders } from '../Vendor/SignVendor/SignStyled';
 const Header = () => {
   const { Search } = Input;
   const [user, setUserName] = useState('');
@@ -33,13 +34,13 @@ const Header = () => {
           <div className=''>
             <Image src='/logo.png' width={2080} height={853} alt='Home' />
           </div>
-          <div className='search'>
-            <Search
+          <div className='search-product'>
+            <input
+              type='text'
+              className='text'
               placeholder='Search for a product'
-              enterButton='Search'
-              type={'text'}
-              style={{ width: '350px' }}
             />
+            <input type='button' value={'Search'} className='search-button' />
           </div>
           <p className='flex'>
             <div
@@ -47,10 +48,6 @@ const Header = () => {
               onClick={userMenuOpen}>
               {user ? (
                 <p className=''>
-                  <div>
-                    {' '}
-                    <ArrowDropDown />
-                  </div>
                   <div>
                     {' '}
                     {`Hello ${user}`}{' '}
@@ -104,9 +101,8 @@ const Header = () => {
             </div>
           </p>
           <Link href='/user/cart'>
-            <a style={{color:'#fff'}}>
+            <a style={{ color: '#fff' }}>
               <p className='cart'>
-                Cart
                 <ShoppingCart />
                 <p>{totalCount}</p>
               </p>
@@ -114,12 +110,22 @@ const Header = () => {
           </Link>
         </HeaderStyled>
       </div>
-      <div className=''>
+      <MobileStyled>
+      <LogoHolders>
+        <div className='img'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
+      </LogoHolders>
+      <div className='search-product'>
+            <input
+              type='text'
+              className='text'
+              placeholder='Search for a product'
+            />
+            <input type='button' value={'Search'} className='search-button' />
+          </div>
         <HeaderStyled>
           <div className='mobile-view'>
-            <div className=''>
-              <Image src='/logo.png' width={2080} height={853} alt='Home' />
-            </div>
             <a>
               <p className='flex'>
                 {user ? (
@@ -142,24 +148,16 @@ const Header = () => {
               </p>
             </a>
             <Link href='/user/cart'>
-              <a className='sign'>
-                <p className='cart'>
-                  Cart <ShoppingCart />
-                  <p>{totalCount}</p>
-                </p>
-              </a>
-            </Link>
+            <a style={{ color: '#fff' }}>
+              <p className='cart'>
+                <ShoppingCart />
+                <p>{totalCount}</p>
+              </p>
+            </a>
+          </Link>
           </div>
         </HeaderStyled>
-        <div className='searchs'>
-          <Search
-            placeholder='Search for a product'
-            enterButton='Search'
-            type={'text'}
-            style={{ width: '300px' }}
-          />
-        </div>
-      </div>
+      </MobileStyled>
     </HeadStyle>
   );
 };

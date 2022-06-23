@@ -21,7 +21,7 @@ const FeaturedProduct = () => {
   const fetchAllProducts = async (page) => {
     setLoading(true);
     try {
-      const res = await axios.get(`${API_URL}/public/products?page=${page}&limit=${2}`);
+      const res = await axios.get(`${API_URL}/public/products?page=${page}&limit=${4}`);
       setProduct(res.data.data);
       console.log(res.data.data);
       setLoading(false);

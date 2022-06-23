@@ -55,25 +55,26 @@ const UserLogin = () => {
   };
   return (
     <UserWebLayout webtitle='Sign In'>
-      <LogoHolder>
-        <div className='img'>
-          <img src='/logo2.png' alt='Log' />
-        </div>
-      </LogoHolder>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
           <Card className='card-div'>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
+              <h2>Sign In</h2>
+              <p>
+                Sign-in to get access to great shopping deals from trusted
+                vendors
+              </p>
               <Row gutter={24}>
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
                     <label>Email Address</label>
+                  <br></br>
                     <Controller
                       control={control}
                       name='email'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input size='large' type='email' onChange={onChange} />
+                        <input size='large' type='email' onChange={onChange} />
                       )}
                     />
                     {errors.email && (
@@ -91,7 +92,7 @@ const UserLogin = () => {
                       name='password'
                       rules={{ required: true }}
                       render={({ field: { onChange } }) => (
-                        <Input.Password
+                        <input
                           size='large'
                           type='password'
                           onChange={onChange}
@@ -108,7 +109,7 @@ const UserLogin = () => {
               <Row>
                 <Col>
                   <Link href='/user/forgot-password'>
-                    <a>Forgot Password</a>
+                    <a className='forgot'>Forgot Password</a>
                   </Link>
                 </Col>
               </Row>
@@ -132,7 +133,7 @@ const UserLogin = () => {
             <Row>
               <Col xs={24} xl={24} lg={24}>
                 <p className='dont'>
-                  Do not have an account{' '}
+                  Do not have an account?{' '}
                   <Link href='/user/sign-up'>
                     <a>Sign Up</a>
                   </Link>

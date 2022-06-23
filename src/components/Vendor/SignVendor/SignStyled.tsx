@@ -9,13 +9,28 @@ export const SignStyled = styled.div`
     width: 400px;
   }
   .card-div {
-    margin: 0 5px;
+    margin: 3rem 0px;
     // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
     border-radius: 15px;
     input {
-      border-radius: 15px;
+      border-radius: 40px;
+      border: 0.5px solid var(--primary-color);
+      width: 300px;
+      height: 50px;
       background: #f8f8f8;
     }
+    input:focus {
+      outline: none;
+    }
+    color: var(--primary-color);
+    h2,
+    p {
+      text-align: center;
+      color: var(--primary-color);
+    }
+  }
+  .forgot {
+    padding-left: 3rem;
   }
   .terms {
     margin-left: 5px;
@@ -78,6 +93,7 @@ export const LogoHolders = styled.div`
 
 export const FormGroup = styled.div`
   margin-bottom: 15px;
+  padding: 0px 3rem;
 `;
 
 export const Layout = styled.div`
