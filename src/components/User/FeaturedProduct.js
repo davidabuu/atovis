@@ -111,6 +111,7 @@ const FeaturedProduct = () => {
             <Pagination current={currentProduct} onChange={onChange} style={{
               display:'flex',
               alignItems:'center',
+              marginTop:'10px',
               justifyContent:'center'
             }} pageSize={productPerPage} total={product.length} />;
           </div>
