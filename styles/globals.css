@@ -172,6 +172,9 @@ input {
     margin: 5px 0.5rem;
     font-size: 15px;
   }
+  .flexx h1{
+    font-size: 17px;
+  }
   
 }
 @media (max-width: 650px) {

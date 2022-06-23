@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../Layout/Layout';
 import { Button } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 import { AddressStyled } from './UserStyled';
 import { LocationOnOutlined } from '@material-ui/icons';
+import { getCartTotal } from '../../redux/User/Cart/CartSlice';
 const Address = () => {
+  const dispatch = useDispatch();
+  const { cartItems, totalAmount } = useSelector((state) => state.cartSlice);
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [cartItems, dispatch]);
   return (
     <Layout>
       <AddressStyled>
@@ -23,7 +30,7 @@ const Address = () => {
       </AddressStyled>
       <div className='total'>
         <span>
-          <p>Gross Total $45.00</p>
+          <h2>Total Amount : &#8358;{totalAmount} </h2>
         </span>
       </div>
       <div className='total'>
@@ -33,7 +40,7 @@ const Address = () => {
       </div>
       <div className='total'>
         <span>
-          <p>Net Total: $800.00</p>
+          <p>Net Total: &#8358;{totalAmount} </p>
         </span>
       </div>
       <div className='btn-payment total'>

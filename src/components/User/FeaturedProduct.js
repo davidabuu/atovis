@@ -1,4 +1,4 @@
-import { Button, Row, Col, Spin } from 'antd';
+import { Button, Row, Col, Spin, Pagination } from 'antd';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import BeautyStars from 'beauty-stars';
@@ -15,25 +15,27 @@ const FeaturedProduct = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1)
+  const [productPerPage, setProductPerPage] = useState(1)
   const API_URL = process.env.APP_BASE_URL;
+  const fetchAllProducts = async (page) => {
+    setLoading(true);
+    try {
+      const res = await axios.get(`${API_URL}/public/products?page=${page}&limit=${2}`);
+      setProduct(res.data.data);
+      console.log(res.data.data);
+      setLoading(false);
+      setError(false);
+    } catch (error) {
+      setError(true);
+      setLoading(false);
+      console.log(error);
+    }   
+  };
   useEffect(() => {
     Aos.init({ duration: 300 });
     //Fetch All Products
-    const fetchAllProducts = async () => {
-      setLoading(true);
-      try {
-        const res = await axios.get(`${API_URL}/public/products`);
-        setProduct(res.data.data);
-        console.log(res.data.data);
-        setLoading(false);
-        setError(false);
-      } catch (error) {
-        setError(true);
-        setLoading(false);
-        console.log(error);
-      }
-    };
-    fetchAllProducts();
+    fetchAllProducts(1);
   }, []);
   const onClick = (_id) => {
     storeInLocalStorage('id', _id);
@@ -45,7 +47,13 @@ const FeaturedProduct = () => {
   const clear = () => {
     dispatch(clearCart());
   };
-  console.log(product);
+  const onChange = (page) => {
+    fetchAllProducts(page)
+  }
+  const indexOfLastPage = currentPage * productPerPage;
+  const indexOfFirstProduct = indexOfLastPage - productPerPage
+  const currentProduct = product.slice(indexOfFirstProduct, indexOfLastPage)
+  console.log(currentProduct)
   return (
     <FeaturedProductStyled data-aos='zoom-in' data-aos-once='true'>
       {loading ? (
@@ -100,6 +108,11 @@ const FeaturedProduct = () => {
                 </Row>
               ))}
             </Row>
+            <Pagination current={currentProduct} onChange={onChange} style={{
+              display:'flex',
+              alignItems:'center',
+              justifyContent:'center'
+            }} pageSize={productPerPage} total={product.length} />;
           </div>
           
         </div>
