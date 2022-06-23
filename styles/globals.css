@@ -181,6 +181,9 @@ input {
   .footer-desktop {
     display: none;
   }
+  .flex h3{
+    transform: translateY(10px);
+  }
   .footer-mobile {
     display: block;
     padding-top: 10px;
