@@ -9,6 +9,8 @@ import {
   addToCart,
   decreaseItemFromCart,
 } from '../../../src/redux/User/Cart/CartSlice';
+import Header from '../../../src/components/Header/Header';
+import FooterDiv from '../../../src/components/Footer/FooterDiv';
 // import { addToUserCart } from '../../../src/redux/User/Cart/CartSlice';
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -36,47 +38,53 @@ const ProductDetails = () => {
   //   dispatch(decreaseItemFromCart(cartItem));
   // };
   const AddToCart = (data) => {
-    dispatch(addToCart(data))
-  }
+    dispatch(addToCart(data));
+  };
   return (
     <UserWebLayout webtitle='Product Detail'>
-      <Layout>
+      <ProductDetailsStyled>
+      <div className='img'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
+        <div className='header'>
+        <Header/>
+        </div>
         {isLoading ? (
           <div className='flexx' style={{ minHeight: '80vh' }}>
             <Spin />
             <p>Fetching Data</p>
           </div>
         ) : (
-          <div>
-            <h1 className='center text-color product-overview'>
-              PRODUCT OVERVIEW
-            </h1>
-            <ProductDetailsStyled>
+          <ProductDetailsStyled>
+            <h1 className=''>PRODUCT OVERVIEW</h1>
+            <div className='product-info'>
               <div>
-                <img src={productDetails.data.imageUrl} alt='Alt' />
+                <img src={productDetails.data.imageUrl} alt='ProductIMage' />
               </div>
-              <div className='product-info'>
-                <div className='p'>
-                  <b>Product Name: </b>
-                  {`${productDetails.data.name}`}
+              <div className='product-details'>
+                <div className='product-name'>
+                  <b>{`${productDetails.data.name}`}</b>
                 </div>
-                <div className='description p'>
-                  <b>Description: </b>
-                  {`Beautiful and attractive product`}
+                <div className='description'>
+                  <b>Beautiful and attractive product</b>
                 </div>
                 <div>
+                  <h2>{`${productDetails.data.price}`}</h2>
+                </div>
+                <div className='btn'>
                   <Button
                     onClick={() => AddToCart(productDetails.data)}
-                    className='cart-btn'
-                    loading={loading}>
+                    loading={loading}
+                    className='btn-sign'>
                     {loading ? 'Adding' : 'Add To Cart'}
                   </Button>
                 </div>
               </div>
-            </ProductDetailsStyled>
-          </div>
+            </div>
+          </ProductDetailsStyled>
         )}
-      </Layout>
+        <FooterDiv/>
+      </ProductDetailsStyled>
     </UserWebLayout>
   );
 };

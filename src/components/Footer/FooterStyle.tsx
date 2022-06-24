@@ -38,9 +38,12 @@ export const MobileStyle = styled.div`
   display: flex;
   align-items: center;
   background: #fff;
+  a {
+    color: #333;
+  }
   justify-content: space-around;
-  a:hover{
-    color:var(--primary-color) !important;
+  a:hover {
+    color: var(--primary-color) !important;
   }
 `;
 export const FooterDivStyle = styled.div`

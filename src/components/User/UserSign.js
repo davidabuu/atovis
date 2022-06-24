@@ -57,91 +57,77 @@ const UserLogin = () => {
     <UserWebLayout webtitle='Sign In'>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
-          <Card className='card-div'>
+          <div className='card-div'>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
               <h2>Sign In</h2>
-              <p>
+              <p  className='p'>
                 Sign-in to get access to great shopping deals from trusted
                 vendors
               </p>
-              <Row gutter={24}>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>Email Address</label>
-                  <br></br>
-                    <Controller
-                      control={control}
-                      name='email'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <input size='large' type='email' onChange={onChange} />
-                      )}
+              <div>
+                <label>Email Address</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='email'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input size='large' type='email' onChange={onChange} />
+                  )}
+                />
+                {errors.email && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div>
+                <label>Password</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='password'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input
+                      size='large'
+                      type='password'
+                      onChange={onChange}
+                      minLength={'8'}
                     />
-                    {errors.email && (
-                      <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>Password</label>
-                    <Controller
-                      control={control}
-                      name='password'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <input
-                          size='large'
-                          type='password'
-                          onChange={onChange}
-                          minLength={'8'}
-                        />
-                      )}
-                    />
-                    {errors.password && (
-                      <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Link href='/user/forgot-password'>
-                    <a className='forgot'>Forgot Password</a>
-                  </Link>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                  <div className='center'>
-                    <Button
-                      loading={loading}
-                      className='button'
-                      htmlType='submit'>
-                      {loading ? 'Authenticating...' : 'Sign In'}
-                    </Button>
-                  </div>
-                </Col>
-              </Row>
-            </form>
-            <p className='center'>OR</p>
-            <div className='center'>
-              <Button className='buttons'>SIGN IN WITH GOOGLE</Button>
-            </div>
-            <Row>
-              <Col xs={24} xl={24} lg={24}>
-                <p className='dont'>
-                  Do not have an account?{' '}
-                  <Link href='/user/sign-up'>
-                    <a>Sign Up</a>
-                  </Link>
+                  )}
+                />
+                {errors.password && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <br></br>
+              <div className='forgot'>
+                <Link href='/user/forgot-password'>
+                  <a className='forgot'>Forgot Password ?</a>
+                </Link>
+              </div>
+              <br></br>
+              <div className='btn'>
+                <Button
+                  loading={loading}
+                  htmlType='submit'
+                  className='btn-sign'>
+                  {loading ? 'Authenticating...' : 'Sign In'}
+                </Button>
+              </div>
+              <h3>OR</h3>
+              <div className='btn-google-sign'>
+                <img src='/google.png' alt='Google'/>
+                <p>Sign in with Google</p>
+              </div>
+              <div>
+                <p>
+                  Dont't have an account ? <a className='p'>Sign up</a>
                 </p>
-              </Col>
-            </Row>
-          </Card>
-        </SignStyled>
+              </div>
+            </form>
+          </div>
+        </SignStyled
+        >
       </div>
     </UserWebLayout>
   );

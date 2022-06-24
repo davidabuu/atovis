@@ -1,237 +1,115 @@
 import styled from 'styled-components';
 
 export const SignStyled = styled.div`
-  margin: auto 15rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   form {
-    width: 400px;
-  }
-  .card-div {
-    margin: 3rem 0px;
-    // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
-    border-radius: 15px;
-    input {
-      border-radius: 40px;
-      border: 0.5px solid var(--primary-color);
-      width: 300px;
-      height: 50px;
-      background: #f8f8f8;
-    }
-    input:focus {
-      outline: none;
-    }
+    display: flex;
+    border: 1px solid #f4f4f4;
+    flex-direction: column;
+    justify-content: space-center;
+    align-items:center;
+    margin: 60px 30rem;
+    padding:10px 3rem;
+    min-height: 60vh;
     color: var(--primary-color);
-    h2,
-    p {
+    h2 {
       text-align: center;
       color: var(--primary-color);
+      font-weight: bold;
     }
-  }
-  .forgot {
-    padding-left: 3rem;
-  }
-  .terms {
-    margin-left: 5px;
-    color: #000;
-  }
-  .checkbox {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  @media (max-width: 500px) {
-    .img {
-      img {
-        width: 200px;
-      }
-      margin-top: 10px;
+    .p{
+      font-weight:bold;
     }
-    form {
-      width: 300px;
-    }
-    .select {
-      width: 300px;
-    }
-  }
-  @media (max-width: 400px) {
-    margin: auto 10rem;
-  }
-  a {
-    color: var(--primary-color);
-    font-weight: bold;
-  }
-  .dont {
-    text-align: center;
-  }
-`;
-
-export const LogoHolder = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  align-items: center;
-  transition: ease all 0.5s;
-  .img {
-    margin-top: 50px;
-  }
-  @media (max-width: 500px) {
-    .img {
-      margin-top: 10px;
-    }
-  }
-`;
-export const LogoHolders = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  align-items: center;
-  transition: ease all 0.5s;
-`;
-
-export const FormGroup = styled.div`
-  margin-bottom: 15px;
-  padding: 0px 3rem;
-`;
-
-export const Layout = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 5px;
-  h1 {
-    font-weight: bold;
-    font-size: 20px;
-    color: var(--primary-color);
-  }
-  ul {
-    margin-top: 5px;
-    display: flex;
-    width: 500px;
-    align-items: center;
-    justify-content: space-around;
-  }
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  li {
-    padding-left: 15px;
-    list-style: none;
-  }
-  @media (max-width: 650px) {
-    ul {
-      width: 400px;
-      font-size: 15px;
+    p {
+      text-align: center;
     }
     a {
-      font-size: 12px;
-      width: 300px;
-    }
-  }
-`;
-
-export const SideNavStyled = styled.div`
-  background: var(--primary-color);
-  display: flex;
-  width: 250px;
-  flex-direction: column;
-  height: 100vh;
-  align-items: center;
-  .color {
-    color: #fff;
-  }
-  li {
-    list-style: none;
-  }
-  div {
-    margin-top: 30px;
-  }
-  ul {
-    display: flex;
-    margin-top: 50px;
-    flex-direction: column;
-    align-items: center;
-  }
-  img {
-    padding-bottom: 10px;
-  }
-  li a:hover {
-    color: lightblue;
-  }
-  li a {
-    display: flex;
-    align-items: center;
-    width: 130px;
-    color: #fff;
-    margin-right: 30px;
-    height: 7rem;
-    justify-content: space-around;
-  }
-`;
-
-export const HeaderStyled = styled.div`
-  background-color: #f4f4f4;
-  border-bottom: 1px solid var(--primary-color);
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  justify-content: space-around;
-  .search {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 600px;
-  }
-  img,
-  .noti {
-    padding-left: 20px;
-  }
-  h1 {
-    font-size: 30px;
-  }
-`;
-
-export const VendorStyle = styled.div`
-  margin: 5rem;
-  h1 {
-    color: var(--primary-color);
-  }
-  .img {
-    text-align: center;
-  }
-  .vendor {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background: #f4f4f4;
-    padding: 10px;
-    h1 {
-      font-size: 20px;
       color: var(--primary-color);
+      font-weight: bold;
     }
-    .info {
-      h1 {
-        margin-top: 5px;
+    .forgot{
+      align-self:flex-start;
+    }
+    input {
+      border: none;
+      width: 300px;
+      border-radius: 25px;
+      border: 1px solid var(--primary-color);
+      padding: 10px;
+      height: 50px;
+    }
+    .btn {
+      width: 300px;
+      text-align:center;
+      font-weight:bold;
+    }
+    h3 {
+      text-align: center;
+      color: var(--primary-color);
+      font-weight:bold;
+      (--primary-color);
+    }
+    .btn-sign{
+      border: none;
+      width: 300px;
+      background-color: var(--primary-color);
+      text-align:center;
+      color: #fff;
+      border-radius: 25px;
+      border: 1px solid var(--primary-color);
+      padding: 10px;
+      height: 50px;
+    }
+    .btn-google-sign{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border: none;
+      width: 300px;
+      background-color: var(--button-color);
+      color: #fff;
+      border-radius: 25px;
+      padding: 10px;
+      height: 50px;
+      p{
+        margin-top:10px;
+        margin-left:10px;
+      }
+      img{
+        width:20px;
       }
     }
   }
-  button {
-    width: 300px !important;
+
+  //Responsive Desgin//////
+  @media(max-width:1300px){
+    form{
+      margin:10px 20rem;
+    }
+  @media(max-width:800px){
+    form{
+      margin:10px 10rem;
   }
-  @media (max-width: 800px) {
-    .vendor {
-      flex-direction: column;
-      align-items: flex-start;
-      padding-left: 50px;
-      h1 {
-        font-size: 17px;
+  @media(max-width:700px){
+    form{
+      margin:10px 10rem;
+      input, .btn-sign, .btn-google-sign{
+        width:250px;
       }
     }
   }
-  margin: 3rem;
+  @media(max-width:600px){
+    form{
+      margin:10px 5rem;
+      input, .btn-sign, .btn-google-sign{
+        width:250px;
+      }
+    }
+  }
+  @media(max-width:400px){
+    form{
+      margin:10px .5rem;
+      input, .btn-sign, .btn-google-sign{
+      }
+    }
+  }
 `;

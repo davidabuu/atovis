@@ -59,135 +59,103 @@ const UserSignUp = () => {
     <UserWebLayout webtitle='Sign Up'>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
-          <Card className='card-div'>
+          <div className='card-div'>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
               <h2>Sign Up</h2>
               <p>Create an Account and get upto 50% on selected products</p>
-              <Row gutter={48} justify='space-between' className='flex'>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>First Name</label>
-                    <Controller
-                      control={control}
-                      name='firstName'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <input size='large' type='text' onChange={onChange} />
-                      )}
+              <div>
+                <label>First Name</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='firstName'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input size='large' type='text' onChange={onChange} />
+                  )}
+                />
+                {errors.firstName && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div>
+                <label>Last Name</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='lastName'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input size='large' type='text' onChange={onChange} />
+                  )}
+                />
+                {errors.lastName && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div>
+                <label>Password</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='password'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input
+                      size='large'
+                      type='password'
+                      onChange={onChange}
+                      minLength={'8'}
                     />
-                    {errors.firstName && (
-                      <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>Last Name</label>
-                    <Controller
-                      control={control}
-                      name='lastName'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <input size='large' type='text' onChange={onChange} />
-                      )}
+                  )}
+                />
+                {errors.password && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div>
+                <label>Confirm Password</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='confirmPassword'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input
+                      size='large'
+                      type='password'
+                      onChange={onChange}
+                      minLength={'8'}
                     />
-                    {errors.lastName && (
-                      <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row gutter={24}>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>Email Address</label>
-                    <Controller
-                      control={control}
-                      name='email'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <input size='large' type='email' onChange={onChange} />
-                      )}
-                    />
-                    {errors.email && (
-                      <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>Password</label>
-                    <Controller
-                      control={control}
-                      name='password'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <input
-                          size='large'
-                          type='password'
-                          onChange={onChange}
-                          minLength={'8'}
-                        />
-                      )}
-                    />
-                    {errors.password && (
-                      <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                  <FormGroup>
-                    <label>Confirm Password</label>
-                    <Controller
-                      control={control}
-                      name='confirmPassword'
-                      rules={{ required: true }}
-                      render={({ field: { onChange } }) => (
-                        <input
-                          size='large'
-                          type='password'
-                          onChange={onChange}
-                        />
-                      )}
-                    />
-                    {errors.confirmPassword && (
-                      <span className='error'>This field is required</span>
-                    )}
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                  <div className='center'>
-                    <Button
-                      loading={loading}
-                      className='button'
-                      htmlType='submit'>
-                      {loading ? 'Authenticating...' : 'Sign Up'}
-                    </Button>
-                  </div>
-                </Col>
-              </Row>
+                  )}
+                />
+                {errors.confirmPassword && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div className='btn'>
+                <Button
+                  loading={loading}
+                  htmlType='submit'
+                  className='btn-google-sign'>
+                  {loading ? 'Authenticating...' : 'Sign Up'}
+                </Button>
+              </div>
+              <h3>OR</h3>
+              <div className='btn'>
+                <Button className='btn-sign'>Sign Up with Google</Button>
+              </div>
+              <div>
+                <Link>
+                  <a>
+                    <p>
+                      Already have an account ? <a>Sign Ip</a>
+                    </p>
+                  </a>
+                </Link>
+              </div>
             </form>
-            <p className='center'>OR</p>
-            <div className='center'>
-              <Button className='buttons'>SIGN WITH GOOGLE</Button>
-            </div>
-            <Row>
-              <Col xs={24} xl={24} lg={24}>
-                <p className='dont'>
-                  Already have an account?{' '}
-                  <Link href='/user/sign-in'>
-                    <a>Sign In</a>
-                  </Link>
-                </p>
-              </Col>
-            </Row>
-          </Card>
+          </div>
         </SignStyled>
       </div>
     </UserWebLayout>

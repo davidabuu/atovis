@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 export const HeadStyle = styled.div`
-  .mobile-view {
-    display: none;
-  }
   .desktop {
     .sign {
       color: #fff !important;
@@ -30,47 +27,6 @@ export const HeadStyle = styled.div`
   @media (max-width: 700px) {
     .desktop {
       display: none;
-    }
-    .mobile-view {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 100%;
-      .sign {
-        color: #fff !important;
-        transform: translateY(-10px);
-      }
-      .signs {
-        display: flex;
-        color: #fff !important;
-        align-items: center;
-        transform: translateY(5px);
-        div {
-          transform: translateY(2px);
-        }
-        &:hover {
-          color: var(--button-color) !important;
-        }
-      }
-      .flex {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translateY(-2px);
-      }
-      .cart {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translateY(14px);
-        p {
-          background: var(--button-color);
-          color: var(--primary-color);
-          font-size: 15px;
-          clip-path: circle();
-          width: 20px;
-        }
-      }
     }
   }
 `;
@@ -195,11 +151,6 @@ export const HeaderStyled = styled.div`
       margin-top: 10px;
       .text {
         width: 200px;
-        height: 20px;
-      }
-      .search-button {
-        width: 70px;
-        height: 20px;
       }
     }
     .logo {
@@ -234,15 +185,50 @@ export const HeaderStyled = styled.div`
 `;
 
 export const MobileStyled = styled.div`
-  @media (max-width: 950px) {
+  display: none !important;
+  @media (max-width: 700px) {
+    .mobile-view{
+      margin:0px !important;
+      background:var(--primary-color);
+      .flexs{
+      color:#fff !important;
+      display:flex;
+      align-items:center;
+      padding-left:10px;
+      h3{
+        font-size:25px;
+        color:#fff;
+      }
+      }
+    }
+    display: block !important;
+    .img{
+      text-align:center;
+      margin-top:10px;
+    }
     .search-product {
-      margin: 10px;
+      display:flex;
+      margin-left:10px;
+      align-items:center;
+      .cart{
+        margin-top:15px;
+      }
+    }
+    .cart{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--primary-color);
+      background:#f4f4f4;
+      padding:2px;
+      border-radius:15px;
+      margin-left:5px;
+    }
       .text {
         width: 300px;
         background-color: #f4f4f4;
         border: 1.5px solid var(--primary-color) !important;
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
+        border-radius: 15px;
         border: none;
         padding-left: 5px;
         height: 39px;
@@ -257,6 +243,11 @@ export const MobileStyled = styled.div`
         width: 100px;
         background: var(--button-color);
       }
+    }
+  }
+  @media(max-width:500px){
+    .search-product{
+      width:300px;
     }
   }
 `;

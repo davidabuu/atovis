@@ -7,16 +7,15 @@ import Swipers from './Swiper';
 
 const UserLandingPage = () => {
   return (
-    <Layout>
-      <HomePage>
+     <div>
+       <HomePage>
         <Swipers />
         <div>
           <CategoryCard />
         </div>
       </HomePage>
       <FeaturedProduct />
-      {/* <AllProducts json={undefined}/> */}
-    </Layout>
+     </div>
   );
 };
 

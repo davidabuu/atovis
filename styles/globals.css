@@ -31,6 +31,12 @@ a {
 .center {
   text-align: center;
 }
+.center-flex{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 .text-color {
   color: var(--primary-color);
 }
@@ -47,7 +53,7 @@ a {
   padding: 25px;
   height: 50px !important;
   margin: 10px 0;
-  width: 300px;
+  width: 280px;
   color: #fff !important;
 }
 .vendor-btn {
@@ -70,8 +76,16 @@ a {
   padding: 25px;
   height: 50px !important;
   margin: 10px 0;
-  width: 300px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  width: 280px !important;
   color: #fff !important;
+  margin-left: 4rem;
+}
+.buttons img{
+width:30px !important;
+
 }
 .cart-btn {
   cursor: pointer;
@@ -304,9 +318,6 @@ a {
 @media (max-width: 850px) {
   .pro-file {
     display: none;
-  }
-  .mobile-profile {
-    display: block;
   }
 }
 @media (max-width: 500px) {

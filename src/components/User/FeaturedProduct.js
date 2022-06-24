@@ -16,7 +16,7 @@ const FeaturedProduct = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [currentPage, setCurrentPage] = useState(1)
-  const [productPerPage, setProductPerPage] = useState(1)
+  const [productPerPage, setProductPerPage] = useState(4)
   const API_URL = process.env.APP_BASE_URL;
   const fetchAllProducts = async (page) => {
     setLoading(true);

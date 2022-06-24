@@ -8,7 +8,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getCartTotal } from '../../redux/User/Cart/CartSlice';
 import { LogoHolders } from '../Vendor/SignVendor/SignStyled';
 const Header = () => {
-  const { Search } = Input;
   const [user, setUserName] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
@@ -26,8 +25,9 @@ const Header = () => {
 
     setMenuOpen(false);
     setUserName(name);
-  }, [name]);
+  }, []);
   return (
+    <>
     <HeadStyle>
       <div className='desktop'>
         <HeaderStyled>
@@ -110,26 +110,33 @@ const Header = () => {
           </Link>
         </HeaderStyled>
       </div>
+      </HeadStyle>
       <MobileStyled>
-      <LogoHolders>
         <div className='img'>
           <img src='/logo2.png' alt='Log' />
         </div>
-      </LogoHolders>
-      <div className='search-product'>
-            <input
-              type='text'
-              className='text'
-              placeholder='Search for a product'
-            />
-            <input type='button' value={'Search'} className='search-button' />
+        <div className='search-product'>
+          <input
+            type='text'
+            className='text'
+            placeholder='Search for a product'
+          />
+          <div className='cart-count'>
+            <Link href='/user/cart'>
+              <a>
+                <p className='cart'>
+                  <ShoppingCart />
+                  <p>{totalCount}</p>
+                </p>
+              </a>
+            </Link>
           </div>
-        <HeaderStyled>
+        </div>
           <div className='mobile-view'>
             <a>
-              <p className='flex'>
+              <p>
                 {user ? (
-                  <p>
+                  <p className='flexs'>
                     <h3>{`Hello ${user}`}</h3>
                     <img src='/hand.png' alt='Hand' className='hand' />
                   </p>
@@ -147,18 +154,9 @@ const Header = () => {
                 )}
               </p>
             </a>
-            <Link href='/user/cart'>
-            <a style={{ color: '#fff' }}>
-              <p className='cart'>
-                <ShoppingCart />
-                <p>{totalCount}</p>
-              </p>
-            </a>
-          </Link>
           </div>
-        </HeaderStyled>
       </MobileStyled>
-    </HeadStyle>
+      </>
   );
 };
 export default Header;
