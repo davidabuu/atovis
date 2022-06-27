@@ -1,4 +1,4 @@
-import {  Button,  notification } from 'antd';
+import { Card, Col, Input, Button, Row, notification } from 'antd';
 import Link from 'next/link';
 import React from 'react';
 import 'aos/dist/aos.css';
@@ -6,11 +6,12 @@ import Aos from 'aos';
 import { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
-
 import router from 'next/router';
-import UserWebLayout from '../../WebLayout/UserWebLayout';
-import { SignStyled } from './SignStyled';
-import { login } from '../../../redux/Vendor/vendorInfoSlice';
+import {
+  SignStyled,
+} from '../Vendor/SignVendor/SignStyled';
+import UserWebLayout from '../WebLayout/UserWebLayout';
+import { adminLogin } from '../../redux/adminSlice';
 const UserLogin = () => {
   useEffect(() => {
     Aos.init({ duration: 300 });
@@ -23,7 +24,7 @@ const UserLogin = () => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { user, isError, isSuccess, message } = useSelector(
-    (state) => state.vendorSlice
+    (state) => state.adminSlice
   );
   useEffect(() => {
     if (isError) {
@@ -38,7 +39,7 @@ const UserLogin = () => {
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch]);
-  const LoginUser = async (record) => {
+  const AdminLogin = async (record) => {
     if (isError) {
       notification.error({
         message: ' Error',
@@ -47,15 +48,15 @@ const UserLogin = () => {
       });
     } else {
       setLoading(true);
-      dispatch(login(record));
+      dispatch(adminLogin(record));
     }
   };
   return (
-    <UserWebLayout webtitle='Vendor Login'>
+    <UserWebLayout webtitle='Admin Sign In'>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
           <div className='card-div'>
-            <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
+            <form autoComplete='off' onSubmit={handleSubmit(AdminLogin)}>
               <div>
                 <label>Email Address</label>
                 <br></br>
@@ -83,7 +84,7 @@ const UserLogin = () => {
                       size='large'
                       type='password'
                       onChange={onChange}
-                      minLength={'6'}
+                    
                     />
                   )}
                 />

@@ -59,7 +59,7 @@ const CartContianer = () => {
                     <img src={item.imageUrl} alt='Hello' />
                     <div>
                       <p>
-                        {item.name} :{' '}
+                        {item.name} :{'Product Info'}
                         <span className='description'>
                           {/* {item.description} */}
                         </span>
@@ -95,12 +95,12 @@ const CartContianer = () => {
                 <div className='total-amount '>
                   <h2>Total Amount : &#8358;{totalAmount} </h2>
                 </div>
-                <div className='total-amount cart-btn '>
+                <div className='total-amount  '>
                   <Button className='cart-btns' onClick={clearAllCartItems}>
                     Clear Cart
                   </Button>
                 </div>
-                <div className='total-amount cart-btn'>
+                <div className='total-amount'>
                   <Button className='cart-btns'>Proceed To CheckOut</Button>
                 </div>
               </div>

@@ -26,6 +26,16 @@ const login = async (data) => {
     return response.data;
   }
 };
+//Login For Admin
+const loginAdmin = async (data) => {
+  const response = await axios.post(`${API_URL}/admin/login`, data);
+  if (response.data) {
+    storeInLocalStorage('user', response.data.token)
+    storeInLocalStorage('name', JSON.stringify(response.data.data.account.firstName))
+
+    return response.data;
+  }
+};
 //Forgot Password
 const forgotPassword = async (data) => {
   const response = await axios.post(`${API_URL}/forgot-password`, data);
@@ -41,7 +51,8 @@ const authSevice = {
   register,
   login,
   forgotPassword,
-  verifyMail
+  loginAdmin,
+  verifyMail,
 };
 export default authSevice;
 

@@ -82,7 +82,7 @@ export const CartStyle = styled.div`
   .price{
     margin:0px;
     font-size:20px;
-    color:f4f4f4;
+    color:var(--primary-color);
     font-weight:bold;
   }
   .mobile-cart{
@@ -115,13 +115,26 @@ export const CartStyle = styled.div`
   @media(max-width:600px){
     .cart-items{
       justify-content:space-between;
-      margin: 10px 1rem;
+      margin: 10px 5px;
+      img{
+        width:200px;
+      }
+    }
+    .cart-btns{
+      width: 200px;
+      margin-top:5px;
+      height:40px;
+      padding:0px;
+    }
+  }
+  @media(max-width:400px){
+    .cart-items{
+   
       img{
         width:150px;
       }
     }
   }
- 
 `;
 
 export const MobileCartStyle = styled.div`

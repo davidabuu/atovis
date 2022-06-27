@@ -157,6 +157,21 @@ h1{
   text-align:center;
   color:#fff;
 }
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-color: var(--primary-color);
+  p {
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  .p {
+    transform: translateX(-50px);
+  }
+}
 .product-info{
   display:flex;
   justify-content:space-around;

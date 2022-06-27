@@ -9,6 +9,7 @@ import cartSlice from './redux/User/Cart/CartSlice';
 import storage from 'redux-persist/lib/storage';
 import categorySlice from './redux/Category/categorySlice';
 import singleProduct from './redux/User/Product/ProductDetailSlice';
+import adminSlice from './redux/adminSlice';
 
 const persistConfig = {
     key: 'root',
@@ -25,6 +26,7 @@ const reducer = combineReducers({
   singleProduct,
   cartSlice,
   categorySlice,
+  adminSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

@@ -59,7 +59,7 @@ const MobileCart = () => {
                   <img src={item.imageUrl} alt='Hello' />
                   <div>
                     <div>
-                      {item.name} :{' '}
+                      {item.name} :{'Product Info'}
                       <span className='description'>
                         {/* {item.description} */}
                       </span>
@@ -94,10 +94,10 @@ const MobileCart = () => {
                 <div className='total-amount'>
                   <h2>Total Amount : &#8358;{totalAmount} </h2>
                 </div>
-                <div className='total-amount'>
+                <div style={{textAlign:'center'}}>
                   <Button className='cart-btns' onClick={clearAllCartItems}>Clear Cart</Button>
                 </div>
-                <div className='total-amount'>
+                <div style={{textAlign:'center'}}>
                   <Button className='cart-btns'>Proceed To CheckOut</Button>
                 </div>
             </>

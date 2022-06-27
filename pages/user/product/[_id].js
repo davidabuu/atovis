@@ -56,7 +56,10 @@ const ProductDetails = () => {
           </div>
         ) : (
           <ProductDetailsStyled>
-            <h1 className=''>PRODUCT OVERVIEW</h1>
+             <div className='head'>
+            <p className='p'>&lt;</p>
+            <p>MY CART</p>
+          </div>
             <div className='product-info'>
               <div>
                 <img src={productDetails.data.imageUrl} alt='ProductIMage' />

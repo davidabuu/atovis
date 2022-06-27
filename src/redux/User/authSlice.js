@@ -71,6 +71,7 @@ export const authSlice = createSlice({
         state.user = null
         state.message = action.payload
     })
+    
   }
 });
 

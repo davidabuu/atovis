@@ -24,13 +24,8 @@ const Bussiness = () => {
   };
   return (
     <UserWebLayout webtitl='Bussiness Info'>
-      <LogoHolders>
-        <div className='img'>
-          <img src='/logo2.png' alt='Log' />
-        </div>
-      </LogoHolders>
       <SignStyled style={{ marginTop: '20px' }}>
-        <Card>
+        <div className='card-div'>
           <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
             <Row gutter={24}>
               <Col xs={24} xl={24} lg={24}>
@@ -50,39 +45,38 @@ const Bussiness = () => {
                 </FormGroup>
               </Col>
 
-              <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
+          
+                <div>
                   <label>Business Type</label>
                   <Controller
                     control={control}
                     name='type'
                     rules={{ required: true }}
                     render={({ field: { onChange } }) => (
-                      <Select
+                      <select
                         onChange={onChange}
                         size='large'
                         style={{ width: '100%' }}>
-                        <Option value='typ1'>Type 1</Option>
-                        <Option value='typ2'>Type 2</Option>
-                      </Select>
+                        <option value='typ1'>Type 1</option>
+                        <option value='typ2'>Type 2</option>
+                      </select>
                     )}
                   />
                   {errors.type && (
                     <span className='error'>This field is required</span>
                   )}
-                </FormGroup>
-              </Col>
+                </div>
+              
             </Row>
-            <Row>
-              <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
+            
+                <div>
                   <label>CAC Registration Number</label>
                   <Controller
                     control={control}
                     name='cacNumber'
                     rules={{ required: true }}
                     render={({ field: { onChange } }) => (
-                      <Input
+                      <input
                         size='large'
                         type='text'
                         onChange={onChange}
@@ -93,19 +87,17 @@ const Bussiness = () => {
                   {errors.cacNumber && (
                     <span className='error'>This field is required</span>
                   )}
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
+                </div>
+              
+           
+                <div>
                   <label>State</label>
                   <Controller
                     control={control}
                     name='state'
                     rules={{ required: true }}
                     render={({ field: { onChange } }) => (
-                      <Input
+                      <input
                         size='large'
                         type='text'
                         onChange={onChange}
@@ -116,12 +108,10 @@ const Bussiness = () => {
                   {errors.state && (
                     <span className='error'>This field is required</span>
                   )}
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
+                </div>
+             
+           
+                <div>
                   <label>Address</label>
                   <Controller
                     control={control}
@@ -139,23 +129,19 @@ const Bussiness = () => {
                   {errors.address && (
                     <span className='error'>This field is required</span>
                   )}
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={24} xl={24} lg={24}>
+                </div>
+             
+                <br></br>
+              <div className='btn'>
                 <Button
-                  size='large'
-                  htmlType='submit'
-                  className='vendor-btn'
                   loading={loading}
-                  block>
-                   {loading ? 'Authenitcation...' : 'NEXT'}
+                  htmlType='submit'
+                  className='btn-sign'>
+                  {loading ? 'Authenticating...' : 'NEXT'}
                 </Button>
-              </Col>
-            </Row>
+              </div>
           </form>
-        </Card>
+        </div>
       </SignStyled>
     </UserWebLayout>
   );
