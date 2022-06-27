@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-
+export const FormGroup = styled.div``
+export const LogoHolder = styled.div``
+export const LogoHolders = styled.div``
 export const SignStyled = styled.div`
   form {
     display: flex;

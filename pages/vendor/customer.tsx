@@ -12,8 +12,10 @@
 
 import React from 'react'
 
-export const customer = () => {
+const customer = () => {
   return (
     <div>customer</div>
   )
 }
+
+export default customer
