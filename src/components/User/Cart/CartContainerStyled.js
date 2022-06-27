@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CartStyle = styled.div`
   background: #f4f4f4;
   padding: 10px;
-  h1 {
+  .h1 {
     text-align: center;
     color: #fff;
     margin: 10px 3rem;
@@ -65,61 +65,88 @@ export const CartStyle = styled.div`
   .items{
     width:700px;
   }
+  .cart-btn{
+    text-align:center;
+  }
+  .cart-btns{
+    border: none;
+    width: 200px;
+    background-color: var(--primary-color);
+    text-align:center;
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    height: 50px;
+  }
   .price{
     margin:0px;
     font-size:20px;
-    color:var(--primary-color);
+    color:f4f4f4;
     font-weight:bold;
   }
-  ///Responsive Design
-  @media(max-width:1000px){
-    .items{
-      width:400px;
+  .mobile-cart{
+    display:none;
+  }
+  .delete{
+    display:flex;
+    align-items:center;
+   // justify-content:center;
+    p{
+      margin-top:5px;
     }
   }
-  @media(max-width:800px){
-    .items{
-      width:300px;
+  @media(max-width:850px){
+    margin:10px 0rem;
+    padding:0px;
+    h1{
+      margin:10px 0px;
     }
-    .cart-items{
-      img{
-        width:200px;
-      }
+    .desktop-cart{
+      display:none;
+    }
+    .mobile-cart{
+      display:block;
+    }
+    .header{
+      display:none;
     }
   }
-  @media(max-width:700px){
-    .items{
-      width:200px;
-    }
+  @media(max-width:600px){
     .cart-items{
+      justify-content:space-between;
+      margin: 10px 1rem;
       img{
         width:150px;
       }
-      margin: 10px 1rem;
     }
   }
-  @media(max-width:480px){
-    .price{
-      margin:0px;
-      font-size:15px;
-    }
-    h1 {
-      text-align: center;
-      color: #fff;
-      margin: 10px 1rem;
-      font-size:15px;
-      padding: 5px;
-      background-color: var(--primary-color);
-    }
+ 
+`;
+
+export const MobileCartStyle = styled.div`
+  .cart-items {
   }
-  @media(max-width:400px){
-    .cart-items{
-      img{
-        width:130px;
-      }
-      margin: 10px 0.5rem;
+  .quantity {
+    width: 100px;
   }
-  .quantity{
-    width: 170px;
+  .img {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-color: var(--primary-color);
+    p {
+      font-size: 20px;
+      padding-top: 10px;
+    }
+    .p {
+      transform: translateX(-50px);
+    }
   }
 `;

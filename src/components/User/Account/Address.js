@@ -42,33 +42,70 @@ const Address = () => { useEffect(() => {
   return (
     <div data-aos='zoom-in'>
       <UserWebLayout webtitle={'Address Info'}>
-        <SignStyled style={{ marginTop: '20px' }}>
-          <Card>
-            <form autoComplete='off'>
-              <Row gutter={24}>
-                <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
-                    <label>Latitude</label>
-                    <Input size='large' name='newemail' value={latitude} />
-                  </FormGroup>
-                </Col>
-                <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
-                    <label>Longitude</label>
-                    <Input size='large' name='newemail' value={longitude} />
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
-                    <Button onClick={() => getLocation()}>Get Location</Button>
-                  </FormGroup>
-                </Col>
-              </Row>
-            </form>
-          </Card>
-        </SignStyled>
+      <div className='card-div'>
+            <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
+              <div>
+                <label>Country</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='country'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input size='large' type='text' onChange={onChange} />
+                  )}
+                />
+                {errors.country && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div>
+                <label>State</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='state'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input size='large' type='text' onChange={onChange} />
+                  )}
+                />
+                {errors.state && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div>
+                <label>City</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='city'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input size='large' type='text' onChange={onChange} />
+                  )}
+                />
+                {errors.city && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              <div>
+                <label>Street & House No</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='street'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <textarea size='large' type='text' onChange={onChange} />
+                  )}
+                />
+                {errors.street && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
+              </form>
+              </div>
       </UserWebLayout>
     </div>
   );
