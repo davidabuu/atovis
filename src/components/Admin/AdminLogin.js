@@ -72,6 +72,7 @@ const UserLogin = () => {
                   <span className='error'>This field is required</span>
                 )}
               </div>
+              <br></br>
               <div>
                 <label>Password</label>
                 <br></br>

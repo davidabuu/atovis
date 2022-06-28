@@ -190,6 +190,24 @@ export const MobileStyled = styled.div`
     .mobile-view{
       margin:0px !important;
       background:var(--primary-color);
+      .sign{
+        color:#fff;
+        display:flex;
+        padding-left:20px;
+        font-size:20px;
+        cursor:pointer;
+       // justify-content:center;
+        p{
+          transform:translateY(5px);
+        }
+        .person{
+          transform:translateY(10px); 
+        }
+        a{
+          color:#fff;
+          
+        }
+      }
       .flexs{
       color:#fff !important;
       display:flex;

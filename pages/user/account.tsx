@@ -7,9 +7,9 @@ const AccountUser = () => {
   return (
     <UserWebLayout webtitle='Account'>
       <div style={{ background: '#f4f4f4' }}>
-        <Layout>
+        {/* <Layout>
           <MyAccount />
-        </Layout>
+        </Layout> */}
       </div>
     </UserWebLayout>
   );

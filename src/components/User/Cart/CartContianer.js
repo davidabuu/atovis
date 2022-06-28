@@ -59,10 +59,8 @@ const CartContianer = () => {
                     <img src={item.imageUrl} alt='Hello' />
                     <div>
                       <p>
-                        {item.name} :{'Product Info'}
-                        <span className='description'>
-                          {/* {item.description} */}
-                        </span>
+                        {item.name} 
+                      
                       </p>
                       <RatingIcon />
                       <div style={{ color: 'var(--primary-color)' }}>
@@ -72,7 +70,7 @@ const CartContianer = () => {
                           style={{ cursor: 'pointer' }}>
                           <div>
                             {' '}
-                            <Delete />{' '}
+                            <Delete />
                           </div>
                           <p>Remove</p>
                         </span>

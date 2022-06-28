@@ -1,4 +1,4 @@
-import { Button, Row, Col, Spin, Pagination } from 'antd';
+import { Button, Row, Col, Spin, Pagination,  } from 'antd';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import BeautyStars from 'beauty-stars';
@@ -9,6 +9,7 @@ import Aos from 'aos';
 import Link from 'next/link';
 import { storeInLocalStorage } from '../utils/usableFunction';
 import { addToCart, clearCart } from '../../redux/User/Cart/CartSlice';
+import {FavoriteBorder} from '@material-ui/icons';
 import { useDispatch } from 'react-redux';
 const FeaturedProduct = () => {
   const [product, setProduct] = useState([]);
@@ -53,7 +54,6 @@ const FeaturedProduct = () => {
   const indexOfLastPage = currentPage * productPerPage;
   const indexOfFirstProduct = indexOfLastPage - productPerPage
   const currentProduct = product.slice(indexOfFirstProduct, indexOfLastPage)
-  console.log(currentProduct)
   return (
     <FeaturedProductStyled data-aos='zoom-in' data-aos-once='true'>
       {loading ? (
@@ -84,8 +84,10 @@ const FeaturedProduct = () => {
                         <a style={{color:'#333'}}>
                           <img src={data.imageUrl} className='img' alt='Home' />
                           <div>
-                            <p>{data.name}</p>
-                            <p>{data.price}</p>
+                            <div>{data.name}</div>
+                            <Row gutter={2} justify='space-between'> &#8358;{data.price}
+                            <div><FavoriteBorder/></div>
+                            </Row>
                             <BeautyStars
                               size='12px'
                               gap='7px'

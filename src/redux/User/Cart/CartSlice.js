@@ -54,6 +54,12 @@ export const cartSlice = createSlice({
         });
       } else if (state.cartItems[itemIndex].quantity === 1) {
         state.cartItems[itemIndex].quantity === 0;
+      } else if (
+        state.cartItems[itemIndex].quantity ===
+        state.cartItems[itemIndex].quantityLeft
+      ) {
+        state.cartItems[itemIndex].quantity ===
+          state.cartItems[itemIndex].quantityLeft;
       }
     },
     clearCart: (state) => {
@@ -62,7 +68,6 @@ export const cartSlice = createSlice({
         positon: 'top-right',
       });
     },
-
     getCartTotal: (state, action) => {
       let { total, cartQuantity } = state.cartItems.reduce(
         (cartTotal, cartItem) => {

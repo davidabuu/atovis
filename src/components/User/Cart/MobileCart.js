@@ -59,10 +59,7 @@ const MobileCart = () => {
                   <img src={item.imageUrl} alt='Hello' />
                   <div>
                     <div>
-                      {item.name} :{'Product Info'}
-                      <span className='description'>
-                        {/* {item.description} */}
-                      </span>
+                      {item.name}
                     </div>
                     <div className='price'>&#8358;{item.price * item.quantity}</div>
                     <div>

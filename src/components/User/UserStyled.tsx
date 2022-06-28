@@ -148,10 +148,37 @@ export const FeaturedProductStyled = styled.div`
       width: 140px;
     }
   }
+  @media (max-width: 350px) {
+    margin: 1rem 0rem;
+    img {
+      width: 140px;
+    }
+    .but-ton {
+      width: 140px;
+    }
+  }
 `;
 
 export const ProductDetailsStyled = styled.div`
 margin:10px 4rem;
+.qty {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--button-color);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  width: 30px;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  font-size: 15px;
+}
 h1{
   background-color:var(--primary-color);
   text-align:center;
@@ -221,6 +248,9 @@ h1{
       .product-info{
         align-items:center;
         flex-direction:column;
+        img{
+          margin-top:10px;
+        }
       }
       .product-details{
         background:#f4f4f4;

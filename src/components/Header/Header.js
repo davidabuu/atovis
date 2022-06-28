@@ -143,9 +143,9 @@ const Header = () => {
                 ) : (
                   <div>
                     <Link href='/user/sign-in'>
-                      <a className='signs'>
+                      <a className='sign'>
                         <p>Sign In</p>{' '}
-                        <div>
+                        <div className='person'>
                           <Person />
                         </div>
                       </a>
