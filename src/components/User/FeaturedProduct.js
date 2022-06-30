@@ -19,6 +19,7 @@ const FeaturedProduct = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [productPerPage, setProductPerPage] = useState(4)
   const API_URL = process.env.APP_BASE_URL;
+  const [qty, setQty] = useState(0);
   const fetchAllProducts = async (page) => {
     setLoading(true);
     try {
@@ -40,10 +41,7 @@ const FeaturedProduct = () => {
   }, []);
   const onClick = (_id) => {
     storeInLocalStorage('id', _id);
-  };
-  const AddToCart = (data) => {
-    console.log(data);
-    dispatch(addToCart(data));
+    console.log(_id)
   };
   const clear = () => {
     dispatch(clearCart());
@@ -80,7 +78,7 @@ const FeaturedProduct = () => {
                     <div className='ft product-card'>
                       <Link
                         href={`/user/product/${data._id}`}
-                        onClick={onClick(data._id)}>
+                        onClick={() => onClick(data._id)}>
                         <a style={{color:'#333'}}>
                           <img src={data.imageUrl} className='img' alt='Home' />
                           <div>
@@ -96,15 +94,17 @@ const FeaturedProduct = () => {
                               value={5}
                             />
                           </div>
-                        </a>
-                      </Link>
-                      <div>
+                          <div>
                         <Button
-                          onClick={() => AddToCart(data)}
+                         
                           className='but-ton'>
                           Add To Cart
                         </Button>
                       </div>
+                        </a>
+
+                      </Link>
+                      
                     </div>
                   </Col>
                 </Row>

@@ -4,10 +4,12 @@ import FooterDiv from '../Footer/FooterDiv';
 import Header from '../Header/Header';
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className='layout'>
       <Header />
       {children}
+      <div className='foot'>
       <FooterDiv />
+      </div>
     </div>
   );
 };

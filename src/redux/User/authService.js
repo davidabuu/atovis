@@ -32,7 +32,7 @@ const loginAdmin = async (data) => {
   if (response.data) {
     storeInLocalStorage('user', response.data.token)
     storeInLocalStorage('name', JSON.stringify(response.data.data.account.firstName))
-
+    router.push('/admin/dashboard')
     return response.data;
   }
 };

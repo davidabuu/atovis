@@ -102,7 +102,7 @@ const UserLogin = () => {
               <br></br>
               <div className='forgot'>
                 <Link href='/user/forgot-password'>
-                  <a className='forgot'>Forgot Password ?</a>
+                  <a className='forgot'>Forgot Password?</a>
                 </Link>
               </div>
               <br></br>
@@ -121,7 +121,7 @@ const UserLogin = () => {
               </div>
               <div>
                 <p>
-                  Dont't have an account ? <a className='p'>Sign up</a>
+                  Dont't have an account ? <Link href='/user/sign-up'><a className='p'>Sign up</a></Link>
                 </p>
               </div>
             </form>

@@ -17,24 +17,31 @@ const ProductDetails = () => {
   const productRedux = useSelector((state) => state.singleProduct);
   const [loading, setLoading] = useState(false);
   //const { cartItems, totalAmount } = useSelector((state) => state.cartSlice);
-  const { productDetails, isLoading } = productRedux;
+  const { productDetails, isLoading, isError } = productRedux;
   const [count, setCount] = useState(1);
   const [product, setProduct] = useState('');
   const { cartItems, totalAmount } = useSelector((state) => state.cartSlice);
+  const [qty, setQty] = useState(0)
+  let id;
+  //console.log(productDetails)
   useEffect(() => {
 
-  const id = JSON.parse(localStorage.getItem('id'));
-    console.log(id);
+  id = (JSON.parse(localStorage.getItem('id')));
     dispatch(singleProductInfo(id));
+    console.log(productDetails);
     setLoading(false)
   }, [setLoading, dispatch]);
   const AddToCart = (data) => {
+    setQty(qty+ 1)
     dispatch(addToCart(data));
   };
   const decrease = (item) => {
+    console.log('Holaa')
+    setQty(qty - 1)
     dispatch(decreaseItemFromCart(item));
   };
   const increase = (item) => {
+    setQty(qty + 1)
     console.log('Hello');
     dispatch(addToCart(item));
   };
@@ -53,14 +60,18 @@ const ProductDetails = () => {
             <p>Fetching Data</p>
           </div>
         ) : (
+          isError ? <div className='error'>
+            <h2>Errror</h2>
+            <Button onClick={() => window.location.reload()}>REFRESH OR RELOAD</Button>
+          </div> :
           <ProductDetailsStyled>
              <div className='head'>
            <Link href='/user/landing-page'>
-           <a>
+           <a style={{color:'#fff'}}>
            <p className='p'>&lt;</p>
            </a>
            </Link>
-            <p>PRODUCT DETAIL</p>
+            <p>PRODUCT DETAILS</p>
           </div>
             <div className='product-info'>
               <div>
@@ -87,17 +98,15 @@ const ProductDetails = () => {
                       <div className='qty' onClick={() => increase(productDetails.data)}>
                         <Add />
                       </div>
-                      <div>{item.quantity}</div>
+                      <div>{qty}</div>
                       <div className='qty' onClick={() => decrease(productDetails.data)}>
                         <Remove />
                       </div>
                     </div>
                     <p className='price'>
-                      Price: &#8358;{item.price * item.quantity}
+                      Price: &#8358;{productDetails.data.price * productDetails.data.quantity}
                     </p>
-                  </div>
-                  </div>
-                <div className='btn'>
+                    <div className='btn'>
                   <Button
                     onClick={() => AddToCart(productDetails.data)}
                     loading={loading}
@@ -105,9 +114,13 @@ const ProductDetails = () => {
                     {loading ? 'Adding' : 'Add To Cart'}
                   </Button>
                 </div>
+                  </div>
+                  </div>
+                  <FooterDiv/>
           </ProductDetailsStyled>
         )}
-        <FooterDiv/>
+      
+     
       </ProductDetailsStyled>
     </UserWebLayout>
   );

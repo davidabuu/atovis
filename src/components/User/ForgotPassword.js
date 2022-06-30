@@ -9,7 +9,7 @@ import { forgotPassword, reset } from '../../redux/User/forgetPassowordSlice';
 import {
   FormGroup,
   LogoHolder,
-  SignStyled,
+  ForgotStyled,
 } from '../Vendor/SignVendor/SignStyled';
 import UserWebLayout from '../WebLayout/UserWebLayout';
 const ForgotPassword = () => {
@@ -49,16 +49,14 @@ const ForgotPassword = () => {
   return (
     <div>
       <UserWebLayout webtitle={'Sign In'}>
-        <LogoHolder>
-          <div className='img'>
-            <img src='/logo2.png' alt='Log' />
-          </div>
-        </LogoHolder>
-        <SignStyled style={{ marginTop: '20px' }}>
-          <Card>
+        <ForgotStyled style={{ marginTop: '20px' }}>
+          <div className='card-div'>
             <form
               autoComplete='off'
               onSubmit={handleSubmit(UserForgotPassword)}>
+                 <p  className='p'>
+              Enter your email to reset your password
+              </p>
               <Row gutter={24}>
                 <Col xs={24} xl={24} lg={24}>
                   <FormGroup>
@@ -90,8 +88,8 @@ const ForgotPassword = () => {
                 </Col>
               </Row>
             </form>
-          </Card>
-        </SignStyled>
+          </div>
+        </ForgotStyled>
       </UserWebLayout>
     </div>
   );

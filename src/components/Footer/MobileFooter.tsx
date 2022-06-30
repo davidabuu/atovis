@@ -4,7 +4,7 @@ import { MobileStyle } from './FooterStyle';
 const MobileFooter = () => {
   return (
     <MobileStyle>
-        <div>
+        {/* <div>
             <Home/>
             <p>Home</p>
         </div>
@@ -19,7 +19,7 @@ const MobileFooter = () => {
         <div>
         <Person />
             <p>Account</p>
-        </div>
+        </div> */}
     </MobileStyle>
   );
 };
