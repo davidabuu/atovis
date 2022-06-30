@@ -38,6 +38,9 @@ const ProductDetails = () => {
   const decrease = (item) => {
     console.log('Holaa')
     setQty(qty - 1)
+    if(qty <== 0){
+      setQty(0)
+    }
     dispatch(decreaseItemFromCart(item));
   };
   const increase = (item) => {
