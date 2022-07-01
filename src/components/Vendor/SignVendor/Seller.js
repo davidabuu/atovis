@@ -6,6 +6,7 @@ import { SignStyled, FormGroup } from './SignStyled';
 import { sellerRegister } from '../../../redux/Vendor/vendorInfoSlice';
 import { useDispatch } from 'react-redux';
 import router from 'next/router';
+import Link from 'next/link';
 import { useState } from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 const Seller = () => {
@@ -33,8 +34,12 @@ const Seller = () => {
   return (
     <UserWebLayout webtitle='Seller Info'>
       <SignStyled style={{ marginTop: '20px' }}>
+      <div className='img'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
         <div>
           <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
+          <h2>SELLER</h2>
             <div className='card-div'>
               <label>Full Name</label>
               <Controller
@@ -91,7 +96,7 @@ const Seller = () => {
                 name='password'
                 rules={{ required: true }}
                 render={({ field: { onChange } }) => (
-                  <Input.Password
+                  <input
                     size='large'
                     type='password'
                     onChange={onChange}
@@ -125,6 +130,11 @@ const Seller = () => {
                 {loading ? 'Authenticating...' : 'NEXT'}
               </Button>
             </div>
+            <div>
+                <p>
+                  Dont't have an account ? <Link href='/vendor/sign-up'><a className='p'>Sign up</a></Link>
+                </p>
+              </div>
           </form>
         </div>
       </SignStyled>

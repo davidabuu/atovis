@@ -5,6 +5,7 @@ const initialState = {
   sellerDetails: '',
   bussinessDetails: '',
   paymentDetails: '',
+  address:''
 };
 // Register User
 export const register = createAsyncThunk(
@@ -47,20 +48,23 @@ export const vendorSellerDetailsSlice = createSlice({
     },
     sellerRegister: (state, action) => {
       state.sellerDetails = action.payload;
-      storeInLocalStorage('seller', JSON.stringify(action.payload));
+      
     },
     bussinessRegister: (state, action) => {
       state.bussinessDetails = action.payload;
-      storeInLocalStorage('bussiness', JSON.stringify(action.payload));
+      
     },
     paymentRegister: (state, action) => {
       state.paymentDetails = action.payload;
-      storeInLocalStorage('account', JSON.stringify(action.payload));
+    
     },
+    address: (state, action) => {
+      state.address = action.payload
+    }
   },
 });
 
-export const { reset, sellerRegister, bussinessRegister, paymentRegister } =
+export const { reset, sellerRegister, bussinessRegister, paymentRegister, address } =
   vendorSellerDetailsSlice.actions;
 export default vendorSellerDetailsSlice.reducer;
 

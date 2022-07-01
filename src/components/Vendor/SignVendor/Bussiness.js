@@ -25,121 +25,71 @@ const Bussiness = () => {
   return (
     <UserWebLayout webtitl='Bussiness Info'>
       <SignStyled style={{ marginTop: '20px' }}>
+        <div className='img'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
         <div className='card-div'>
           <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
-            <Row gutter={24}>
-              <Col xs={24} xl={24} lg={24}>
-                <FormGroup>
-                  <label>Store Name</label>
-                  <Controller
-                    control={control}
-                    name='name'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <Input size='large' type='text' onChange={onChange} />
-                    )}
-                  />
-                  {errors.name && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </FormGroup>
-              </Col>
+          <h2>BUSSINESS NAME</h2>
+            <div>
+              <label>Store Name</label>
+              <Controller
+                control={control}
+                name='name'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input size='large' type='text' onChange={onChange} />
+                )}
+              />
+              {errors.name && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
 
-          
-                <div>
-                  <label>Business Type</label>
-                  <Controller
-                    control={control}
-                    name='type'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <select
-                        onChange={onChange}
-                        size='large'
-                        style={{ width: '100%' }}>
-                        <option value='typ1'>Type 1</option>
-                        <option value='typ2'>Type 2</option>
-                      </select>
-                    )}
+            <div>
+              <label>Business Type</label>
+              <Controller
+                control={control}
+                name='type'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <select id='select' onChange={onChange}>
+                    <option value='typ1' className='option'>Type 1</option>
+                    <option value='typ2'>Type 2</option>
+                  </select>
+                )}
+              />
+              {errors.type && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+
+            <div>
+              <label>CAC Registration Number</label>
+              <Controller
+                control={control}
+                name='cacNumber'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input
+                    size='large'
+                    type='text'
+                    onChange={onChange}
+                   
                   />
-                  {errors.type && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-              
-            </Row>
-            
-                <div>
-                  <label>CAC Registration Number</label>
-                  <Controller
-                    control={control}
-                    name='cacNumber'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <input
-                        size='large'
-                        type='text'
-                        onChange={onChange}
-                        minLength={'8'}
-                      />
-                    )}
-                  />
-                  {errors.cacNumber && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-              
-           
-                <div>
-                  <label>State</label>
-                  <Controller
-                    control={control}
-                    name='state'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <input
-                        size='large'
-                        type='text'
-                        onChange={onChange}
-                        minLength={'8'}
-                      />
-                    )}
-                  />
-                  {errors.state && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-             
-           
-                <div>
-                  <label>Address</label>
-                  <Controller
-                    control={control}
-                    name='address'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <Input.TextArea
-                        size='large'
-                        type='text'
-                        onChange={onChange}
-                        minLength={'8'}
-                      />
-                    )}
-                  />
-                  {errors.address && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-             
-                <br></br>
-              <div className='btn'>
-                <Button
-                  loading={loading}
-                  htmlType='submit'
-                  className='btn-sign'>
-                  {loading ? 'Authenticating...' : 'NEXT'}
-                </Button>
-              </div>
+                )}
+              />
+              {errors.cacNumber && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+
+            <br></br>
+            <div className='btn'>
+              <Button loading={loading} htmlType='submit' className='btn-sign'>
+                {loading ? 'Authenticating...' : 'NEXT'}
+              </Button>
+            </div>
           </form>
         </div>
       </SignStyled>

@@ -54,6 +54,9 @@ const UserLogin = () => {
     <UserWebLayout webtitle='Vendor Login'>
       <div data-aos='zoom-in'>
         <SignStyled style={{ marginTop: '20px' }}>
+        <div className='img'>
+          <img src='/logo2.png' alt='Log' />
+        </div>
           <div className='card-div'>
             <form autoComplete='off' onSubmit={handleSubmit(LoginUser)}>
               <div>

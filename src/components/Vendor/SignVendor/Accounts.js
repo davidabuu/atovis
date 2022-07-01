@@ -19,96 +19,87 @@ const PaymentAccount = () => {
   const onSubmit = (record) => {
     setLoading(true);
     dispatch(paymentRegister(record));
-    router.push('/vendor/vendor-details');
+    router.push('/vendor/address');
   };
   return (
     <UserWebLayout webtitle='Bussiness Info'>
-      <LogoHolders>
+      <SignStyled style={{ marginTop: '20px' }}>
         <div className='img'>
           <img src='/logo2.png' alt='Log' />
         </div>
-      </LogoHolders>
-      <SignStyled style={{ marginTop: '20px' }}>
         <div className='card-div'>
           <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
-           
-                <div>
-                  <label>Account Name</label>
-                  <Controller
-                    control={control}
-                    name='accountName'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <Input
-                        size='large'
-                        type='text'
-                        onChange={onChange}
-                        minLength={'8'}
-                      />
-                    )}
+            <h2>ACCOUNT NAME</h2>
+            <div>
+              <label>Account Name</label>
+              <Controller
+                control={control}
+                name='accountName'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input
+                    size='large'
+                    type='text'
+                    onChange={onChange}
                   />
-                  {errors.accountName && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-            
-           
-              
-                <div>
-                  <label>Account Number</label>
-                  <Controller
-                    control={control}
-                    name='accountNumber'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <input size='large' type='text' onChange={onChange} />
-                    )}
-                  />
-                  {errors.accountNumber && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-           
-                  <div>
-                  <label>Bank</label>
-                  <Controller
-                    control={control}
-                    name='bank'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <input size='large' type='text' onChange={onChange} />
-                    )}
-                  />
-                  {errors.bank && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-          
-            
-                <div>
-                  <label>Payout Frequency</label>
-                  <Controller
-                    control={control}
-                    name='payoutFrequency'
-                    rules={{ required: true }}
-                    render={({ field: { onChange } }) => (
-                      <input size='large' type='number' onChange={onChange} />
-                    )}
-                  />
-                  {errors.payoutFrequency && (
-                    <span className='error'>This field is required</span>
-                  )}
-                </div>
-             
+                )}
+              />
+              {errors.accountName && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+
+            <div>
+              <label>Account Number</label>
+              <Controller
+                control={control}
+                name='accountNumber'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input size='large' type='text' onChange={onChange} />
+                )}
+              />
+              {errors.accountNumber && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+
+            <div>
+              <label>Bank</label>
+              <Controller
+                control={control}
+                name='bank'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input size='large' type='text' onChange={onChange} />
+                )}
+              />
+              {errors.bank && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+
+            <div>
+              <label>Payout Frequency</label>
+              <Controller
+                control={control}
+                name='payoutFrequency'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input size='large' type='number' onChange={onChange} />
+                )}
+              />
+              {errors.payoutFrequency && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+
             <br></br>
-              <div className='btn'>
-                <Button
-                  loading={loading}
-                  htmlType='submit'
-                  className='btn-sign'>
-                  {loading ? 'Authenticating...' : 'NEXT'}
-                </Button>
-              </div>
+            <div className='btn'>
+              <Button loading={loading} htmlType='submit' className='btn-sign'>
+                {loading ? 'Authenticating...' : 'NEXT'}
+              </Button>
+            </div>
           </form>
         </div>
       </SignStyled>
