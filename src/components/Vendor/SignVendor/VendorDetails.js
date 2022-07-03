@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { VendorStyle, LogoHolders } from './SignStyled';
+import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../../redux/Vendor/vendorAuthSlice';
 const VendorDetails = () => {
