@@ -33,6 +33,7 @@ const VendorDetails = () => {
         });
       }
     } catch (error) {
+      console.log(error)
       notification.error({
         message: ' Error',
         description: error.message,

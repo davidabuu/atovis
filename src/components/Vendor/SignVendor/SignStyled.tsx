@@ -2,6 +2,32 @@ import styled from 'styled-components';
 export const FormGroup = styled.div``;
 export const LogoHolder = styled.div``;
 export const LogoHolders = styled.div``;
+export const HeaderStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1000px;
+  margin-left: 4rem;
+  border-bottom: 2px solid var(--primary-color);
+  .search-button {
+    border: none;
+    border-radius: 15px;
+    color: #333;
+    height: 40px;
+    padding-left: 10px;
+    width: 300px;
+    margin-right: 10px;
+    background: #fff;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @media (max-width: 1200px) {
+    width: 600px;
+  }
+`;
 export const VendorStyle = styled.div`
   background-color: #f4f4f4;
   height: 100vh;
@@ -51,8 +77,11 @@ export const VendorStyle = styled.div`
       flex-direction: column;
       margin: 10px;
     }
-    h2{
-      font-size:18px;
+    h2 {
+      font-size: 18px;
+    }
+    .btn {
+      margin: 7px 5px;
     }
   }
 `;
@@ -281,4 +310,37 @@ form {
     margin:10px 10px;
   }
 }
+`;
+
+export const SideNavStyled = styled.div`
+  background: var(--primary-color);
+  width: 200px;
+  text-align: center;
+  display: flex;
+  align-item: center;
+  flex-direction: column;
+  .img {
+    //padding-left: 2rem;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    align-item: center;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  a {
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+  }
+  a:hover {
+    background: #fff;
+    color: var(--primary-color);
+  }
+  @media(max-width:700px){
+    display:none;
+  }
 `;
