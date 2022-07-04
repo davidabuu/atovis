@@ -89,7 +89,8 @@ const MobileCart = () => {
                 </div>
               ))}
                 <div className='total-amount'>
-                  <h2>Total Amount : &#8358;{totalAmount} </h2>
+                  <h2>Total Amount</h2>
+                  <h2>&#8358;{totalAmount}</h2>
                 </div>
                 <div style={{textAlign:'center'}}>
                   <Button className='cart-btns' onClick={clearAllCartItems}>Clear Cart</Button>

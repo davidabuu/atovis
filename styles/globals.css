@@ -154,7 +154,9 @@ width:30px !important;
   background-color: var(--primary-color);
   padding: 7px;
 }
-
+.menu{
+  display: none;
+}
 .ant-select-selector {
   border-radius: 15px !important;
   background: #f8f8f8 !important;
@@ -194,6 +196,11 @@ width:30px !important;
   }
   .flexx h1 {
     font-size: 17px;
+  }
+}
+@media(max-width:700px){
+  .menu{
+    display: block;
   }
 }
 @media (max-width: 650px) {

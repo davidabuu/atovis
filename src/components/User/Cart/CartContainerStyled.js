@@ -162,4 +162,9 @@ export const MobileCartStyle = styled.div`
       transform: translateX(-50px);
     }
   }
+  .total-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 `;

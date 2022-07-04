@@ -4,7 +4,7 @@ import { OverViewStyle } from './InevStyle';
 const OverViewCard = () => {
   return (
     <OverViewStyle>
-      <h2 style={{ color: 'var(--primary-color)' }}>OverView</h2>
+      <h2 style={{ color: 'var(--primary-color)' }}>Overview</h2>
       <div className='over'>
         <div>
           <h1 style={{ color: 'green' }}>18,064</h1>

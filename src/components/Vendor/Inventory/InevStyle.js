@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const OverViewStyle = styled.div`
   background: #ffff;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 10px;
   .over {
     display: flex;
@@ -13,6 +14,7 @@ export const OverViewStyle = styled.div`
 
 export const CatStyle = styled.div`
   background: #ffff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
   padding: 10px;
 `;
@@ -58,6 +60,33 @@ export const InevStyled = styled.div`
     }
     .over-view{
         margin-left:2rem;
+        margin-top:10px;
+    }
+  }
+  @media(max-width:800px){
+    .table-div{
+        flex-direction:column;
+        width:400px;
+    }
+    .product{
+        width:400px;
+    }
+    .over-view{
+        margin-left:2rem;
+        margin-top:10px;
+    }
+  }
+  @media(max-width:400px){
+    .table-div{
+        margin:0px;
+        flex-direction:column;
+        width:350px;
+    }
+    .product{
+        width:350px;
+    }
+    .over-view{
+        margin-left:.5rem;
         margin-top:10px;
     }
   }

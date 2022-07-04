@@ -340,7 +340,19 @@ export const SideNavStyled = styled.div`
     background: #fff;
     color: var(--primary-color);
   }
-  @media(max-width:700px){
+  .menu{
     display:none;
+  }
+  @media(max-width:700px){
+    position:absolute;
+    transform:translateX(-200px);
+    transition:all 0.5s ease;
+    opacity:0;
+    .show{
+      transform:translateX(200px);
+      transition:all 0.5s ease;
+      opacity:1;
+      z-index:3;
+    }
   }
 `;
