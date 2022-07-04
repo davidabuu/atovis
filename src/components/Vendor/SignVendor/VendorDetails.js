@@ -24,7 +24,7 @@ const VendorDetails = () => {
   }
   const registerVendor = async () => {
     try {
-      const res = await axios.post(`${API_URL}/vendor/register`, data);
+      const res = await axios.post(`${process.env.API_URL}/vendor/register`, data);
       if(res.data){
         notification.success({
           message: ' Success',
