@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 //import { DashboardStyled } from '../Dashboard/DashboardStyled';
 import Header from '../Header';
@@ -9,7 +9,9 @@ import CatCard from './CatCard';
 import { Table } from 'antd';
 import Link from 'next/link';
 import { InevStyled } from './InevStyle';
-const Dashboard = () => {
+import MobileHead from '../SignVendor/MobileHead';
+import { Menu } from '@material-ui/icons';
+const Inventory = () => {
   const dataSource = [
     {
       key: '1',
@@ -47,8 +49,8 @@ const Dashboard = () => {
 
   const columns = [
     {
-      title:'',
-      dataIndex:'radio'
+      title: '',
+      dataIndex: 'radio',
     },
     {
       title: 'Name',
@@ -76,12 +78,24 @@ const Dashboard = () => {
       key: 'address',
     },
   ];
+  const [nav, setNav] = useState(false);
+  const SetNav = () => setNav(!nav);
   return (
     <UserWebLayout webtitle='Inventory'>
       <InevStyled>
-        <SideNav />
+        <div className={`${nav ? 'nav' : ''}`}>
+          <SideNav />
+        </div>
+        <div onClick={SetNav}>
+          <Menu />
+        </div>
         <div>
-          <Header />
+          <div className='desktop-head'>
+            <Header />
+          </div>
+          <div className='mobile-head'>
+            <MobileHead />
+          </div>
           <div className='table-div'>
             <div className='product'>
               <Row justify='space-between'>
@@ -110,4 +124,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Inventory;

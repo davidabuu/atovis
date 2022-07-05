@@ -23,6 +23,9 @@ export const InevStyled = styled.div`
   display: flex;
   background:#f4f4f4;
   width: 100%;
+  .mobile-head{
+    display:none;
+  }
   .table-div {
     display: flex;
     algin-items: center;
@@ -75,6 +78,18 @@ export const InevStyled = styled.div`
         margin-left:2rem;
         margin-top:10px;
     }
+  }
+  @media(max-width:700px){
+    .mobile-head{
+      display:block !important;
+    }
+    .desktop-head, .nav{
+      display:none !important;
+    }
+    .nav{
+      transform:translateX(-200px);
+    }
+
   }
   @media(max-width:400px){
     .table-div{

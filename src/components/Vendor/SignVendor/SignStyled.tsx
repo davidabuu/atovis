@@ -27,6 +27,9 @@ export const HeaderStyled = styled.div`
   @media (max-width: 1200px) {
     width: 600px;
   }
+  @media (max-width: 800px) {
+    width: 300px;
+  }
 `;
 export const VendorStyle = styled.div`
   background-color: #f4f4f4;
@@ -340,19 +343,22 @@ export const SideNavStyled = styled.div`
     background: #fff;
     color: var(--primary-color);
   }
-  .menu{
-    display:none;
+  .menu {
+    display: none;
   }
-  @media(max-width:700px){
-    position:absolute;
-    transform:translateX(-200px);
-    transition:all 0.5s ease;
-    opacity:0;
-    .show{
-      transform:translateX(200px);
-      transition:all 0.5s ease;
-      opacity:1;
-      z-index:3;
-    }
+`;
+
+export const MobileHeadStyled = styled.div`
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0.5rem;
+}
+.name{
+  margin: 10px 0.5rem;
+  input{
+    border-radius:10px;
   }
+}
 `;

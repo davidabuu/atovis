@@ -282,6 +282,9 @@ export const ImgStyle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    h1{
+      color:#fff;
+    }
     button {
       background-color: #e8ffff;
       width: 200px;

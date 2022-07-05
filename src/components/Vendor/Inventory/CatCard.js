@@ -42,7 +42,7 @@ const CatCard = () => {
   return (
     <CatStyle>
       <h2 style={{ color: 'var(--primary-color)' }}>Categories</h2>
-      <Table dataSource={dataSource} columns={columns}  pagination={false} />
+      <Table dataSource={dataSource} columns={columns} pagination={false} />
     </CatStyle>
   );
 };

@@ -12,17 +12,10 @@ import {
 } from '@material-ui/icons';
 //import Image from 'next/image';
 const SideNav = () => {
-  const [nav, setNav] = useState(false);
-  const ShowNav = () => {
-    setNav(!nav);
-  };
   return (
     <div>
-      <div className='menu' onClick={ShowNav}>
-        <Menu />
-      </div>
       <SideNavStyled>
-        <div className={`${nav ? 'show' : ''}`}>
+        <div>
           <div className='img'>
             <img src='/logo.png' alt='Log' />
           </div>
