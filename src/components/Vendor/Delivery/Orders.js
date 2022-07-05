@@ -1,5 +1,6 @@
 import { Button } from 'antd'
 import React from 'react'
+import { OrderStyled } from './DeliveryStyle'
 
 const Orders = () => {
     const fakeOrders = [
@@ -35,8 +36,8 @@ const Orders = () => {
         },
     ]
   return (
-    <div>
-        <div>
+    <OrderStyled>
+        <div className='vendor-orders'>
             <h2>Active Orders</h2>
             <select defaultValue={'All'}>
                 <option>All</option>
@@ -49,18 +50,19 @@ const Orders = () => {
                 fakeOrders.map((item) => (
                     <div>
                         <Row key={item.id}>
-                        <div>
+                        <div className='orders'>
                             <div className='id'>
                             <h3>ID:{item.id}</h3>
                             <Button>Shipped</Button>
                             </div>
+                            <p>{item.address}</p>
                         </div>
                         </Row>
                     </div>
                 ))
             }
         </div>
-    </div>
+    </OrderStyled>
   )
 }
 

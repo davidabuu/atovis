@@ -4,6 +4,7 @@ import Header from '../Header'
 import SideNav from '../SideNav'
 import MobileHead from '../SignVendor/MobileHead'
 import { DeliveryCss } from './DeliveryStyle'
+import Orders from './Orders'
 
 const Delivery = () => {
   const logistic = [
@@ -55,6 +56,9 @@ const Delivery = () => {
                 </div>
               ))
             }
+            <div className='order-div'>
+            <Orders/>
+          </div>
           </div>
     </DeliveryCss>
   )
