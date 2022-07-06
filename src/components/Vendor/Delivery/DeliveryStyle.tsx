@@ -57,3 +57,19 @@ export const OrderStyled = styled.div`
     }
   }
 `;
+export const MobileHeadNavStyled = styled.div`
+  .nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 2rem;
+    .icon {
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 900px) {
+    .logo {
+      height: 50px;
+    }
+  }
+`;

@@ -9,8 +9,9 @@ import CatCard from './CatCard';
 import { Table } from 'antd';
 import Link from 'next/link';
 import { InevStyled } from './InevStyle';
-import MobileHead from '../SignVendor/MobileHead';
+import MobileNavHead from '../SignVendor/MobileHead';
 import { Menu } from '@material-ui/icons';
+import VendorSearch from '../SignVendor/VendorSearch';
 const Inventory = () => {
   const dataSource = [
     {
@@ -83,28 +84,24 @@ const Inventory = () => {
   return (
     <UserWebLayout webtitle='Inventory'>
       <InevStyled>
-        <div className={`${nav ? 'nav' : ''}`}>
+        <div className='desktop-head'>
           <SideNav />
-        </div>
-        <div onClick={SetNav}>
-          <Menu />
         </div>
         <div>
           <div className='desktop-head'>
             <Header />
           </div>
           <div className='mobile-head'>
-            <MobileHead />
+            <MobileNavHead />
+            <VendorSearch />
           </div>
           <div className='table-div'>
-            <div className='product'>
-              <Row justify='space-between'>
-                <Col xs={12} xl={12} lg={12}>
-                  <p className='p'>INVENTORY</p>
-                </Col>
+            <div className='produc'>
+              <div className=''>
+                <h3 className='p'>INVENTORY</h3>
                 <p className='promote'>Promote Products</p>
                 <p className='add'>Add Products</p>
-              </Row>
+              </div>
               <Table
                 dataSource={dataSource}
                 columns={columns}

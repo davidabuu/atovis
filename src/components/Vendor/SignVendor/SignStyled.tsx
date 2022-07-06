@@ -6,8 +6,7 @@ export const HeaderStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1000px;
-  margin-left: 4rem;
+  margin: 0rem 1.5rem;
   border-bottom: 2px solid var(--primary-color);
   .search-button {
     border: none;
@@ -23,12 +22,6 @@ export const HeaderStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-  }
-  @media (max-width: 1200px) {
-    width: 600px;
-  }
-  @media (max-width: 800px) {
-    width: 300px;
   }
 `;
 export const VendorStyle = styled.div`
@@ -322,9 +315,6 @@ export const SideNavStyled = styled.div`
   display: flex;
   align-item: center;
   flex-direction: column;
-  .img {
-    //padding-left: 2rem;
-  }
   ul {
     list-style: none;
     display: flex;
@@ -343,22 +333,37 @@ export const SideNavStyled = styled.div`
     background: #fff;
     color: var(--primary-color);
   }
-  .menu {
-    display: none;
+  @media (max-width: 700px) {
+    position: absolute;
+    z-index: 2;
+    transform: translateX(-10px);
+    transition: all 0.5s ease;
   }
 `;
 
 export const MobileHeadStyled = styled.div`
-.menu{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px 0.5rem;
-}
-.name{
-  margin: 10px 0.5rem;
-  input{
-    border-radius:10px;
+  .menu {
+    display: flex;
+    margin-left: 20%;
+    margin-top: 5px;
+    justify-content: space-around;
+    align-items: center;
+    .icon {
+      margin-top: 15px;
+    }
   }
-}
+  .name {
+    margin: 10px 0.5rem;
+    input {
+      border-radius: 10px;
+    }
+  }
+`;
+
+export const VendorSearchStyle = styled.div`
+  margin: 5px 2rem;
+  .search {
+    border-radius: 20px;
+    padding: 10px;
+  }
 `;
