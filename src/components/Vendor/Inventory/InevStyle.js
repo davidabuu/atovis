@@ -25,6 +25,9 @@ export const InevStyled = styled.div`
   .mobile-head, .menu-div{
     display:none;
   }
+  .head{
+    margin-left:4rem;
+  }
   .table-div {
     display: flex;
     algin-items: center;
@@ -60,6 +63,9 @@ export const InevStyled = styled.div`
     display:block;
     .mobile-head, .menu-div{
       display:inline !important;
+    }
+    .head{
+      margin-left:0rem;
     }
     .over-view{
       margin-left:0px;

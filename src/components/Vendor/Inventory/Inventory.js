@@ -87,7 +87,7 @@ const Inventory = () => {
         <div className='desktop-head'>
           <SideNav />
         </div>
-        <div>
+        <div className='head'>
           <div className='desktop-head'>
             <Header />
           </div>
@@ -100,7 +100,11 @@ const Inventory = () => {
               <div className=''>
                 <h3 className='p'>INVENTORY</h3>
                 <p className='promote'>Promote Products</p>
-                <p className='add'>Add Products</p>
+               <Link href='/vendor/create-product'>
+               <a>
+               <p className='add'>Add Products</p>
+               </a>
+               </Link>
               </div>
               <Table
                 dataSource={dataSource}

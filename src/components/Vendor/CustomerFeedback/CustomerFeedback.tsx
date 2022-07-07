@@ -6,6 +6,8 @@ import { Table } from 'antd';
 import SideNav from '../SideNav';
 import { DashboardStyled } from '../Dashboard/DashboardStyled';
 import BeautyStars from 'beauty-stars';
+import MobileNavHead from '../SignVendor/MobileHead';
+import VendorSearch from '../SignVendor/VendorSearch';
 
 const CustomerFeedback = () => {
     const dataSource = [
@@ -85,11 +87,16 @@ const CustomerFeedback = () => {
       ];
   return (
     <UserWebLayout webtitle='Customer FeedBack'>
-      <DashboardStyled>
-        <SideNav />
-        <div className='header'>
-          <div className='head'>
+      <div>
+      <div className='desktop-head'>
+          <SideNav />
+        </div>
+          <div className='desktop-head'>
             <Header />
+          </div>
+          <div className='mobile-head'>
+            <MobileNavHead />
+            <VendorSearch />
           </div>
           <div className='cards'>
             <Card heading={'Products Sold'} number={'100'} />
@@ -99,7 +106,6 @@ const CustomerFeedback = () => {
           </div>
           <Table dataSource={dataSource} columns={columns} />
         </div>
-      </DashboardStyled>
     </UserWebLayout>
   );
 };

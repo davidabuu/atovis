@@ -186,7 +186,11 @@ a {
     color: #fff !important;
   }
 }
+
 @media (max-width: 1000px) {
+  .mobile-head, .menu-div{
+    display:inline !important;
+  }
   .product-overview {
     margin: 5px 0.5rem;
     font-size: 15px;
@@ -195,7 +199,7 @@ a {
     font-size: 17px;
   }
   .side-nav .showNav {
-    transform: translateX(-250px);
+    transform: translateX(-350px);
     transition: all 0.5s ease-in;
     position: absolute;
     z-index: 2;

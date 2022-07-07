@@ -35,13 +35,7 @@ const Delivery = () => {
   ]
   return (
     <DeliveryCss>
-          <SideNav />
-        <div className='desktop-head'>
-        <Header />
-        </div>
-          <div className='mobile-head'>
-            <MobileHead/>
-          </div>
+        
           <div className='logistic'>
             <h2>Select a Logistic Partner</h2>
             {
