@@ -4,15 +4,8 @@ import { SideNavStyled } from './SignVendor/SignStyled';
 import {
   CloseRounded,
   Dashboard,
-  ExitToApp,
-  Menu,
-  NotificationImportant,
-  NotificationImportantOutlined,
-  NotificationImportantRounded,
-  NotificationsActive,
   Settings,
 } from '@material-ui/icons';
-//import Image from 'next/image';
 const SideNav = () => {
   const [nav, setNav] = useState(false);
   const SetNav = () => setNav(!nav);
@@ -26,30 +19,30 @@ const SideNav = () => {
               <CloseRounded className='close' onClick={SetNav} />
             </div>
             <ul>
-              <li>
+              <Link href='/vendor/dashboard'>
                 <a>
                   <Dashboard className='color' />
                   <span>Dashboard</span>
                 </a>
-              </li>
-              <li>
+              </Link>
+              <Link href='/vendor/create-product'>
                 <a>
                   <img src='/product.png' alt='Product' />
                   <span>Products</span>
                 </a>
-              </li>
-              <li>
+              </Link>
+              <Link href='/vendor/delivery'>
                 <a>
-                  <img src='/delivery.png' alt='Delivery' />
+                  <img src='/vendor/delivery.png' alt='Delivery' />
                   <span>Delivery</span>
                 </a>
-              </li>
-              <li>
+              </Link>
+              <Link href='/vendor/settings'>
                 <a>
                   <Settings className='color' />
                   <span>Settings</span>
                 </a>
-              </li>
+              </Link>
             </ul>
           </div>
         </SideNavStyled>

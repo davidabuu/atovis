@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Input, Row } from 'antd';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import SideNav from '../SideNav';
 import Link from 'next/link';
 import { SettingStyled } from './SettingStyled';
@@ -27,35 +27,60 @@ const VendorSettings = () => {
       <Row>
         <form>
           <h1>Profile Setting</h1>
-          <div>
+          <div className='file'>
             <label>Email</label>
-            <br></br>
-            <Input
-              size='large'
-              placeholder='Input Email'
-              type='email'
-              className='input'
-            />
-            <label>Email</label>
-            <br></br>
-            <Input
-              size='large'
-              placeholder='Input Phone Number'
-              type='email'
-              className='input'
-            />
-            <label>Address</label>
-            <br></br>
-            <Input
-              size='large'
-              placeholder='Input Address'
-              type='email'
-              className='input'
-            />
+              <Controller
+                control={control}
+                name='email'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input type='email' onChange={onChange} className='input' />
+                )}
+              />
+              {errors.email && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+            <div className='file'>
+              <label>Phone Number</label>
+              <Controller
+                control={control}
+                name='number'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <input
+                    type='number'
+                    
+                    className='input'
+                    onChange={onChange}
+                  />
+                )}
+              />
+              {errors.email && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
+            <div>
+              <label>Address</label>
+              <Controller
+                control={control}
+                name='text'
+                rules={{ required: true }}
+                render={({ field: { onChange } }) => (
+                  <textarea
+                   
+                    className='input'
+                    onChange={onChange}
+                  />
+                )}
+              />
+              {errors.email && (
+                <span className='error'>This field is required</span>
+              )}
+            </div>
             <div>
               <Button>Save Changes</Button>
             </div>
-          </div>
           <div>
             <h1>Password</h1>
             <p>
@@ -71,8 +96,8 @@ const VendorSettings = () => {
               Once you delete your account there is no going back please be
               certain
             </p>
-            <div>
-              <Button>Remove Account</Button>
+            <div className='btn'>
+              <Button className='remove'>Remove Account</Button>
             </div>
           </div>
         </form>

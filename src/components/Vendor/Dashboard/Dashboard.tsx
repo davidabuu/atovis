@@ -11,10 +11,11 @@ import { DashboardStyled } from './DashboardStyled';
 const Dashboard = () => {
   return (
     <UserWebLayout webtitle='Dashboard'>
-      <>
-      <div className='desktop-head'>
+      <DashboardStyled>
+        <div className='desktop-head'>
           <SideNav />
         </div>
+        <div className='head'>
           <div className='desktop-head'>
             <Header />
           </div>
@@ -29,7 +30,8 @@ const Dashboard = () => {
             <Card heading={'Pending Orders'} number={'100'} />
             <Card heading={'Cancelled Orders'} number={'100'} />
           </div>
-      </>
+        </div>
+      </DashboardStyled>
     </UserWebLayout>
   );
 };

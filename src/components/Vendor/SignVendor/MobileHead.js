@@ -6,9 +6,8 @@ import {
   CloseRounded,
   Settings,
 } from '@material-ui/icons';
-import { MobileHeadStyled, SideNavStyled } from './SignStyled';
-import { Input } from 'antd';
-import SideNav from '../SideNav';
+import {SideNavStyled } from './SignStyled';
+import Link from 'next/link';
 import { MobileHeadNavStyled } from '../Delivery/DeliveryStyle';
 const MobileNavHead = () => {
   const [nav, setNav] = useState(false);
@@ -24,30 +23,30 @@ const MobileNavHead = () => {
                 <CloseRounded className='close' onClick={SetNav} />
               </div>
               <ul>
-                <li>
+                <Link href='/vendor/delivery'>
                   <a>
                     <Dashboard className='color' />
                     <span>Dashboard</span>
                   </a>
-                </li>
-                <li>
+                </Link>
+                <Link href='/vendor/create-produtc'>
                   <a>
                     <img src='/product.png' alt='Product' />
                     <span>Products</span>
                   </a>
-                </li>
-                <li>
+                </Link>
+                <Link href='/vendor/delivery'>
                   <a>
                     <img src='/delivery.png' alt='Delivery' />
                     <span>Delivery</span>
                   </a>
-                </li>
-                <li>
+                </Link>
+                <Link href='/vendor/settings'>
                   <a>
                     <Settings className='color' />
                     <span>Settings</span>
                   </a>
-                </li>
+                </Link>
               </ul>
             </div>
           </SideNavStyled>
