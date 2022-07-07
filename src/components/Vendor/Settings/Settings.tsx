@@ -7,6 +7,7 @@ import { SettingStyled } from './SettingStyled';
 import { Header } from 'semantic-ui-react';
 import MobileNavHead from '../SignVendor/MobileHead';
 import VendorSearch from '../SignVendor/VendorSearch';
+import { SignStyled } from '../SignVendor/SignStyled';
 const VendorSettings = () => {
   const {
     control,
@@ -24,7 +25,7 @@ const VendorSettings = () => {
         <MobileNavHead />
         <VendorSearch />
       </div>
-      <Row>
+      <SignStyled>
         <form>
           <h1>Profile Setting</h1>
           <div className='file'>
@@ -101,7 +102,7 @@ const VendorSettings = () => {
             </div>
           </div>
         </form>
-      </Row>
+      </SignStyled>
     </SettingStyled>
   );
 };

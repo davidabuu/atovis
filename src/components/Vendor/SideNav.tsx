@@ -25,7 +25,7 @@ const SideNav = () => {
                   <span>Dashboard</span>
                 </a>
               </Link>
-              <Link href='/vendor/create-product'>
+              <Link href='/vendor/inventory'>
                 <a>
                   <img src='/product.png' alt='Product' />
                   <span>Products</span>
