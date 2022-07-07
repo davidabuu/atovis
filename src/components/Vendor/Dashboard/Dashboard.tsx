@@ -7,7 +7,7 @@ import MobileNavHead from '../SignVendor/MobileHead';
 import VendorSearch from '../SignVendor/VendorSearch';
 import VendorChart from '../VendorChart';
 import { DashboardStyled } from './DashboardStyled';
-
+import DashBoardCategory from './DashBoardCategory'
 const Dashboard = () => {
   return (
     <UserWebLayout webtitle='Dashboard'>
@@ -23,7 +23,10 @@ const Dashboard = () => {
             <MobileNavHead />
             <VendorSearch />
           </div>
+          <div>
           <VendorChart />
+          <DashBoardCategory/>
+          </div>
           <div className='cards'>
             <Card heading={'Products Sold'} number={'100'} />
             <Card heading={'Incomplete Orders'} number={'100'} />
