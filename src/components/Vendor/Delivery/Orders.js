@@ -1,4 +1,4 @@
-import { Button } from 'antd'
+import { Button, Row } from 'antd'
 import React from 'react'
 import { OrderStyled } from './DeliveryStyle'
 
@@ -48,8 +48,8 @@ const Orders = () => {
         <div className='active-orders'>
             {
                 fakeOrders.map((item) => (
-                    <div>
-                        <Row key={item.id}>
+                    <div key={item.id}>
+                        <Row >
                         <div className='orders'>
                             <div className='id'>
                             <h3>ID:{item.id}</h3>
