@@ -58,7 +58,14 @@ const MobileNavHead = () => {
         </div>
         <img src='/logo2.png' alt='Logo' className='' />
         <div className='icon'>
-          <NotificationsActive />
+        <Link href='/vendor/notification'>
+        <a>
+        <NotificationsActive />
+        </a>
+        </Link>
+        </div>
+        <div className='noti'>
+       
         </div>
         <img src='/profile.png' alt='Hello' className='icon' />
       </div>

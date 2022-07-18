@@ -1,32 +1,35 @@
 import styled from 'styled-components';
 
 export const DeliveryCss = styled.div`
+  display: flex;
+  background: #f4f4f4;
   .logistic {
     display: flex;
-    background: #f4f4f4;
     h1,
     h2 {
       color: var(--primary-color);
     }
-    align-items: center;
     justify-content: space-between;
     margin-top: 10px;
     border-radius: 10px;
-    background: #ffff;
     padding: 10px;
-    img {
-      width: 30px;
+    .img {
+      width: 100px;
+    }
+    .logistic-div {
+      background: #ffff;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
     }
     .item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px solid var(--primary-color);
-      border-bottom: 1px solid var(--primary-color);
+      border-top: 0.25px solid var(--primary-color);
+      border-bottom: 0.25px solid var(--primary-color);
     }
   }
-  display: flex;
-  background: #f4f4f4;
   .mobile-head,
   .menu-div {
     display: none;
@@ -51,24 +54,42 @@ export const DeliveryCss = styled.div`
     .desktop-head {
       display: none !important;
     }
-  }
-  .chart {
-    flex-direction: column;
-  }
-  .cards {
-    color: var(--primary-color);
-    display: flex;
-    justify-content: space-around;
-  }
+    .logistic{
+      flex-direction:column;
+      img{
+        width:470px;
+      }
+    }
+    @media (max-width: 900px) {
+      h2{
+        font-size:15px;
+      }
+      .logistic{
+        flex-direction:column;
+        img{
+          width:350px;
+        }
+        .img{
+          width:60px;
+        }
+    }
+    }
 `;
 
 export const OrderStyled = styled.div`
-  backgroud: #fff;
+  background: #fff;
+  margin-left: 1rem;
   padding: 10px;
   border-radius: 10px;
   h3,
   h2 {
     color: var(--primary-color);
+  }
+  select {
+    background: #f4f4f4;
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 5px;
   }
   .vendor-orders {
     display: flex;
@@ -78,15 +99,39 @@ export const OrderStyled = styled.div`
   .active-orders {
     background: #f4f4f4;
     padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0px;
     .orders {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       flex-direction: column;
       .id {
         display: flex;
         align-items: center;
         justify-content: space-between;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .orders {
+      .id {
+        width: 700px !important;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    margin-top: 10px;
+    margin-left: 0;
+    .orders {
+      .id {
+        width: 400px !important;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .orders {
+      .id {
+        width: 300px !important;
       }
     }
   }
@@ -97,6 +142,7 @@ export const MobileHeadNavStyled = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0px 2rem;
+    min-height: 60vh;
     .icon {
       margin-top: 30px;
     }

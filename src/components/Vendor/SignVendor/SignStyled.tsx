@@ -314,6 +314,7 @@ export const SideNavStyled = styled.div`
   text-align: center;
   display: flex;
   align-item: center;
+  height:130vh;
   flex-direction: column;
   ul {
     list-style: none;
@@ -321,7 +322,7 @@ export const SideNavStyled = styled.div`
     align-item: center;
     justify-content: space-around;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 60vh;
   }
   a {
     color: #fff;

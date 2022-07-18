@@ -12,62 +12,64 @@ const Delivery = () => {
   const logistic = [
     {
       id: 1,
-      img: '/logo.png',
+      img: '/logo2.png',
       name: 'Logistic Company 1',
       description: 'GIG Logistics forever',
     },
     {
       id: 2,
-      img: '/logo.png',
+      img: '/logo2.png',
       name: 'Logistic Company 1',
       description: 'GIG Logistics forever',
     },
     {
       id: 3,
-      img: '/logo.png',
+      img: '/logo2.png',
       name: 'Logistic Company 1',
       description: 'GIG Logistics forever',
     },
     {
       id: 4,
-      img: '/logo.png',
+      img: '/logo2.png',
       name: 'Logistic Company 1',
       description: 'GIG Logistics forever',
     },
   ];
   return (
     <DeliveryCss>
-       <div className='desktop-head'>
-          <SideNav />
-        </div>
-        <div className='head'>
-          <div className='desktop-head'>
-            <Header />
-          </div>
-          <div className='mobile-head'>
-            <MobileNavHead />
-            <VendorSearch />
-          </div>
-          </div>
-      <div>
-        <img src='/log.png' alt='Logistics'/>
+      <div className='desktop-head'>
+        <SideNav />
       </div>
+      <div className='head'>
+        <div className='desktop-head'>
+          <Header />
+        </div>
+        <div className='mobile-head'>
+          <MobileNavHead />
+          <VendorSearch />
+        </div>
         <div className='logistic'>
+          <div>
+            <img src='/log.png' alt='Logistics' />
+          <div className='logistic-div'>
           <h2>Select a Logistic Partner</h2>
-          {logistic.map((item) => (
-            <div className='item' key={item.id}>
-              <img src={item.img} alt='Img' />
-              <div>
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
+            {logistic.map((item) => (
+              <div className='item' key={item.id}>
+                <img src={item.img} className='img' alt='Img' />
+                <div>
+                  <h2>{item.name}</h2>
+                  <p>{item.description}</p>
+                </div>
+                <Radio></Radio>
               </div>
-              <Radio></Radio>
-            </div>
-          ))}
+            ))}
+          </div>
+          </div>
           <div className='order-div'>
             <Orders />
           </div>
         </div>
+      </div>
     </DeliveryCss>
   );
 };
