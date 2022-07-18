@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const DeliveryCss = styled.div`
-  display: flex;
-  background: #f4f4f4;
-  h1,
-  h2 {
-    color: var(--primary-color);
-  }
   .logistic {
     display: flex;
+    background: #f4f4f4;
+    h1,
+    h2 {
+      color: var(--primary-color);
+    }
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
@@ -25,6 +24,41 @@ export const DeliveryCss = styled.div`
       border-top: 1px solid var(--primary-color);
       border-bottom: 1px solid var(--primary-color);
     }
+  }
+  display: flex;
+  background: #f4f4f4;
+  .mobile-head,
+  .menu-div {
+    display: none;
+  }
+  .head {
+    margin-left: 4rem;
+  }
+  .chart {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @media (max-width: 1000px) {
+    display: block;
+    .mobile-head,
+    .menu-div {
+      display: inline !important;
+    }
+    .head {
+      margin-left: 0rem;
+    }
+    .desktop-head {
+      display: none !important;
+    }
+  }
+  .chart {
+    flex-direction: column;
+  }
+  .cards {
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
   }
 `;
 

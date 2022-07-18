@@ -25,84 +25,78 @@ const VendorSettings = () => {
         <MobileNavHead />
         <VendorSearch />
       </div>
-      <SignStyled>
+      <>
         <form>
           <h1>Profile Setting</h1>
           <div className='file'>
-            <label>Email</label>
-              <Controller
-                control={control}
-                name='email'
-                rules={{ required: true }}
-                render={({ field: { onChange } }) => (
-                  <input type='email' onChange={onChange} className='input' />
+                <label>Email Address</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='firstName'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input className='input' type='email' onChange={onChange} />
+                  )}
+                />
+                {errors.firstName && (
+                  <span className='error'>This field is required</span>
                 )}
-              />
-              {errors.email && (
-                <span className='error'>This field is required</span>
-              )}
-            </div>
-            <div className='file'>
-              <label>Phone Number</label>
-              <Controller
-                control={control}
-                name='number'
-                rules={{ required: true }}
-                render={({ field: { onChange } }) => (
-                  <input
-                    type='number'
-                    
-                    className='input'
-                    onChange={onChange}
-                  />
+              </div>
+              <div className='file'>
+                <label>Phone Number</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='firstName'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <input className='input' type='number' onChange={onChange} />
+                  )}
+                />
+                {errors.firstName && (
+                  <span className='error'>This field is required</span>
                 )}
-              />
-              {errors.email && (
-                <span className='error'>This field is required</span>
-              )}
-            </div>
+              </div>
+              <div className='file'>
+                <label>Address</label>
+                <br></br>
+                <Controller
+                  control={control}
+                  name='firstName'
+                  rules={{ required: true }}
+                  render={({ field: { onChange } }) => (
+                    <textarea onChange={onChange} />
+                  )}
+                />
+                {errors.firstName && (
+                  <span className='error'>This field is required</span>
+                )}
+              </div>
             <div>
-              <label>Address</label>
-              <Controller
-                control={control}
-                name='text'
-                rules={{ required: true }}
-                render={({ field: { onChange } }) => (
-                  <textarea
-                   
-                    className='input'
-                    onChange={onChange}
-                  />
-                )}
-              />
-              {errors.email && (
-                <span className='error'>This field is required</span>
-              )}
-            </div>
-            <div>
-              <Button>Save Changes</Button>
+              <Button className='btn'>Save Changes</Button>
             </div>
           <div>
-            <h1>Password</h1>
-            <p>
+            <span>Password</span>
+            <div>
               You can reset or change you password by clicking{' '}
               <Link href='/user/forgot-password'>
                 <a>here</a>
               </Link>
-            </p>
-          </div>
-          <div>
-            <h1>Deactivate</h1>
-            <p>
+            </div>
+            <div>
+            <span>Deactivate</span>
+            <div>
               Once you delete your account there is no going back please be
               certain
-            </p>
-            <div className='btn'>
-              <Button className='remove'>Remove Account</Button>
             </div>
           </div>
+          </div>
+          <div>
+              <Button className='remove'>Remove Account</Button>
+            </div>
         </form>
-      </SignStyled>
+      </>
     </SettingStyled>
   );
 };

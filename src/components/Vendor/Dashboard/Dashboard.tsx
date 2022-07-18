@@ -5,7 +5,7 @@ import Header from '../Header';
 import SideNav from '../SideNav';
 import MobileNavHead from '../SignVendor/MobileHead';
 import VendorSearch from '../SignVendor/VendorSearch';
-import VendorChart from '../VendorChart';
+import VendorChart from './Chart';
 import { DashboardStyled } from './DashboardStyled';
 import DashBoardCategory from './DashBoardCategory'
 const Dashboard = () => {
@@ -23,7 +23,7 @@ const Dashboard = () => {
             <MobileNavHead />
             <VendorSearch />
           </div>
-          <div>
+          <div className='chart'>
           <VendorChart />
           <DashBoardCategory/>
           </div>

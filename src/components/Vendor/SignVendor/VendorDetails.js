@@ -24,6 +24,7 @@ const VendorDetails = () => {
   }
   const registerVendor = async () => {
     try {
+      setLoading(true)
       const res = await axios.post(`${process.env.API_URL}/vendor/register`, data);
       if(res.data){
         notification.success({
@@ -32,6 +33,7 @@ const VendorDetails = () => {
           duration: 1000,
         });
       }
+      setLoading(false)
     } catch (error) {
       console.log(error)
       notification.error({
@@ -39,6 +41,7 @@ const VendorDetails = () => {
         description: error.message,
         duration: 1000,
       });
+      setLoading(false);
     }
   };
   return (

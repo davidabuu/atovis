@@ -33,7 +33,7 @@ const SideNav = () => {
               </Link>
               <Link href='/vendor/delivery'>
                 <a>
-                  <img src='/vendor/delivery.png' alt='Delivery' />
+                  <img src='/delivery.png' alt='Delivery' />
                   <span>Delivery</span>
                 </a>
               </Link>

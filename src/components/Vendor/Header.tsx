@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Input } from 'antd';
 import { NotificationsActive } from '@material-ui/icons';
 import { HeaderStyled } from './SignVendor/SignStyled';
+import Link from 'next/link';
 const Header = () => {
   return (
     <HeaderStyled>
@@ -9,7 +9,11 @@ const Header = () => {
       <div className='search'>
         <input type='text' placeholder='Search' className='search-button' />
         <div className='noti'>
-          <NotificationsActive />
+        <Link href='/vendor/notification'>
+        <a>
+        <NotificationsActive />
+        </a>
+        </Link>
         </div>
         <img src='/profile.png' alt='Hello' />
       </div>

@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const SettingStyled = styled.div`
-display: flex;
-  background:#f4f4f4;
-  .mobile-head, .menu-div{
-    display:none;
+  display: flex;
+  background: #f4f4f4;
+  .mobile-head,
+  .menu-div {
+    display: none;
   }
-  .head{
-    margin-left:4rem;
+  .head {
+    margin-left: 4rem;
   }
   form {
     display: flex;
@@ -17,85 +18,58 @@ display: flex;
     align-items: center;
     justify-content: spade-around;
     flex-direction: column;
+    height: 500px;
+    margin-left: 20rem;
     margin-top: 30px;
-    .file {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 730px;
-      margin-bottom: 10px;
-      input,
-      select,
-      textarea {
-        background: #f4f4f4;
-        border: 1px solid var(--primary-color);
-        border-radius: 15px;
-        padding: 8px;
-        width: 350px;
-      }
-      input[type='text'],
-      select,
-      textarea {
-        padding: 10px;
-      }
+    input,
+    select,
+    textarea {
+      background: #f4f4f4;
+      border: 1px solid var(--primary-color);
+      border-radius: 15px;
+      padding: 8px;
+      width: 350px;
     }
-  }
-  .btn{
-    height: 30px !important;
-    width:350px;
-    margin-bottom:20px;
+    input[type='text'],
+    select,
+    textarea {
+      padding: 10px;
+    }
+    .btn {
+      border: none;
+      width: 350px;
+      background-color: var(--primary-color);
+      text-align: center;
+      color: #fff;
+      border-radius: 25px;
+      border: 1px solid var(--primary-color);
+      padding: 10px;
+      height: 40px;
+    }
   }
   .remove {
     background: red;
     border-radius: 15px;
-    width: 100%;
+    width: 350px;
     text-align: center;
     color: #ffff;
-    height: 40px !important;
+    height: 40px;
   }
   .a {
     color: var(--primary-color);
     font-weight: bold;
   }
-  @media(max-width:1000px){
-    display:block;
-    .mobile-head, .menu-div{
-      display:inline !important;
-    }
-    .head{
-      margin-left:0rem;
-    }
-    .desktop-head{
-      display:none !important;
-    }
-    form{
-      margin:20px 1rem;
-    }
-    .file{
-      input, select, textarea{
-        width:400px;
-        margin-top:10px;
-      }
-    }
-  @media(max-width:800px){
-    form{
-      margin:20px 1rem;
-    }
-    .file{
-      width:600px;
-      input, select, textarea{
-        width:300px;
-        margin-top:10px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column !important;
+    form {
+      margin: 0.5rem 2rem;
+      input,
+      select,
+      textarea,
+      .btn, .remove {
+        width: 250px;
       }
     }
   }
-  @media(max-width:500px){
-    .file{
-      input, select, textarea{
-        width:280px !important;
-      }
-    }
-  }
-
-
 `;

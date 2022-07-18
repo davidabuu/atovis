@@ -1,26 +1,36 @@
 import styled from 'styled-components';
 
 export const DashboardStyled = styled.div`
-display: flex;
-background:#f4f4f4;
-.mobile-head, .menu-div{
-  display:none;
-}
-.head{
-  margin-left:4rem;
-}
-@media(max-width:1000px){
-  display:block;
-  .mobile-head, .menu-div{
-    display:inline !important;
+  display: flex;
+  background: #f4f4f4;
+  .mobile-head,
+  .menu-div {
+    display: none;
   }
-  .head{
-    margin-left:0rem;
+  .head {
+    margin-left: 4rem;
   }
-  .desktop-head{
-    display:none !important;
+  .chart {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
-}
+  @media (max-width: 1000px) {
+    display: block;
+    .mobile-head,
+    .menu-div {
+      display: inline !important;
+    }
+    .head {
+      margin-left: 0rem;
+    }
+    .desktop-head {
+      display: none !important;
+    }
+  }
+  .chart {
+    flex-direction: column;
+  }
   .cards {
     color: var(--primary-color);
     display: flex;
