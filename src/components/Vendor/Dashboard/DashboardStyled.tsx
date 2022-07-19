@@ -70,14 +70,4 @@ export const ChartStyle = styled.div`
   background: #ffff;
   padding: 10px;
   border-radius: 10px;
-  .bar-chart{
-    width:400;
-    height:400;
-  }
-  @media(max-width:1000px){
-    .bar-chart{
-      width:200;
-      height:200;
-    }
-  }
 `;
