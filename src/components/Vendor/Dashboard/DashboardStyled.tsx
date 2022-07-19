@@ -13,18 +13,19 @@ export const DashboardStyled = styled.div`
   .chart {
     display: flex;
     justify-content: space-around;
-    width: 120%;
+    width: 100%;
     margin-top: 10px;
   }
   .cards {
     margin-top: 10px;
     color: var(--primary-color);
     display: flex;
+    align-item: center;
     justify-content: space-around;
   }
   @media (max-width: 1200px) {
     .chart {
-      flex-direction: column;
+      width: 80%;
     }
   }
   @media (max-width: 1000px) {
@@ -39,8 +40,13 @@ export const DashboardStyled = styled.div`
     .desktop-head {
       display: none !important;
     }
-    .cards {
+    .cards,
+    .chart {
       flex-direction: column;
+    }
+    .chart {
+      margin-left: 2rem;
+      justify-content: space-around;
     }
   }
 `;
@@ -59,10 +65,18 @@ export const CatStyleDash = styled.div`
     h2 {
       color: var(--primary-color);
     }
-    .cat-items {
-      algin-items: center;
-      justify-content: space-between;
+    h1 {
+      font-size: 17px;
     }
+    .cat-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0px;
+    }
+  }
+  @media (max-width: 1000px) {
+    margin-top: 10px;
   }
 `;
 

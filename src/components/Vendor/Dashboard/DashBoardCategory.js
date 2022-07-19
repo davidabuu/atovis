@@ -59,9 +59,9 @@ const DashBoardCategory = () => {
        {
             fakeCat.map((item) => (
                 <div className='cat-items' key={item.id}>
-                    <h2>{item.cat}</h2>
-                    <div className='div'>
-                        <div style={{backgroud:`${item.color}`}}></div>
+                    <h1>{item.cat}</h1>
+                    <div style={{backgroundColor:`${item.color}`, width:'150px', marginBottom:'5px' , color:`${item.color}`, borderRadius:'10px', height:'20px'}}>
+                        dfghjkl
                     </div>
                 </div>
             ))

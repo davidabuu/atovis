@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useEffect, useState } from 'react';
 import {
   BarChart,
   Bar,
@@ -13,6 +13,16 @@ import {
 import { ChartStyle } from './DashboardStyled';
 
 const PriceChart = () => {
+  const [width, setWidth] = useState(400);
+  useEffect(() => {
+    console.log(window.innerWidth);
+    if (window.innerWidth <= 800) {
+      setWidth(300);
+    }
+    if (window.innerWidth <= 400) {
+      setWidth(250);
+    }
+  });
   const data = [
     {
       name: 'Page A',
@@ -62,11 +72,15 @@ const PriceChart = () => {
     <ChartStyle>
       <h2>Today's sales</h2>
       <h1>206, 500</h1>
-      <ResponsiveContainer width={'100%'} height={'100%'}>
-        <BarChart width={400} height={350} data={data}>
-          <Bar dataKey='uv' fill='#1b5958' />
-        </BarChart>
-      </ResponsiveContainer>
+
+      <BarChart width={width} height={width} data={data}>
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='name' />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey='uv' fill='#1b5958' />
+      </BarChart>
     </ChartStyle>
   );
 };
