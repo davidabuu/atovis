@@ -35,22 +35,39 @@ const DashBoardCategory = () => {
   ];
   return (
     <CatStyleDash>
-      <h1>Today's Sales</h1>
-      <h1>&8358;93,120</h1>
-      <h2>Order Details</h2>
-      <p>Category of Product Sold</p>
       <div>
-        {
+        <select>
+          <option>Jan</option>
+          <option>Jan</option>
+          <option>Jan</option>
+          <option>Jan</option>
+        </select>
+        <select>
+          <option>Jan</option>
+          <option>Jan</option>
+          <option>Jan</option>
+          <option>Jan</option>
+        </select>
+        <p>Reset</p>
+      </div>
+     <div className='cat'>
+     <h1>Today's Sales</h1>
+      <h1>&#8358;93,120</h1>
+      <h2>Order Details</h2>
+      <div>Category of Product Sold</div>
+       <div>
+       {
             fakeCat.map((item) => (
                 <div className='cat-items' key={item.id}>
                     <h2>{item.cat}</h2>
                     <div className='div'>
-                        <div className='inner-div' style={{backgroud:`${item.color}`}}></div>
+                        <div style={{backgroud:`${item.color}`}}></div>
                     </div>
                 </div>
             ))
         }
-      </div>
+       </div>
+     </div>
     </CatStyleDash>
   );
 };

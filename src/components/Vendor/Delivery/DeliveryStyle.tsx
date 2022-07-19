@@ -142,7 +142,6 @@ export const MobileHeadNavStyled = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0px 2rem;
-    min-height: 60vh;
     .icon {
       margin-top: 30px;
     }

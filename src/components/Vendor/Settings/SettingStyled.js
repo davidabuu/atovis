@@ -18,7 +18,7 @@ export const SettingStyled = styled.div`
     align-items: center;
     justify-content: spade-around;
     flex-direction: column;
-    height: 500px;
+    height: 520px;
     margin-left: 20rem;
     margin-top: 30px;
     input,

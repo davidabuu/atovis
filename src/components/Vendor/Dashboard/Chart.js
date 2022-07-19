@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { ChartStyle } from './DashboardStyled';
 
 
 
@@ -50,13 +51,15 @@ const PriceChart= () => {
       ]
   
   return (
-    <div>
-          <ResponsiveContainer width="100%" height="100%">
-        <BarChart width={150} height={40} data={data}>
+  
+         
+      <ChartStyle>
+        <h2>Today's sales</h2>
+        <h1>206, 500</h1>
+          <BarChart width={400} height={400} data={data}>
           <Bar dataKey="uv" fill="#1b5958" />
         </BarChart>
-      </ResponsiveContainer>
-    </div>
+      </ChartStyle>
   );
 };
 

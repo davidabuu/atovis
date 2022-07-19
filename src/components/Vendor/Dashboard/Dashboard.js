@@ -5,9 +5,9 @@ import Header from '../Header';
 import SideNav from '../SideNav';
 import MobileNavHead from '../SignVendor/MobileHead';
 import VendorSearch from '../SignVendor/VendorSearch';
-import VendorChart from './Chart';
 import { DashboardStyled } from './DashboardStyled';
-import DashBoardCategory from './DashBoardCategory'
+import DashBoardCategory from './DashBoardCategory';
+import PriceChart from './Chart';
 const Dashboard = () => {
   return (
     <UserWebLayout webtitle='Dashboard'>
@@ -24,8 +24,12 @@ const Dashboard = () => {
             <VendorSearch />
           </div>
           <div className='chart'>
-          <VendorChart />
-          <DashBoardCategory/>
+            <div>
+              <PriceChart />
+            </div>
+            <div>
+              <DashBoardCategory />
+            </div>
           </div>
           <div className='cards'>
             <Card heading={'Products Sold'} number={'100'} />
