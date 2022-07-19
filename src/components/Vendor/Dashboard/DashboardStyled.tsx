@@ -23,7 +23,9 @@ export const DashboardStyled = styled.div`
     justify-content: space-around;
   }
   @media (max-width: 1200px) {
-    flex-direction: column;
+    .chart {
+      flex-direction: column;
+    }
   }
   @media (max-width: 1000px) {
     display: block;
@@ -37,7 +39,7 @@ export const DashboardStyled = styled.div`
     .desktop-head {
       display: none !important;
     }
-    .card {
+    .cards {
       flex-direction: column;
     }
   }
@@ -68,4 +70,14 @@ export const ChartStyle = styled.div`
   background: #ffff;
   padding: 10px;
   border-radius: 10px;
+  .bar-chart{
+    width:400;
+    height:400;
+  }
+  @media(max-width:1000px){
+    .bar-chart{
+      width:200;
+      height:200;
+    }
+  }
 `;

@@ -56,7 +56,7 @@ const PriceChart= () => {
       <ChartStyle>
         <h2>Today's sales</h2>
         <h1>206, 500</h1>
-          <BarChart width={400} height={400} data={data}>
+          <BarChart  className='bar-chart'  data={data}>
           <Bar dataKey="uv" fill="#1b5958" />
         </BarChart>
       </ChartStyle>
