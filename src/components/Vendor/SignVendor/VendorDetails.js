@@ -3,47 +3,47 @@ import { Button, Col, notification, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
-import { VendorStyle, LogoHolders } from './SignStyled';
-import axios from 'axios'
+import { VendorStyle} from './SignStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../../redux/Vendor/vendorAuthSlice';
 const VendorDetails = () => {
-  const { isLoading, isError, message } = useSelector(
+  const { isLoading, isError, message, isSuccess } = useSelector(
     (state) => state.vendorAuth
   );
   const [loading, setLoading] = useState(false);
-  const { sellerDetails, bussinessDetails, paymentDetails, address } = useSelector(
+  const { sellerDetails, businessDetails, paymentDetails} = useSelector(
     (state) => state.vendorDetails
   );
-  console.log(address)
+  //console.log(address)
   const data = {
     sellerDetails,
-    bussinessDetails,
+    businessDetails,
     paymentDetails,
-    address
   }
-  const registerVendor = async () => {
-    try {
-      setLoading(true)
-      const res = await axios.post(`${process.env.API_URL}/vendor/register`, data);
-      if(res.data){
-        notification.success({
-          message: ' Success',
-          description: 'Congratulations, You are now a vendor',
-          duration: 1000,
-        });
-      }
+  const dispatch = useDispatch()
+  console.log(data)
+  useEffect(() => {
+   if(isSuccess){
       setLoading(false)
-    } catch (error) {
-      console.log(error)
       notification.error({
         message: ' Error',
-        description: error.message,
+        description: <Link href='/vendor/login'><a>Congrats you are now a Vendor. Click Here</a></Link>,
+      duration: 1000,
+      });
+    }
+  })
+  const registerVendor = async () => {
+    if (!isError) {
+      notification.error({
+        message: ' Error',
+        description: message[0].message,
         duration: 1000,
       });
-      setLoading(false);
+    } else {
+      setLoading(true);
+      dispatch(register(data));
     }
-  };
+  }
   return (
     <UserWebLayout webtitle='Vendor Details'>
       <VendorStyle>
@@ -84,15 +84,15 @@ const VendorDetails = () => {
             <div className='info'>
               <div>
                 <h2>Store Name</h2>
-                <p>{bussinessDetails.name}</p>
+                <p>{businessDetails.name}</p>
               </div>
               <div>
                 <h2>Bussiness Type</h2>
-                <p>{bussinessDetails.type}</p>
+                <p>{businessDetails.type}</p>
               </div>
               <div>
                 <h2>CAC Regisrtation Number</h2>
-                <p>{bussinessDetails.cacNumber}</p>
+                <p>{businessDetails.cacNumber}</p>
                 <Link href='/vendor/account'>
                   <a>
                     <Edit /> Edit
@@ -127,7 +127,7 @@ const VendorDetails = () => {
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <h2>Address Details</h2>
             <div className='info'>
               <div>
@@ -150,7 +150,7 @@ const VendorDetails = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='btn'>
             <Button loading={loading} onClick={registerVendor} htmlType='submit' className='btn-sign'>

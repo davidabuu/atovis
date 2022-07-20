@@ -314,7 +314,7 @@ export const SideNavStyled = styled.div`
   text-align: center;
   display: flex;
   align-item: center;
-  height:130vh;
+  height: 130vh;
   flex-direction: column;
   ul {
     list-style: none;
@@ -367,4 +367,33 @@ export const VendorSearchStyle = styled.div`
     border-radius: 20px;
     padding: 10px;
   }
+`;
+
+export const NavigationStyle = styled.div`
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right:2rem !important;
+    a {
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    a:hover{
+      color:var(--primary-color);
+    }
+    .icon {
+      width: 20px;
+      margin-top: 5px;
+    }
+  }
+  @media(max-width:800px){
+    a{
+    font-size:15px;  }
+    .icon{
+      width:10px;
+      margin-top:0px;
+    }
 `;

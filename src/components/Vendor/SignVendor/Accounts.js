@@ -4,6 +4,7 @@ import { Button, Card, Col, Input, Row, Select } from 'antd';
 import { LogoHolders } from './SignStyled';
 import { SignStyled, FormGroup } from './SignStyled';
 import { paymentRegister } from '../../../redux/Vendor/vendorInfoSlice';
+import Navigation from '../Navigation';
 import { useDispatch } from 'react-redux';
 import router from 'next/router';
 import { useState } from 'react';
@@ -19,7 +20,7 @@ const PaymentAccount = () => {
   const onSubmit = (record) => {
     setLoading(true);
     dispatch(paymentRegister(record));
-    router.push('/vendor/address');
+    router.push('/vendor/vendor-details');
   };
   return (
     <UserWebLayout webtitle='Bussiness Info'>
@@ -29,6 +30,7 @@ const PaymentAccount = () => {
         </div>
         <div className='card-div'>
           <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
+            <Navigation/>
             <h2>ACCOUNT NAME</h2>
             <div>
               <label>Account Name</label>

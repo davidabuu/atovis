@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { Button, Card, Col, Input, notification, Row } from 'antd';
-import { LogoHolders } from './SignStyled';
+import { Button, Input, notification, Row } from 'antd';
+
 import { SignStyled, FormGroup } from './SignStyled';
 import { sellerRegister } from '../../../redux/Vendor/vendorInfoSlice';
 import { useDispatch } from 'react-redux';
@@ -9,6 +9,7 @@ import router from 'next/router';
 import Link from 'next/link';
 import { useState } from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
+import Navigation from '../Navigation';
 const Seller = () => {
   const {
     handleSubmit,
@@ -34,12 +35,13 @@ const Seller = () => {
   return (
     <UserWebLayout webtitle='Seller Info'>
       <SignStyled style={{ marginTop: '20px' }}>
-      <div className='img'>
+        <div className='img'>
           <img src='/logo2.png' alt='Log' />
         </div>
         <div>
           <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
-          <h2>SELLER</h2>
+            <Navigation />
+            <h2>SELLER</h2>
             <div className='card-div'>
               <label>Full Name</label>
               <Controller
@@ -131,10 +133,13 @@ const Seller = () => {
               </Button>
             </div>
             <div>
-                <p>
-                  Dont't have an account ? <Link href='/vendor/sign-up'><a className='p'>Sign up</a></Link>
-                </p>
-              </div>
+              <p>
+                Dont't have an account ?{' '}
+                <Link href='/vendor/sign-up'>
+                  <a className='p'>Sign up</a>
+                </Link>
+              </p>
+            </div>
           </form>
         </div>
       </SignStyled>

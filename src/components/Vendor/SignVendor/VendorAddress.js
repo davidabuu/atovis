@@ -5,6 +5,7 @@ import Aos from 'aos';
 import { useDispatch } from 'react-redux';
 import { Controller, useForm } from 'react-hook-form';
 import { address } from '../../../redux/Vendor/vendorInfoSlice';
+import Navigation from '../Navigation';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import { SignStyled } from './SignStyled';
 import router from 'next/router';
@@ -64,7 +65,7 @@ const VendorAddress = () => {
     setLoading(true);
     console.log(data)
     dispatch(address(data));
-    router.push('/vendor/vendor-details');
+    router.push('/vendor/payment-info');
   };
   return (
     <div data-aos='zoom-in'>
@@ -75,6 +76,7 @@ const VendorAddress = () => {
           </div>
           <div className='card-div'>
             <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
+            <Navigation />
               <div>
                 <label>Latitude</label>
                 <br></br>
