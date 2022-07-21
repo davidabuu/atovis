@@ -4,7 +4,9 @@ import CatCard from '../../User/CatCard';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
 import LayoutSearch from '../LayoutSearch';
 import SideNav from '../SideNav';
+import AdminCat from './AdminCat';
 import { AdminInevStyle } from './AdminInevStyled';
+import AdminOverView from './AdminOverView';
 const InventoryVendor = () => {
   const dataSource = [
     {
@@ -106,10 +108,10 @@ const InventoryVendor = () => {
                 pagination={false}
               />
             </div>
-            <div className='over-view'>
-              <OverView />
+            <div>
+              <AdminOverView/>
               <div className='cat'>
-                <CatCard />
+                <AdminCat />
               </div>
             </div>
           </div>
