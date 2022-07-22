@@ -1,6 +1,7 @@
 import { Table } from 'antd';
 import BeautyStars from 'beauty-stars';
 import React from 'react';
+import { CustomerDataStyle } from './CustomerStyled'
 const AdminCustomerData
  = () => {
     const dataSource = [
@@ -68,9 +69,10 @@ const AdminCustomerData
       ];
   return (
     
-      <div>
+      <CustomerDataStyle>
+        <h1>Customers Data</h1>
           <Table dataSource={dataSource} columns={columns} />
-        </div>
+        </CustomerDataStyle>
   );
 };
 

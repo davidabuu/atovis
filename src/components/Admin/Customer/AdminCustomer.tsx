@@ -2,7 +2,7 @@ import { Table } from 'antd';
 import BeautyStars from 'beauty-stars';
 import React from 'react';
 import UserWebLayout from '../../WebLayout/UserWebLayout';
-
+import { CustomerDataStyle } from './CustomerStyled'
 const AdminCustomerFeedback = () => {
     const dataSource = [
         {
@@ -81,9 +81,10 @@ const AdminCustomerFeedback = () => {
       ];
   return (
     <UserWebLayout webtitle='Customer FeedBack'>
-      <div>
+      <CustomerDataStyle>
+        <h1>Customer Feedback</h1>
           <Table dataSource={dataSource} columns={columns} />
-        </div>
+        </CustomerDataStyle>
     </UserWebLayout>
   );
 };

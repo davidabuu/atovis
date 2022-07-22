@@ -13,3 +13,10 @@ display:inline;
     justify-content:spacer-around;
 }
 `
+
+export const CustomerDataStyle = styled.div`
+background: #ffff;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding: 10px;
+`
