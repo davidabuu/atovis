@@ -91,12 +91,14 @@ const Transaction = () => {
               type='monotone'
               dataKey='uv'
               stroke='#8884d8'
-              fill='#8884d8'
+              fill='
+              #E48B05
+              #21A3BF'
             />
           </AreaChart>
         </ResponsiveContainer>
       </div>
-      <PieChartDemo/>
+      <PieChartDemo />
     </div>
   );
 };

@@ -80,7 +80,7 @@ const ActiveUsers = () => {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+            <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#21A3BF" />
           </AreaChart>
         </ResponsiveContainer>
       </div>

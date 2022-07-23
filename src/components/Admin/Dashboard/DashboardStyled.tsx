@@ -26,10 +26,11 @@ export const OverViewStyle = styled.div`
         font-size: 30px;
       }
       .gross {
-        background-color: var(--primary-color);
+        background-color:#06C2C2;
       }
       .gross-sale {
-        background-color: var(--primary-color);
+        background-color: 
+        #C75515;
       }
     }
   }
